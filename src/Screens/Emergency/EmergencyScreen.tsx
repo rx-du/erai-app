@@ -1,17 +1,19 @@
 import React from 'react';
 import { View, Text, Alert } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import { MainLayout } from '../Layout/MainLayout';
 import { styles } from './Styles';
 
-import HomeIcon from '../../Icons/home-button.svg';
+import EmergencyIcon from '../../Icons/emergency-button.svg';
 import { useTheme } from '../../Theme/ThemeContext';
 import { CustomButton } from '../../Components/CustomButton';
 
 export default function EmergencyScreen({ navigation }: any) {
   const { colors } = useTheme();
+  const { t } = useTranslation();
 
   const handleCall = () => {
-    Alert.alert('Calling 911...', 'Pretend to dial emergency number');
+    Alert.alert(t('emergency.calling'), 'Pretend to dial emergency number');
     // Linking.openURL('tel:911')
   };
 
@@ -19,16 +21,16 @@ export default function EmergencyScreen({ navigation }: any) {
     <MainLayout>
       <View style={styles.container}>
         <Text style={[styles.title, { color: colors.Text.neutral.primary }]}>
-          What is your emergency?
+          {t('emergency.whatIsEmergency')}
         </Text>
 
         <Text style={[styles.subtitle, { color: colors.Text.neutral.secondary }]}>
-          Hold the button bellow and help will reach you soon
+          {t('emergency.holdButton')}
         </Text>
 
-        <HomeIcon />
+        <EmergencyIcon />
 
-        <CustomButton type="tertiary" text="Show all emergency contacts" onPress={() => {}} />
+        <CustomButton type="tertiary" text={t('emergency.showAllContacts')} onPress={() => {}} />
       </View>
     </MainLayout>
   );

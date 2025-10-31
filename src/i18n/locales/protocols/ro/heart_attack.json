@@ -1,0 +1,98 @@
+{
+  "id": "heart_attack",
+  "title": "Infarct",
+  "sections": [
+    {
+      "title": "Critic",
+      "type": "text",
+      "content": "Infarctele sunt urgențe medicale. Fiecare secundă contează. Urmați protocolul imediat."
+    },
+    {
+      "title": "Simptome Comune",
+      "type": "list",
+      "items": [
+        "Durere sau disconfort în piept",
+        "Durere în brațe, gât, maxilar sau spate",
+        "Dificultăți de respirație",
+        "Greață sau vărsături"
+      ]
+    },
+    {
+      "title": "Semne Adiționale",
+      "type": "list",
+      "items": [
+        "Transpirații reci",
+        "Amețeli",
+        "Oboseală neobișnuită",
+        "Senzație de arsură la stomac"
+      ]
+    },
+    {
+      "title": "Acțiune rapidă",
+      "type": "text",
+      "content": "325mg Aspirină, mestecați încet."
+    }
+  ],
+  "steps": [
+    {
+      "id": "heart_attack_protocol",
+      "title": "Protocol Infarct",
+      "category": "Urgențe Cardiace",
+      "severity": "critical",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Siguranța Scenei & Evaluare Inițială",
+          "subtitle": "Asigurați siguranța scenei, verificați reactivitatea și evaluați respirația",
+          "timeframe": "Imediat",
+          "type": "instruction",
+          "video": "sample_video.mp4",
+          "status": "completed"
+        },
+        {
+          "id": 2,
+          "title": "Apelați Serviciile de Urgență",
+          "subtitle": "Apelați 112 imediat – timpul este critic pentru evenimentele cardiace",
+          "timeframe": "În 1 minut",
+          "type": "action",
+          "icon": "phone",
+          "status": "completed"
+        },
+        {
+          "id": 3,
+          "title": "Administrați Aspirină",
+          "subtitle": "Dați 325mg aspirină dacă pacientul este conștient și nu este alergic",
+          "timeframe": "În 5 minute",
+          "type": "instruction",
+          "video": "sample_video.mp4",
+          "status": "completed"
+        },
+        {
+          "id": 4,
+          "title": "Poziționați Pacientul",
+          "subtitle": "Așezați pacientul într-o poziție verticală confortabilă",
+          "timeframe": "Imediat",
+          "type": "instruction",
+          "status": "completed"
+        },
+        {
+          "id": 5,
+          "title": "Monitorizați Semnele Vitale",
+          "subtitle": "Monitorizați continuu respirația, pulsul și conștiența",
+          "timeframe": "Continuu",
+          "type": "monitor",
+          "status": "completed"
+        },
+        {
+          "id": 6,
+          "title": "Pregătiți-vă pentru RCP",
+          "subtitle": "Fiți gata să începeți RCP dacă pacientul își pierde conștiența",
+          "timeframe": "Dacă este necesar",
+          "type": "alert",
+          "link": "cpr_protocol",
+          "status": "completed"
+        }
+      ]
+    }
+  ]
+}

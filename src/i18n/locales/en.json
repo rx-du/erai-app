@@ -1,0 +1,135 @@
+{
+  "welcome": {
+    "title": "Hello,",
+    "subtitle": "An app designed to guide anyone through emergencies, with quick first responder protocols and first aid steps.",
+    "login": "Login",
+    "signUp": "Sign up",
+    "or": "or",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithApple": "Continue with Apple"
+  },
+  "login": {
+    "title": "Login",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "loginButton": "Login",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up",
+    "welcomeBack": "Welcome back",
+    "accountLocked": "Account locked",
+    "tryAgain": "Try again",
+    "checkCredentials": "Please double-check and try again.",
+    "completeFields": "Please complete all the fields to connect to your account.",
+    "tooManyAttempts": "Too many failed login attempts. Please try again in 15 minutes.",
+    "goBack": "Go back"
+  },
+  "signUp": {
+    "title": "Sign up",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "signUpButton": "Sign up",
+    "haveAccount": "Already have an account?",
+    "login": "Login",
+    "createNewAccount": "Create new account",
+    "terms": "By continuing, you agree to the Terms of Service and aknowledge the Privacy Policy.",
+    "enterEmailAddress": "Enter your email address",
+    "educationalPurposes": "I understand that this app is designed for Educational Purposes Only.",
+    "continue": "Continue",
+    "goBack": "Go back",
+    "setPassword": "Set your password",
+    "setPasswordCriteria": "Enter a combination of uppercase letters, lowercase letters, numbers, symbols.",
+    "setPasswordAdvice": "Do not use your first name, last name, email address.",
+    "passwordNotMatch": "The passwords you entered do not match. Please check and try again."
+  },
+  "navigation": {
+    "aid": "Aid",
+    "location": "Location",
+    "emergency": "Emergency",
+    "account": "Account"
+  },
+  "aid": {
+    "title": "First Aid",
+    "stepByStep": "Step-by-step guidance",
+    "chooseEmergency": "Choose your emergency",
+    "emergencyResponse": "Emergency Response",
+    "firstAid": "First Aid",
+    "categories": {
+      "cpr": "CPR",
+      "bleeding": "Bleeding",
+      "burns": "Burns",
+      "fractures": "Fractures",
+      "headInjury": "Head injury",
+      "heartAttack": "Heart attack",
+      "anaphylaxis": "Anaphylaxis",
+      "seizure": "Seizure",
+      "shock": "Shock",
+      "wounds": "Wounds",
+      "opiateOverdose": "Opiate overdose",
+      "burnInjury": "Burn injury"
+    },
+    "protocol": {
+      "step": "Step",
+      "of": "of",
+      "close": "Close",
+      "stepCompleted": "Step completed",
+      "stepCompletedCheck": "✓ Step completed"
+    }
+  },
+  "location": {
+    "title": "Location",
+    "currentLocation": "Current Location",
+    "shareLocation": "Share Location",
+    "noPermission": "Location permission not granted",
+    "enableLocation": "Please enable location services to use this feature",
+    "loading": "Loading location...",
+    "turnOnPermission": "Turn on phone permissions",
+    "allowLocation": "Allow the app to access your location from your phone's settings.",
+    "openSettings": "Open phone's settings"
+  },
+  "emergency": {
+    "title": "Emergency",
+    "call": "Call Emergency Services",
+    "callNumber": "Call {{number}}",
+    "whatIsEmergency": "What is your emergency?",
+    "holdButton": "Hold the button bellow and help will reach you soon",
+    "showAllContacts": "Show all emergency contacts",
+    "calling": "Calling 911..."
+  },
+  "account": {
+    "title": "Account",
+    "loggedInAs": "You are logged in as",
+    "logout": "Log out",
+    "profile": "Profile",
+    "language": "Language",
+    "country": "Country",
+    "subscription": {
+      "title": "Subscription",
+      "free": "Free",
+      "upgrade": "Upgrade",
+      "paymentsHistory": "Payments history"
+    },
+    "settings": {
+      "title": "Settings"
+    },
+    "theme": {
+      "title": "Theme",
+      "light": "Light",
+      "dark": "Dark"
+    }
+  },
+  "common": {
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "next": "Next",
+    "done": "Done",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  }
+}

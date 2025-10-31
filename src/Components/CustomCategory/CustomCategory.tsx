@@ -20,7 +20,7 @@ export default function CustomCategory({ label, icon: Icon, onPress }: CustomCat
         { backgroundColor: colors.Bg.primary, borderColor: colors.Divider.primary },
       ]}
     >
-      <Icon />
+      <Icon color={colors.Button.accent.primary} />
       <Text>{label}</Text>
     </TouchableOpacity>
   );

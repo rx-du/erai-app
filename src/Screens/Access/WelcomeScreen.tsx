@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Platform } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import { CustomButton } from '../../Components/CustomButton';
 import { MainLayout } from '../Layout/MainLayout';
 
@@ -14,6 +15,7 @@ import { useTheme } from '../../Theme/ThemeContext';
 
 export default function WelcomeScreen({ navigation }: any) {
   const { colors } = useTheme();
+  const { t } = useTranslation();
 
   return (
     <MainLayout>
@@ -25,17 +27,16 @@ export default function WelcomeScreen({ navigation }: any) {
       </View>
 
       <View style={welcomeStyles.textContainer}>
-        <Text style={[welcomeStyles.title, { color: colors.Text.neutral.primary }]}>Hello,</Text>
-        <Text style={welcomeStyles.subtitle}>
-          An app designed to guide anyone through emergencies, with quick first responder protocols
-          and first aid steps.
+        <Text style={[welcomeStyles.title, { color: colors.Text.neutral.primary }]}>
+          {t('welcome.title')}
         </Text>
+        <Text style={welcomeStyles.subtitle}>{t('welcome.subtitle')}</Text>
       </View>
 
       <View style={welcomeStyles.buttonsContainer}>
         <CustomButton
           onPress={() => navigation.navigate('Login')}
-          text="Login"
+          text={t('welcome.login')}
           type="primary"
           dimension="large"
           width={345}
@@ -43,19 +44,19 @@ export default function WelcomeScreen({ navigation }: any) {
 
         <CustomButton
           onPress={() => navigation.navigate('SignUp')}
-          text="Sign up"
+          text={t('welcome.signUp')}
           type="secondary"
           dimension="large"
           width={345}
         />
 
         <View style={welcomeStyles.dividerContainer}>
-          <Text style={welcomeStyles.dividerText}>or</Text>
+          <Text style={welcomeStyles.dividerText}>{t('welcome.or')}</Text>
         </View>
 
         <CustomButton
           onPress={() => signInWithGoogle(navigation)}
-          text="Continue with Google"
+          text={t('welcome.continueWithGoogle')}
           Icon={GoogleIcon}
           type="social"
           dimension="large"
@@ -65,7 +66,7 @@ export default function WelcomeScreen({ navigation }: any) {
         {Platform.OS === 'ios' && (
           <CustomButton
             onPress={() => signInWithApple(navigation)}
-            text="Continue with Apple"
+            text={t('welcome.continueWithApple')}
             Icon={AppleIcon}
             type="social"
             dimension="large"

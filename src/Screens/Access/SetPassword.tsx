@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { View, Text, Alert } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import { MainLayout } from '../Layout/MainLayout';
 import { CustomButton } from '../../Components/CustomButton';
 import { CustomInput } from '../../Components/CustomInput';
-import { Messages } from '../../Constants/Messages';
 import { loginStyles, registerStyles } from './Styles';
 import { useTheme } from '../../Theme/ThemeContext';
 
 export default function SetPasswordScreen({ route, navigation }: any) {
+  const { t } = useTranslation();
   const { colors } = useTheme();
 
   const { email } = route.params;
@@ -15,7 +16,7 @@ export default function SetPasswordScreen({ route, navigation }: any) {
   const [confirm, setConfirm] = useState('');
   const [serverError, setServerError] = useState('');
   const [shouldDisplayError, setShouldDisplayError] = useState(false);
-  const messageError = serverError || Messages.passwordNotMatch;
+  const messageError = serverError || t('signUp.passwordNotMatch');
 
   const handleSetPassword = async () => {
     if (password !== confirm) {
@@ -53,13 +54,13 @@ export default function SetPasswordScreen({ route, navigation }: any) {
         <View style={registerStyles.firstSection}>
           <View style={registerStyles.firstSubsection}>
             <Text style={[registerStyles.title, { color: colors.Text.neutral.primary }]}>
-              {Messages.setPassword}
+              {t('signUp.setPassword')}
             </Text>
             <Text style={[registerStyles.subTitle, { color: colors.Text.neutral.secondary }]}>
-              {Messages.setPasswordCriteria}
+              {t('signUp.setPasswordCriteria')}
             </Text>
             <Text style={[registerStyles.subTitle, { color: colors.Text.neutral.secondary }]}>
-              {Messages.setPasswordAdvice}
+              {t('signUp.setPasswordAdvice')}
             </Text>
             {shouldDisplayError && (
               <Text style={[loginStyles.errorText, { color: colors.Text.accent.primary }]}>
@@ -73,7 +74,7 @@ export default function SetPasswordScreen({ route, navigation }: any) {
               onChangeText={setPassword}
               value={password}
               name={'password'}
-              placeholder={Messages.enterPassword}
+              placeholder={t('signUp.password')}
               onInputClick={() => {}}
               secureTextEntry={false}
             />
@@ -82,13 +83,13 @@ export default function SetPasswordScreen({ route, navigation }: any) {
               onChangeText={setConfirm}
               value={confirm}
               name={'password'}
-              placeholder={Messages.confirmPassword}
+              placeholder={t('signUp.confirmPassword')}
               onInputClick={() => {}}
               secureTextEntry={false}
             />
             <CustomButton
               onPress={handleSetPassword}
-              text="Continue"
+              text={t('signUp.continue')}
               type="primary"
               dimension="large"
               width={123}
@@ -98,7 +99,7 @@ export default function SetPasswordScreen({ route, navigation }: any) {
         <View style={registerStyles.secondSection}>
           <CustomButton
             onPress={() => navigation.navigate('Welcome')}
-            text="Cancel"
+            text={t('common.cancel')}
             type="tertiary"
             dimension="large"
             width={116}

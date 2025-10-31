@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -13,6 +13,8 @@ import RegisterScreen from '../Screens/Access/RegisterScreen';
 import SetPasswordScreen from '../Screens/Access/SetPassword';
 import LoginScreen from '../Screens/Access/LoginScreen';
 import ProtocolScreen from '../Screens/Aid/Protocol/ProtocolScreen';
+import { SvgProps } from 'react-native-svg';
+import ProtocolStepScreen from '../Screens/Aid/Protocol/ProtocolStepScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -44,19 +46,27 @@ export type RootStackParamList = {
   SignUp: undefined;
   SetPassword: undefined;
   MainTabs: undefined;
-  Protocol: undefined;
+  Protocol: {
+    protocolData: any;
+    title: string;
+    icon: FC<SvgProps>;
+  };
+  ProtocolStep: {
+    protocolData: any;
+  };
 };
 
 export default function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="MainTabs" component={MainTabs} />
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="SignUp" component={RegisterScreen} />
         <Stack.Screen name="SetPassword" component={SetPasswordScreen} />
-        <Stack.Screen name="MainTabs" component={MainTabs} />
         <Stack.Screen name="Protocol" component={ProtocolScreen} />
+        <Stack.Screen name="ProtocolStep" component={ProtocolStepScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

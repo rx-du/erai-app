@@ -1,0 +1,95 @@
+{
+  "id": "neurological_decline",
+  "title": "Neurological Decline / Head Trauma",
+  "sections": [
+    {
+      "title": "Critical",
+      "type": "text",
+      "content": "Any decline in GCS, new focal deficits, or signs of herniation require immediate ALS intervention and trauma center transport!"
+    },
+    {
+      "title": "Critical Signs",
+      "type": "list",
+      "items": [
+        "Altered level of consciousness",
+        "Unequal or non-reactive pupils",
+        "Clear fluid from ears/nose (CSF leak)",
+        "Raccoon eyes or Battle’s sign",
+        "Severe headache or vomiting"
+      ]
+    },
+    {
+      "title": "Immediate Actions",
+      "type": "list",
+      "items": [
+        "Scene safety and C-spine control",
+        "Glasgow Coma Scale assessment",
+        "Airway management with C-spine",
+        "Neurological baseline establishment",
+        "Rapid transport preparation"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": "heart_attack_protocol",
+      "title": "Heart Attack Protocol",
+      "category": "Cardiac Emergencies",
+      "severity": "critical",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Scene Safety & Initial Assessment",
+          "subtitle": "Ensure scene safety, check responsiveness, and assess breathing",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": "sample_video.mp4",
+          "status": "completed"
+        },
+        {
+          "id": 2,
+          "title": "Call Emergency Services",
+          "subtitle": "Call 911 immediately – time is critical for cardiac events",
+          "timeframe": "Within 1 minute",
+          "type": "action",
+          "icon": "phone",
+          "status": "completed"
+        },
+        {
+          "id": 3,
+          "title": "Administer Aspirin",
+          "subtitle": "Give 325mg aspirin if patient is conscious and not allergic",
+          "timeframe": "Within 5 minutes",
+          "type": "instruction",
+          "video": "sample_video.mp4",
+          "status": "completed"
+        },
+        {
+          "id": 4,
+          "title": "Position Patient",
+          "subtitle": "Place patient in comfortable upright position",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "completed"
+        },
+        {
+          "id": 5,
+          "title": "Monitor Vital Signs",
+          "subtitle": "Continuously monitor breathing, pulse, and consciousness",
+          "timeframe": "Ongoing",
+          "type": "monitor",
+          "status": "completed"
+        },
+        {
+          "id": 6,
+          "title": "Prepare for CPR",
+          "subtitle": "Be ready to start CPR if patient loses consciousness",
+          "timeframe": "If needed",
+          "type": "alert",
+          "link": "cpr_protocol",
+          "status": "completed"
+        }
+      ]
+    }
+  ]
+}

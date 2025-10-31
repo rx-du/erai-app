@@ -1,0 +1,135 @@
+{
+  "welcome": {
+    "title": "Bună,",
+    "subtitle": "O aplicație concepută pentru a ghida pe oricine prin situații de urgență, cu protocoale rapide pentru primul răspuns și pași de prim ajutor.",
+    "login": "Autentificare",
+    "signUp": "Înregistrare",
+    "or": "sau",
+    "continueWithGoogle": "Continuă cu Google",
+    "continueWithApple": "Continuă cu Apple"
+  },
+  "login": {
+    "title": "Autentificare",
+    "email": "Email",
+    "password": "Parolă",
+    "forgotPassword": "Ai uitat parola?",
+    "loginButton": "Autentificare",
+    "noAccount": "Nu ai un cont?",
+    "signUp": "Înregistrare",
+    "welcomeBack": "Bine ai revenit",
+    "accountLocked": "Cont blocat",
+    "tryAgain": "Încearcă din nou",
+    "checkCredentials": "Te rugăm să verifici și să încerci din nou.",
+    "completeFields": "Te rugăm să completezi toate câmpurile pentru a te conecta la contul tău.",
+    "tooManyAttempts": "Prea multe încercări eșuate de autentificare. Te rugăm să încerci din nou în 15 minute.",
+    "goBack": "Înapoi"
+  },
+  "signUp": {
+    "title": "Înregistrare",
+    "email": "Email",
+    "password": "Parolă",
+    "confirmPassword": "Confirmă parola",
+    "signUpButton": "Înregistrare",
+    "haveAccount": "Ai deja un cont?",
+    "login": "Autentificare",
+    "createNewAccount": "Creează cont nou",
+    "terms": "Continuând, ești de acord cu Termenii de Serviciu și recunoști Politica de Confidențialitate.",
+    "enterEmailAddress": "Introdu adresa ta de email",
+    "educationalPurposes": "Înțeleg că această aplicație este concepută doar în Scopuri Educaționale.",
+    "continue": "Continuă",
+    "goBack": "Înapoi",
+    "setPassword": "Setează parola",
+    "setPasswordCriteria": "Introdu o combinație de litere mari, litere mici, numere, simboluri.",
+    "setPasswordAdvice": "Nu folosi prenumele, numele, adresa de email.",
+    "passwordNotMatch": "Parolele introduse nu se potrivesc. Te rugăm să verifici și să încerci din nou."
+  },
+  "navigation": {
+    "aid": "Ajutor",
+    "location": "Locație",
+    "emergency": "Urgență",
+    "account": "Cont"
+  },
+  "aid": {
+    "title": "Prim Ajutor",
+    "stepByStep": "Ghid pas cu pas",
+    "chooseEmergency": "Alege urgența ta",
+    "emergencyResponse": "Răspuns la Urgență",
+    "firstAid": "Prim Ajutor",
+    "categories": {
+      "cpr": "RCP",
+      "bleeding": "Sângerare",
+      "burns": "Arsuri",
+      "fractures": "Fracturi",
+      "headInjury": "Traumatism cranial",
+      "heartAttack": "Infarct",
+      "anaphylaxis": "Anafilaxie",
+      "seizure": "Convulsii",
+      "shock": "Șoc",
+      "wounds": "Răni",
+      "opiateOverdose": "Supradoză opiacee",
+      "burnInjury": "Leziune prin arsură"
+    },
+    "protocol": {
+      "step": "Pasul",
+      "of": "din",
+      "close": "Închide",
+      "stepCompleted": "Pas completat",
+      "stepCompletedCheck": "✓ Pas completat"
+    }
+  },
+  "location": {
+    "title": "Locație",
+    "currentLocation": "Locația Curentă",
+    "shareLocation": "Partajează Locația",
+    "noPermission": "Permisiunea de locație nu a fost acordată",
+    "enableLocation": "Te rugăm să activezi serviciile de locație pentru a folosi această funcție",
+    "loading": "Se încarcă locația...",
+    "turnOnPermission": "Activează permisiunile telefonului",
+    "allowLocation": "Permite aplicației să acceseze locația ta din setările telefonului.",
+    "openSettings": "Deschide setările telefonului"
+  },
+  "emergency": {
+    "title": "Urgență",
+    "call": "Apelează Serviciile de Urgență",
+    "callNumber": "Apelează {{number}}",
+    "whatIsEmergency": "Care este urgența ta?",
+    "holdButton": "Ține apăsat butonul de mai jos și ajutorul va ajunge în curând",
+    "showAllContacts": "Arată toate contactele de urgență",
+    "calling": "Se apelează 112..."
+  },
+  "account": {
+    "title": "Cont",
+    "loggedInAs": "Ești autentificat ca",
+    "logout": "Deconectare",
+    "profile": "Profil",
+    "language": "Limbă",
+    "country": "Țară",
+    "subscription": {
+      "title": "Abonament",
+      "free": "Gratuit",
+      "upgrade": "Actualizează",
+      "paymentsHistory": "Istoric plăți"
+    },
+    "settings": {
+      "title": "Setări"
+    },
+    "theme": {
+      "title": "Temă",
+      "light": "Luminos",
+      "dark": "Întunecat"
+    }
+  },
+  "common": {
+    "cancel": "Anulează",
+    "confirm": "Confirmă",
+    "save": "Salvează",
+    "delete": "Șterge",
+    "edit": "Editează",
+    "back": "Înapoi",
+    "next": "Următorul",
+    "done": "Gata",
+    "loading": "Se încarcă...",
+    "error": "Eroare",
+    "success": "Succes"
+  }
+}

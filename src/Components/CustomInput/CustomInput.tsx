@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { FieldError, FieldErrorsImpl, Merge } from 'react-hook-form';
 import { TextInput } from 'react-native';
 import { Styles } from './Styles';
-import { Messages } from '../../Constants/Messages';
 import { useTheme } from '../../Theme/ThemeContext';
 
 type TextInputProps = {
@@ -34,7 +33,7 @@ export function CustomInput({
     setIsFocused(false);
   };
 
-  const keyboardType = Messages.enterEmail === placeholder ? 'email-address' : 'default';
+  const keyboardType = placeholder.toLowerCase().includes('email') ? 'email-address' : 'default';
 
   const inputStyle = {
     ...Styles.input,

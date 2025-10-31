@@ -1,0 +1,85 @@
+{
+  "id": "anaphylaxis",
+  "title": "Anaphylaxis",
+  "sections": [
+    {
+      "title": "High Priority",
+      "type": "text",
+      "content": "Anaphylaxis is a severe, life-threatening allergic reaction that requires immediate intervention."
+    },
+    {
+      "title": "Mild Reaction",
+      "type": "list",
+      "items": ["Localized hives", "Mild itching", "Nasal congestion", "Mild GI upset"],
+      "note": "Monitor closely, consider antihistamines."
+    },
+    {
+      "title": "Moderate Reaction",
+      "type": "list",
+      "items": ["Generalized hives", "Mild airway swelling", "Vomiting", "Anxiety"],
+      "note": "Prepare epinephrine, close monitoring."
+    }
+  ],
+  "steps": [
+    {
+      "id": "anaphylaxis_protocol",
+      "title": "Anaphylaxis Protocol",
+      "category": "Allergic Emergencies",
+      "severity": "critical",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Recognize Anaphylaxis",
+          "subtitle": "Identify signs of severe allergic reaction: difficulty breathing, swelling, hives",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": "sample_video.mp4",
+          "status": "completed"
+        },
+        {
+          "id": 2,
+          "title": "Call Emergency Services",
+          "subtitle": "Call 911 immediately for suspected anaphylaxis",
+          "timeframe": "Immediate",
+          "type": "action",
+          "icon": "phone",
+          "status": "completed"
+        },
+        {
+          "id": 3,
+          "title": "Administer Epinephrine",
+          "subtitle": "Use EpiPen or equivalent if available - inject into outer thigh",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": "sample_video.mp4",
+          "status": "completed"
+        },
+        {
+          "id": 4,
+          "title": "Position Patient",
+          "subtitle": "Lay patient flat, elevate legs (unless vomiting or breathing difficulty)",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": "sample_video.mp4",
+          "status": "completed"
+        },
+        {
+          "id": 5,
+          "title": "Monitor Breathing",
+          "subtitle": "Continuously monitor airway, breathing, and circulation",
+          "timeframe": "Ongoing",
+          "type": "monitor",
+          "status": "completed"
+        },
+        {
+          "id": 6,
+          "title": "Prepare Second Dose",
+          "subtitle": "Be ready to give second epinephrine dose after 5-15 minutes if needed",
+          "timeframe": "5-15 minutes",
+          "type": "instruction",
+          "status": "completed"
+        }
+      ]
+    }
+  ]
+}

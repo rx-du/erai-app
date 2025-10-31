@@ -1,13 +1,13 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useMemo, useEffect } from 'react';
 import { View, Text, ScrollView } from 'react-native';
-import { tabs } from './Helper';
+import { useTranslation } from 'react-i18next';
+import { getTabs } from './Helper';
 import CustomCategory from '../../Components/CustomCategory/CustomCategory';
 import { styles } from './Styles';
 
 import HeaderIcon from '../../Icons/aid-vector.svg';
 import { CustomTabs } from '../../Components/CustomTabs/CustomTabs';
 import { MainLayout } from '../Layout/MainLayout';
-import { Messages } from '../../Constants/Messages';
 import { useTheme } from '../../Theme/ThemeContext';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -15,9 +15,16 @@ import { RootStackParamList } from '../../Navigations/Navigations';
 
 export default function AidScreen() {
   const { colors } = useTheme();
+  const { t, i18n } = useTranslation();
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
-  const [activeTab, setActiveTab] = useState(Messages.emergencyRespone);
+  const [activeTab, setActiveTab] = useState(t('aid.emergencyResponse'));
+
+  const tabs = useMemo(() => getTabs(), [i18n.language]);
+
+  useEffect(() => {
+    setActiveTab(t('aid.emergencyResponse'));
+  }, [i18n.language, t]);
 
   const handleTabPress = useCallback((tabKey: string) => {
     setActiveTab(tabKey);
@@ -29,10 +36,10 @@ export default function AidScreen() {
         <View style={styles.header}>
           <View style={styles.headerText}>
             <Text style={[styles.text, { color: colors.Text.neutral.primary }]}>
-              Step-by-step guidance
+              {t('aid.stepByStep')}
             </Text>
             <Text style={[styles.subText, { color: colors.Text.neutral.secondary }]}>
-              Choose your emergency
+              {t('aid.chooseEmergency')}
             </Text>
           </View>
           <HeaderIcon />
@@ -52,7 +59,14 @@ export default function AidScreen() {
             <CustomCategory
               label={item.label}
               icon={item.icon}
-              onPress={() => navigation.navigate('Protocol')}
+              key={item.label}
+              onPress={() =>
+                navigation.navigate('Protocol', {
+                  protocolData: item.pageContent,
+                  title: item.label,
+                  icon: item.icon,
+                })
+              }
             />
           ))}
       </ScrollView>

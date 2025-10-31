@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import MapView from 'react-native-maps';
 import { MainLayout } from '../Layout/MainLayout';
 import { useTheme } from '../../Theme/ThemeContext';
@@ -15,11 +16,12 @@ import GpsIcon from '../../Icons/gps-32.svg';
 
 export default function LocationScreen() {
   const { theme, colors } = useTheme();
+  const { t } = useTranslation();
   const { region, addressTitle, addressDetails, permission, getLocation } = useGetLocation();
   const { shareLocation } = useShareLocation(region);
 
   if (permission === false) return <NoPermissionScreen />;
-  if (!region) return <Text>Se încarcă locația...</Text>;
+  if (!region) return <Text>{t('location.loading')}</Text>;
 
   return (
     <MainLayout>

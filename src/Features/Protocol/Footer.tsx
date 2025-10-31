@@ -1,12 +1,21 @@
-import { Text, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { footerStyle } from './Styles';
 
 import NoHands from '../../Icons/no-hands-32.svg';
 import Clock from '../../Icons/clock.svg';
 import { useTheme } from '../../Theme/ThemeContext';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../Navigations/Navigations';
 
-export default function Footer() {
+type FooterProps = {
+  protocolData: string;
+};
+
+export default function Footer({ protocolData }: FooterProps) {
   const { colors } = useTheme();
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
   return (
     <View style={footerStyle.container}>
       <View
@@ -14,15 +23,20 @@ export default function Footer() {
       >
         <NoHands color={colors.Button.accent.primary} />
       </View>
-      <View
+      <TouchableOpacity
         style={[footerStyle.secondContainer, { backgroundColor: colors.Button.accent.primary }]}
+        onPress={() =>
+          navigation.navigate('ProtocolStep', {
+            protocolData: protocolData,
+          })
+        }
       >
-        <Text>Start protocol</Text>
+        <Text style={[footerStyle.text, { color: colors.Text.neutral.white }]}>Start protocol</Text>
         <View style={footerStyle.timeContainer}>
-          <Text>15 min</Text>
+          <Text style={[footerStyle.text, { color: colors.Text.neutral.white }]}>15 min</Text>
           <Clock />
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 }

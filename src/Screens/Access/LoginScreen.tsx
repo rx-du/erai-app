@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { Text, View } from 'react-native';
 import { useForm } from 'react-hook-form';
-import { Messages } from '../../Constants/Messages';
+import { useTranslation } from 'react-i18next';
 import { loginStyles } from './Styles';
 import { LoginForm } from '../../Features/Auth/LoginForm';
 import { MainLayout } from '../Layout/MainLayout';
@@ -10,6 +10,7 @@ import { CustomButton } from '../../Components/CustomButton';
 
 export default function LoginScreen({ navigation }: any) {
   const { colors } = useTheme();
+  const { t } = useTranslation();
   const form = useForm({
     defaultValues: {
       username: '',
@@ -19,11 +20,9 @@ export default function LoginScreen({ navigation }: any) {
   const [serverError, setServerError] = useState('');
   const errorValidation =
     form.formState.errors.username || form.formState.errors.password || serverError;
-  const displayError = serverError || Messages.completeFields;
+  const displayError = serverError || t('login.completeFields');
   const displayAccountLocked =
-    serverError === Messages.tooManyFailedLoginAttempts
-      ? Messages.accountLocked
-      : Messages.tryAgain;
+    serverError === t('login.tooManyAttempts') ? t('login.accountLocked') : t('login.tryAgain');
 
   const loginHandler = useCallback(
     async (data: any) => {
@@ -57,11 +56,11 @@ export default function LoginScreen({ navigation }: any) {
         // if (signInData?.user) {
         //   navigation.replace('MainTabs');
         // } else {
-        //   setServerError(Messages.tryAgain);
+        //   setServerError(t('login.tryAgain'));
         // }
       } catch (err: any) {
         console.error(err);
-        setServerError(err.message || Messages.tryAgain);
+        setServerError(err.message || t('login.tryAgain'));
       }
     },
     [form, navigation]
@@ -72,7 +71,7 @@ export default function LoginScreen({ navigation }: any) {
       <View style={loginStyles.loginContainer}>
         <View style={loginStyles.firstContainer}>
           <Text style={[loginStyles.title, { color: colors.Text.neutral.primary }]}>
-            {errorValidation ? displayAccountLocked : Messages.welcomeBack}
+            {errorValidation ? displayAccountLocked : t('login.welcomeBack')}
           </Text>
           {errorValidation && (
             <Text style={[loginStyles.errorText, { color: colors.Text.accent.primary }]}>
@@ -86,8 +85,12 @@ export default function LoginScreen({ navigation }: any) {
         </View>
 
         <View style={loginStyles.secondContainer}>
-          <CustomButton type="tertiary" text="Forgot password" onPress={() => {}} />
-          <CustomButton type="tertiary" text="Go back" onPress={() => navigation.goBack()} />
+          <CustomButton type="tertiary" text={t('login.forgotPassword')} onPress={() => {}} />
+          <CustomButton
+            type="tertiary"
+            text={t('login.goBack')}
+            onPress={() => navigation.goBack()}
+          />
         </View>
       </View>
     </MainLayout>

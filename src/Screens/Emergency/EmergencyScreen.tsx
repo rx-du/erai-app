@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Alert } from 'react-native';
+import { View, Text, Alert, Linking, TouchableOpacity } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { MainLayout } from '../Layout/MainLayout';
 import { styles } from './Styles';
@@ -13,8 +13,7 @@ export default function EmergencyScreen({ navigation }: any) {
   const { t } = useTranslation();
 
   const handleCall = () => {
-    Alert.alert(t('emergency.calling'), 'Pretend to dial emergency number');
-    // Linking.openURL('tel:911')
+    Linking.openURL('tel:123');
   };
 
   return (
@@ -27,10 +26,18 @@ export default function EmergencyScreen({ navigation }: any) {
         <Text style={[styles.subtitle, { color: colors.Text.neutral.secondary }]}>
           {t('emergency.holdButton')}
         </Text>
+        <TouchableOpacity onPress={handleCall} style={styles.emergencyButtonContainer}>
+          <EmergencyIcon />
+          <View style={styles.emergencyTextOverlay}>
+            <Text style={styles.emergencyText}>SOS</Text>
+          </View>
+        </TouchableOpacity>
 
-        <EmergencyIcon />
-
-        <CustomButton type="tertiary" text={t('emergency.showAllContacts')} onPress={() => {}} />
+        <CustomButton
+          type="tertiary"
+          text={t('emergency.showAllContacts')}
+          onPress={() => navigation.navigate('EmergencyContact')}
+        />
       </View>
     </MainLayout>
   );

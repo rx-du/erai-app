@@ -15,6 +15,7 @@ import LoginScreen from '../Screens/Access/LoginScreen';
 import ProtocolScreen from '../Screens/Aid/Protocol/ProtocolScreen';
 import { SvgProps } from 'react-native-svg';
 import ProtocolStepScreen from '../Screens/Aid/Protocol/ProtocolStepScreen';
+import EmergencyContactScreen from '../Screens/Emergency/EmergencyContactScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -54,19 +55,21 @@ export type RootStackParamList = {
   ProtocolStep: {
     protocolData: any;
   };
+  EmergencyContact: undefined;
 };
 
 export default function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="MainTabs" component={MainTabs} />
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="SignUp" component={RegisterScreen} />
         <Stack.Screen name="SetPassword" component={SetPasswordScreen} />
+        <Stack.Screen name="MainTabs" component={MainTabs} />
         <Stack.Screen name="Protocol" component={ProtocolScreen} />
         <Stack.Screen name="ProtocolStep" component={ProtocolStepScreen} />
+        <Stack.Screen name="EmergencyContact" component={EmergencyContactScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

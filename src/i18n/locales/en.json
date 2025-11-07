@@ -104,6 +104,7 @@
     "profile": "Profile",
     "language": "Language",
     "country": "Country",
+    "appPermissions": "App Permissions",
     "subscription": {
       "title": "Subscription",
       "free": "Free",
@@ -131,5 +132,24 @@
     "loading": "Loading...",
     "error": "Error",
     "success": "Success"
+  },
+  "contacts": {
+    "emergencyContactsTitle": "Select Emergency Contacts",
+    "emergencyContactsSubtitle": "Select up to 5 contacts to notify in emergencies",
+    "permissionTitle": "Contacts Permission",
+    "permissionMessage": "App needs access to your contacts.",
+    "permissionDenied": "Permission Denied",
+    "permissionDeniedMessage": "Cannot access contacts without permission",
+    "loading": "Loading contacts...",
+    "noContacts": "No contacts found on this device.",
+    "noNumber": "No number",
+    "unnamed": "Unnamed",
+    "error": "Error",
+    "errorLoadingMessage": "Could not load contacts",
+    "errorSaving": "Error",
+    "errorSavingMessage": "Could not save emergency contacts",
+    "limitReached": "Limit Reached",
+    "limitReachedMessage": "You can only select up to 5 emergency contacts",
+    "selectedCount": "{{count}}/{{max}} contacts selected"
   }
 }

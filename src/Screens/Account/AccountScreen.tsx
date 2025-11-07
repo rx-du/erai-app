@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, Linking, Platform } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../Theme/ThemeContext';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
@@ -46,6 +46,14 @@ export default function AccountScreen({ navigation }: any) {
     await GoogleSignin.revokeAccess();
     await GoogleSignin.signOut();
     navigation.replace('Welcome');
+  };
+
+  const openAppSettings = () => {
+    if (Platform.OS === 'ios') {
+      Linking.openURL('app-settings:');
+    } else {
+      Linking.openSettings();
+    }
   };
 
   return (
@@ -124,6 +132,18 @@ export default function AccountScreen({ navigation }: any) {
             <View style={styles.settingValue}>
               <Text style={styles.settingValueText}>{selectedTheme}</Text>
               <ChevronDownIcon width={16} height={16} />
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[styles.settingItem, { backgroundColor: colors.Bg.pure }]}
+            onPress={openAppSettings}
+          >
+            <Text style={[styles.settingLabel, { color: colors.Text.neutral.secondary }]}>
+              {t('account.appPermissions')}
+            </Text>
+            <View style={styles.settingValue}>
+              <ChevronDownIcon width={16} height={16} style={styles.chevronRight} />
             </View>
           </TouchableOpacity>
         </View>

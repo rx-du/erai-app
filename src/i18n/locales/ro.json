@@ -104,6 +104,7 @@
     "profile": "Profil",
     "language": "Limbă",
     "country": "Țară",
+    "appPermissions": "Permisiuni Aplicație",
     "subscription": {
       "title": "Abonament",
       "free": "Gratuit",
@@ -131,5 +132,24 @@
     "loading": "Se încarcă...",
     "error": "Eroare",
     "success": "Succes"
+  },
+  "contacts": {
+    "emergencyContactsTitle": "Selectează Contacte de Urgență",
+    "emergencyContactsSubtitle": "Selectează până la 5 contacte pentru a notifica în caz de urgență",
+    "permissionTitle": "Permisiune Contacte",
+    "permissionMessage": "Aplicația necesită acces la contactele tale.",
+    "permissionDenied": "Permisiune Refuzată",
+    "permissionDeniedMessage": "Nu se poate accesa contactele fără permisiune",
+    "loading": "Se încarcă contactele...",
+    "noContacts": "Nu s-au găsit contacte pe acest dispozitiv.",
+    "noNumber": "Fără număr",
+    "unnamed": "Fără nume",
+    "error": "Eroare",
+    "errorLoadingMessage": "Nu s-au putut încărca contactele",
+    "errorSaving": "Eroare",
+    "errorSavingMessage": "Nu s-au putut salva contactele de urgență",
+    "limitReached": "Limită Atinsă",
+    "limitReachedMessage": "Poți selecta doar până la 5 contacte de urgență",
+    "selectedCount": "{{count}}/{{max}} contacte selectate"
   }
 }

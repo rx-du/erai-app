@@ -1,31 +1,36 @@
 {
   "id": "heart_attack",
   "title": "Heart Attack",
-  "sections": [
+  "category": [
     {
-      "title": "Critical",
-      "type": "text",
-      "content": "Heart attacks are medical emergencies. Every second counts. Follow the protocol immediately."
-    },
-    {
-      "title": "Common Symptoms",
-      "type": "list",
-      "items": [
-        "Chest pain or discomfort",
-        "Pain in arms, neck, jaw, or back",
-        "Shortness of breath",
-        "Nausea or vomiting"
+      "name": "",
+      "sections": [
+        {
+          "title": "Critical",
+          "type": "text",
+          "content": "Heart attacks are medical emergencies. Every second counts. Follow the protocol immediately."
+        },
+        {
+          "title": "Common Symptoms",
+          "type": "list",
+          "items": [
+            "Chest pain or discomfort",
+            "Pain in arms, neck, jaw, or back",
+            "Shortness of breath",
+            "Nausea or vomiting"
+          ]
+        },
+        {
+          "title": "Additional Signs",
+          "type": "list",
+          "items": ["Cold sweats", "Lightheadedness", "Unusual fatigue", "Heartburn-like feeling"]
+        },
+        {
+          "title": "Quick action",
+          "type": "text",
+          "content": "325mg Aspirin, chew slowly."
+        }
       ]
-    },
-    {
-      "title": "Additional Signs",
-      "type": "list",
-      "items": ["Cold sweats", "Lightheadedness", "Unusual fatigue", "Heartburn-like feeling"]
-    },
-    {
-      "title": "Quick action",
-      "type": "text",
-      "content": "325mg Aspirin, chew slowly."
     }
   ],
   "steps": [
@@ -51,7 +56,8 @@
           "timeframe": "Within 1 minute",
           "type": "action",
           "icon": "phone",
-          "status": "completed"
+          "status": "completed",
+          "shouldDisplayEmergencyCall": true
         },
         {
           "id": 3,
@@ -85,7 +91,8 @@
           "timeframe": "If needed",
           "type": "alert",
           "link": "cpr_protocol",
-          "status": "completed"
+          "status": "completed",
+          "shouldDisplayCprProtocol": true
         }
       ]
     }

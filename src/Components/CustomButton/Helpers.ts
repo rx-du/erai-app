@@ -48,6 +48,11 @@ export function getButtonStyle(type: ButtonType, dimension: ButtonDimension) {
       textColor: colors.Text.neutral.primary,
       borderColor: 'transparent',
     },
+    disabled: {
+      backgroundColor: colors.Button.neutral.secondary,
+      textColor: colors.Text.neutral.disabled,
+      borderColor: 'transparent',
+    },
   };
 
   return { ...ButtonStyles[type], height };

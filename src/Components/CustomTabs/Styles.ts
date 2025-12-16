@@ -5,9 +5,9 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    borderTopRightRadius: 24,
-    borderBottomRightRadius: 24,
-    borderTopLeftRadius: 24,
-    borderBottomLeftRadius: 24,
+    borderTopRightRadius: 16,
+    borderBottomRightRadius: 16,
+    borderTopLeftRadius: 16,
+    borderBottomLeftRadius: 16,
   },
 });

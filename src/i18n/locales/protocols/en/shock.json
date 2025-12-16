@@ -1,0 +1,63 @@
+{
+  "id": "shock_management",
+  "title": "Shock Management First Aid",
+  "category": [],
+  "steps": [
+    {
+      "id": "shock_management_protocol",
+      "title": "Shock management first aid",
+      "category": "Trauma Emergencies",
+      "severity": "critical",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Recognize Shock Signs",
+          "subtitle": "Check for rapid pulse, pale skin, confusion, decreased blood pressure.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Position Patient",
+          "subtitle": "Place patient supine, elevate legs 8–12 inches if no spinal injury.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Control Bleeding",
+          "subtitle": "Stop any visible bleeding immediately using direct pressure.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Maintain Airway",
+          "subtitle": "Ensure open airway, provide oxygen if available.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Prevent Heat Loss",
+          "subtitle": "Cover patient with blankets, maintain normal body temperature.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Monitor Vitals",
+          "subtitle": "Continuously monitor pulse, breathing, and level of consciousness.",
+          "timeframe": "Critical",
+          "type": "monitor",
+          "status": "pending"
+        }
+      ]
+    }
+  ]
+}

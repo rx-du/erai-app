@@ -1,0 +1,596 @@
+{
+  "id": "active_shooter",
+  "title": "Active Shooter",
+  "category": [
+    {
+      "sections": [
+        {
+          "title": "Critical",
+          "type": "text",
+          "content": "Dial emergency number immediately and maintain communication."
+        },
+        {
+          "title": "Your safety is the priority",
+          "type": "text",
+          "content": "Follow instructions that protect your teachers and school officials."
+        },
+        {
+          "title": "Stealth",
+          "type": "text",
+          "content": "All steps should be performed quickly and quietly."
+        },
+        {
+          "title": "Tactical medical care",
+          "type": "text",
+          "content": "Requires specialized training and coordination with medical teams."
+        },
+        {
+          "title": "Mass casualty events",
+          "type": "text",
+          "content": "Ensure coordinated response and systematic triage protocols."
+        },
+        {
+          "title": "Reunification",
+          "type": "text",
+          "content": "It is a both a logistical and emotional process requiring patience and coordination."
+        }
+      ]
+    }
+  ],
+
+  "protocols": [
+    {
+      "id": "school_lockdown",
+      "title": "School Lockdown Procedure (A.L.I.C.E.)",
+      "ageRange": "All staff",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Alert",
+          "subtitle": "Recognize and accept the threat. Immediately initiate lockdown procedures. Notify all staff and students through communication systems.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Lockdown",
+          "subtitle": "Secure all areas immediately. Lock all doors and windows. Direct everyone to move away from sight lines.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Inform",
+          "subtitle": "Provide ongoing updates to staff, students, and emergency services. Maintain communication with incident command.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Counter",
+          "subtitle": "If shooter enters your space, take action to disrupt or incapacitate as last resort. Work together as a team.",
+          "timeframe": "If needed",
+          "type": "action",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Evacuate",
+          "subtitle": "Once it is safe, evacuate the premises following predetermined routes.",
+          "timeframe": "If safe",
+          "type": "action",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Reunification",
+          "subtitle": "After threat is neutralized, facilitate safe reunification of students with families.",
+          "timeframe": "Threat neutralized",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        }
+      ]
+    },
+
+    {
+      "id": "student_response",
+      "title": "Student Response Protocol",
+      "ageRange": "Students",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Stay Calm and Assess",
+          "subtitle": "Take deep breaths. Listen carefully. Assess surroundings for threats and exits.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Follow Teacher Instructions",
+          "subtitle": "Listen and follow instructions without question. Help younger students if needed.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Secure Hiding Position",
+          "subtitle": "Move away from doors and windows. Stay low. Hide behind solid objects.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Silence All Devices",
+          "subtitle": "Turn phones to silent. Avoid using devices unless emergency.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Prepare to Move if Needed",
+          "subtitle": "Be ready to evacuate if instructed. Follow escape routes.",
+          "timeframe": "If needed",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Protect and Support Others",
+          "subtitle": "Help calm others. Assist in keeping group safe.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "medical_response",
+      "title": "Active Shooter Medical Response",
+      "ageRange": "Tactical medics",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Assess Scene Safety",
+          "subtitle": "Confirm scene secure. Identify hot zones. Establish medical position with cover.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Rapid Triage Assessment",
+          "subtitle": "Use START triage. Prioritize life-threatening injuries.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Provide Tactical Medical Care",
+          "subtitle": "Control hemorrhage. Secure airway. Treat pneumothorax.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Coordinate Medical Evacuation",
+          "subtitle": "Communicate with incident command. Request resources.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Monitor and Reassess",
+          "subtitle": "Monitor vital signs. Reassess triage categories.",
+          "timeframe": "Ongoing",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Prepare for Transport",
+          "subtitle": "Ready patients for evacuation to hospitals.",
+          "timeframe": "Ongoing",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        }
+      ]
+    },
+
+    {
+      "id": "mass_casualty",
+      "title": "Active Shooter Mass Casualty",
+      "ageRange": "Hospital Systems",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Establish Triage Area",
+          "subtitle": "Set up triage zones. Implement START protocol.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Request Additional Resources",
+          "subtitle": "Call for multiple ambulances. Request trauma resources.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Treat Immediate Priorities",
+          "subtitle": "Focus on life-threatening bleeding and airway management.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Organize Patient Transport",
+          "subtitle": "Match patients with appropriate facilities.",
+          "timeframe": "If needed",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Document All Actions",
+          "subtitle": "Maintain patient tracking records.",
+          "timeframe": "Ongoing",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Assessment",
+          "subtitle": "Reassess patient conditions. Adjust treatment priorities.",
+          "timeframe": "Ongoing",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "classroom_barricade",
+      "title": "Classroom Barricade Techniques",
+      "ageRange": "Teachers and Students",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Lock the Door",
+          "subtitle": "Use door stops or wedges. If door doesn't lock, hold it shut.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Move Heavy Furniture",
+          "subtitle": "Push desks, chairs, bookcases against door.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Reinforce the Barricade",
+          "subtitle": "Stack chairs. Use rope or belts to secure furniture.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Block Windows and Sight Lines",
+          "subtitle": "Cover windows with anything available.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Create Hiding Areas",
+          "subtitle": "Find areas not visible from outside. Stay low and quiet.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Prepare Final Defense",
+          "subtitle": "Gather defensive items. Use only as a last resort.",
+          "timeframe": "If needed",
+          "type": "action",
+          "video": null,
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "mass_evacuation",
+      "title": "Mass Evacuation Protocol",
+      "ageRange": "Law Enforcement & Fire Department",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Assess Evacuation Routes",
+          "subtitle": "Identify primary and secondary routes. Ensure safe corridors.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Alert and Direct Evacuation",
+          "subtitle": "Use alarms or PA system. Guide people away from danger.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Coordinate Group Movement",
+          "subtitle": "Assist individuals with disabilities. Maintain orderly evacuation.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Secure Assembly Areas",
+          "subtitle": "Ensure adequate space and security for evacuees.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Account for All Personnel",
+          "subtitle": "Report missing individuals to command.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Maintain Security and Control",
+          "subtitle": "Prevent unauthorized entry. Coordinate with responders.",
+          "timeframe": "Ongoing",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "incident_command",
+      "title": "Incident Command Structure",
+      "ageRange": "Incident Commander",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Establish Incident Command",
+          "subtitle": "Set up command post. Designate commander.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Assign Key Roles",
+          "subtitle": "Assign operations, logistics, planning, finance sections.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Coordinate Resources",
+          "subtitle": "Deploy teams. Coordinate medical response.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Manage Information Flow",
+          "subtitle": "Collect intelligence. Maintain situational awareness.",
+          "timeframe": "Ongoing",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Ensure Responder Safety",
+          "subtitle": "Monitor responder locations. Implement accountability.",
+          "timeframe": "Ongoing",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Document and Transition",
+          "subtitle": "Maintain incident log. Prepare transition to recovery phase.",
+          "timeframe": "Ongoing",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        }
+      ]
+    },
+
+    {
+      "id": "post_incident",
+      "title": "Post-Incident Procedures",
+      "ageRange": "All responders",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Ensure Immediate Safety",
+          "subtitle": "Verify all-clear. Check for injuries. Ensure area safe.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Provide Medical Aid",
+          "subtitle": "Assess injuries. Treat or call for medical support.",
+          "timeframe": "If needed",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Account for Everyone",
+          "subtitle": "Conduct headcount. Report missing persons.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Preserve Evidence",
+          "subtitle": "Do not disturb scene. Document observations.",
+          "timeframe": "Ongoing",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Coordinate with Authorities",
+          "subtitle": "Follow investigation protocols. Assist reunification.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Support Long-term Recovery",
+          "subtitle": "Provide counseling. Participate in after-action review.",
+          "timeframe": "Ongoing",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        }
+      ]
+    },
+
+    {
+      "id": "family_reunification",
+      "title": "Family Reunification",
+      "ageRange": "Family Services",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Establish Reunification Site",
+          "subtitle": "Set up secure location away from incident scene.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Register Families",
+          "subtitle": "Verify identities. Track arrival times and relationships.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Communicate Information",
+          "subtitle": "Share information appropriately. Coordinate updates.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Coordinate Reunification Process",
+          "subtitle": "Match students with verified family members.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Provide Security and Support",
+          "subtitle": "Provide crowd control and crisis counseling.",
+          "timeframe": "Ongoing",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Follow-up Support Services",
+          "subtitle": "Provide ongoing resources and schedule counseling.",
+          "timeframe": "Ongoing",
+          "type": "instruction",
+          "video": null,
+          "status": "pending"
+        }
+      ]
+    }
+  ]
+}

@@ -5,11 +5,11 @@ import { MainLayout } from '../../Layout/MainLayout';
 
 export default function ProtocolStepScreen() {
   const route = useRoute<RouteProp<RootStackParamList, 'ProtocolStep'>>();
-  const { protocolData } = route.params;
+  const { protocolData, icon } = route.params;
 
   return (
     <MainLayout>
-      <ProtocolStepFlow protocolData={protocolData} />
+      <ProtocolStepFlow protocolData={protocolData} icon={icon} />
     </MainLayout>
   );
 }

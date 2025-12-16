@@ -61,20 +61,25 @@
       "burns": "Burns",
       "fractures": "Fractures",
       "headInjury": "Head injury",
+      "activeShooter": "Active shooter",
       "heartAttack": "Heart attack",
       "anaphylaxis": "Anaphylaxis",
       "seizure": "Seizure",
       "shock": "Shock",
       "wounds": "Wounds",
       "opiateOverdose": "Opiate overdose",
-      "burnInjury": "Burn injury"
+      "burnInjury": "Burn injury",
+      "choking": "Choking",
+      "diabetes": "Diabetes",
+      "splinting": "Splinting",
+      "mentalHealth": "Mental health",
+      "fluidElectrolyte": "Fluid & Electrolyte"
     },
     "protocol": {
       "step": "Step",
       "of": "of",
       "close": "Close",
-      "stepCompleted": "Step completed",
-      "stepCompletedCheck": "✓ Step completed"
+      "stepCompleted": "Step completed"
     }
   },
   "location": {

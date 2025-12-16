@@ -1,91 +1,142 @@
 {
-  "id": "heart_attack",
-  "title": "Heart Attack",
-  "sections": [
+  "id": "choking",
+  "title": "Choking",
+  "icon": "ChokingIcon",
+  "category": [
     {
-      "title": "Critical",
-      "type": "text",
-      "content": "Heart attacks are medical emergencies. Every second counts. Follow the protocol immediately."
-    },
-    {
-      "title": "Common Symptoms",
-      "type": "list",
-      "items": [
-        "Chest pain or discomfort",
-        "Pain in arms, neck, jaw, or back",
-        "Shortness of breath",
-        "Nausea or vomiting"
+      "name": "",
+      "sections": [
+        {
+          "title": "AHA Accredited",
+          "subtitle": "This protocol follows American Heart Association Basic Life Support choking guidelines with AI safety guidance."
+        }
       ]
-    },
-    {
-      "title": "Additional Signs",
-      "type": "list",
-      "items": ["Cold sweats", "Lightheadedness", "Unusual fatigue", "Heartburn-like feeling"]
-    },
-    {
-      "title": "Quick action",
-      "type": "text",
-      "content": "325mg Aspirin, chew slowly."
     }
   ],
-  "steps": [
+  "protocols": [
     {
-      "id": "heart_attack_protocol",
-      "title": "Heart Attack Protocol",
-      "category": "Cardiac Emergencies",
-      "severity": "critical",
+      "id": "CHOKING_ADULT",
+      "title": "Choking protocol for adults",
+      "ageRange": "8+ years",
       "steps": [
         {
           "id": 1,
-          "title": "Scene Safety & Initial Assessment",
-          "subtitle": "Ensure scene safety, check responsiveness, and assess breathing",
+          "title": "Assess the situation",
+          "subtitle": "Ask 'Are you choking?' If they cannot speak, cough, or breathe, they need immediate help.",
           "timeframe": "Immediate",
-          "type": "instruction",
-          "video": "sample_video.mp4",
-          "status": "completed"
+          "video": null
         },
         {
           "id": 2,
-          "title": "Call Emergency Services",
-          "subtitle": "Call 911 immediately – time is critical for cardiac events",
-          "timeframe": "Within 1 minute",
-          "type": "action",
-          "icon": "phone",
-          "status": "completed"
+          "title": "Position Adult",
+          "subtitle": "Stand behind person. If seated, have them lean forward.",
+          "timeframe": "Immediate",
+          "video": null
         },
         {
           "id": 3,
-          "title": "Administer Aspirin",
-          "subtitle": "Give 325mg aspirin if patient is conscious and not allergic",
-          "timeframe": "Within 5 minutes",
-          "type": "instruction",
-          "video": "sample_video.mp4",
-          "status": "completed"
+          "title": "Give Back Blows",
+          "subtitle": "Stand behind them, lean them forward, and give 5 sharp blows between the shoulder blades.",
+          "timeframe": "Immediate",
+          "video": null
         },
         {
           "id": 4,
-          "title": "Position Patient",
-          "subtitle": "Place patient in comfortable upright position",
+          "title": "Perform Heimlich Maneuver",
+          "subtitle": "Place hands above navel, thrust inward and upward 5 times. Alternate with back blows.",
           "timeframe": "Immediate",
-          "type": "instruction",
-          "status": "completed"
+          "video": null
         },
         {
           "id": 5,
-          "title": "Monitor Vital Signs",
-          "subtitle": "Continuously monitor breathing, pulse, and consciousness",
-          "timeframe": "Ongoing",
-          "type": "monitor",
-          "status": "completed"
+          "title": "Call for Help",
+          "subtitle": "If object doesn't come out after several attempts, call 911 while continuing efforts. ",
+          "timeframe": "Immediate",
+          "video": null,
+          "shouldDisplayEmergencyCall": true
+        }
+      ]
+    },
+    {
+      "id": "CHOKING_CHILD",
+      "title": "Choking protocol for children",
+      "ageRange": "1-8 years",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Assess the Situation",
+          "subtitle": "Ask: “Are you choking?” Check if child cannot speak, cough, or breathe effectively.",
+          "timeframe": "Immediate",
+          "video": null
         },
         {
-          "id": 6,
-          "title": "Prepare for CPR",
-          "subtitle": "Be ready to start CPR if patient loses consciousness",
-          "timeframe": "If needed",
-          "type": "alert",
-          "link": "cpr_protocol",
-          "status": "completed"
+          "id": 2,
+          "title": "Position Child",
+          "subtitle": "Stand behind child or have them lean forward. Support chest with one hand.",
+          "timeframe": "Immediate",
+          "video": null
+        },
+        {
+          "id": 3,
+          "title": "Give Back Blows",
+          "subtitle": "Give 5 sharp back blows between shoulder blades with heel of hand.",
+          "timeframe": "Immediate",
+          "video": null
+        },
+        {
+          "id": 4,
+          "title": "Abdominal Thrusts (Child)",
+          "subtitle": "Place hands above navel, thrust inward and upward 5 times with less force than adult.",
+          "timeframe": "Immediate",
+          "video": null
+        },
+        {
+          "id": 5,
+          "title": "Call for Help",
+          "subtitle": "If object doesn’t come out after several attempts, call 911 while continuing efforts.",
+          "shouldDisplayEmergencyCall": true
+        }
+      ]
+    },
+    {
+      "id": "CHOKING_INFANT",
+      "title": "Choking protocol for infants",
+      "ageRange": "0-1 years",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Assess the Situation",
+          "subtitle": "Check if infant is conscious and unable to cry or make sounds. Look for signs of distress.",
+          "timeframe": "Immediate",
+          "video": null
+        },
+        {
+          "id": 2,
+          "title": "Position Infant",
+          "subtitle": "Place infant face-down on your forearm, supporting head and neck. Keep head lower than chest.",
+          "timeframe": "Immediate",
+          "shouldDisplayEmergencyCall": true,
+          "video": null
+        },
+        {
+          "id": 3,
+          "title": "Back Blows for Infant",
+          "subtitle": "Give 5 firm back blows between shoulder blades using heel of hand.",
+          "timeframe": "Immediate",
+          "video": null
+        },
+        {
+          "id": 4,
+          "title": "Chest Thrusts",
+          "subtitle": "Turn infant over, give 5 chest thrusts with 2 fingers on breastbone.",
+          "timeframe": "Immediate",
+          "video": null
+        },
+        {
+          "id": 5,
+          "title": "Call for Help",
+          "subtitle": "If object doesn’t come out after several attempts, call 911 while continuing efforts.",
+          "shouldDisplayEmergencyCall": true
         }
       ]
     }

@@ -1,30 +1,25 @@
 import { StyleSheet } from 'react-native';
 
 export const welcomeStyles = StyleSheet.create({
-  logo: {
-    width: '100%',
-    overflow: 'hidden',
+  mainContainer: {
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  container: {
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'relative',
+    paddingHorizontal: 24,
+    paddingBottom: 48,
+    gap: 48,
   },
-
-  overlayIconContainer: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: [{ translateX: -16 }, { translateY: -16 }],
-  },
-
   textContainer: {
-    width: 342,
-    height: 126,
     flexDirection: 'column',
+    justifyContent: 'flex-end',
     alignItems: 'center',
     gap: 16,
-    flexShrink: 0,
-    alignSelf: 'center',
-    marginTop: 40,
+    paddingHorizontal: 24,
   },
   title: {
     textAlign: 'center',
@@ -36,7 +31,6 @@ export const welcomeStyles = StyleSheet.create({
     letterSpacing: -0.64,
   },
   subtitle: {
-    color: '#727272',
     textAlign: 'center',
     fontFamily: 'Inter',
     fontSize: 15,
@@ -44,25 +38,19 @@ export const welcomeStyles = StyleSheet.create({
     fontWeight: '400',
     lineHeight: 24,
   },
-
   buttonsContainer: {
-    width: 345,
     flexDirection: 'column',
-    alignItems: 'flex-start',
-    gap: 10,
-    alignSelf: 'center',
-    marginTop: 48,
-  },
-
-  dividerContainer: {
-    width: '100%',
-    paddingVertical: 32,
+    justifyContent: 'flex-end',
     alignItems: 'center',
-    justifyContent: 'center',
+    gap: 8,
   },
-  dividerText: {
-    color: '#888',
+  servicesText: {
     textAlign: 'center',
+    fontFamily: 'Inter',
+    fontSize: 13,
+    fontStyle: 'normal',
+    fontWeight: '400',
+    lineHeight: 20.8,
   },
 });
 

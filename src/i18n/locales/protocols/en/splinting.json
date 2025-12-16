@@ -1,91 +1,423 @@
 {
-  "id": "heart_attack",
-  "title": "Heart Attack",
-  "sections": [
+  "id": "SPLINTING",
+  "title": "Splinting",
+  "category": [],
+  "protocols": [
     {
-      "title": "Critical",
-      "type": "text",
-      "content": "Heart attacks are medical emergencies. Every second counts. Follow the protocol immediately."
-    },
-    {
-      "title": "Common Symptoms",
-      "type": "list",
-      "items": [
-        "Chest pain or discomfort",
-        "Pain in arms, neck, jaw, or back",
-        "Shortness of breath",
-        "Nausea or vomiting"
-      ]
-    },
-    {
-      "title": "Additional Signs",
-      "type": "list",
-      "items": ["Cold sweats", "Lightheadedness", "Unusual fatigue", "Heartburn-like feeling"]
-    },
-    {
-      "title": "Quick action",
-      "type": "text",
-      "content": "325mg Aspirin, chew slowly."
-    }
-  ],
-  "steps": [
-    {
-      "id": "heart_attack_protocol",
-      "title": "Heart Attack Protocol",
-      "category": "Cardiac Emergencies",
-      "severity": "critical",
+      "id": "upper_extremity_fracture",
+      "title": "Upper extremity fracture protocol",
+      "ageRange": "",
       "steps": [
         {
           "id": 1,
           "title": "Scene Safety & Initial Assessment",
-          "subtitle": "Ensure scene safety, check responsiveness, and assess breathing",
+          "subtitle": "Ensure the area is safe and assess mechanism of injury",
           "timeframe": "Immediate",
           "type": "instruction",
-          "video": "sample_video.mp4",
-          "status": "completed"
+          "status": "pending"
         },
         {
           "id": 2,
-          "title": "Call Emergency Services",
-          "subtitle": "Call 911 immediately – time is critical for cardiac events",
-          "timeframe": "Within 1 minute",
-          "type": "action",
-          "icon": "phone",
-          "status": "completed"
+          "title": "Neurovascular Assessment",
+          "subtitle": "Check pulse, sensation, and movement distal to injury",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
         },
         {
           "id": 3,
-          "title": "Administer Aspirin",
-          "subtitle": "Give 325mg aspirin if patient is conscious and not allergic",
-          "timeframe": "Within 5 minutes",
+          "title": "Pain Management",
+          "subtitle": "Consider appropriate pain control measures before manipulation",
+          "timeframe": "Immediate",
           "type": "instruction",
-          "video": "sample_video.mp4",
-          "status": "completed"
+          "status": "pending"
         },
         {
           "id": 4,
-          "title": "Position Patient",
-          "subtitle": "Place patient in comfortable upright position",
+          "title": "Immobilize Above & Below",
+          "subtitle": "Stabilize joints above and below the fracture site",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "completed"
+          "status": "pending"
         },
         {
           "id": 5,
-          "title": "Monitor Vital Signs",
-          "subtitle": "Continuously monitor breathing, pulse, and consciousness",
-          "timeframe": "Ongoing",
-          "type": "monitor",
-          "status": "completed"
+          "title": "Apply Splint Material",
+          "subtitle": "Use rigid materials like SAM splint or board splint",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
         },
         {
           "id": 6,
-          "title": "Prepare for CPR",
-          "subtitle": "Be ready to start CPR if patient loses consciousness",
-          "timeframe": "If needed",
-          "type": "alert",
-          "link": "cpr_protocol",
-          "status": "completed"
+          "title": "Secure Splint",
+          "subtitle": "Wrap with gauze or elastic bandage; avoid over-tightening",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Reassess Neurovascular Status",
+          "subtitle": "Recheck circulation, sensation, and movement",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Position & Transport",
+          "subtitle": "Elevate if possible and prepare for rapid transport",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        }
+      ]
+    },
+
+    {
+      "id": "lower_extremity_fracture",
+      "title": "Lower extremity fracture protocol",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Scene Safety & Trauma Assessment",
+          "subtitle": "Evaluate for other injuries and mechanism",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Neurovascular Baseline",
+          "subtitle": "Document pulse, sensation, and movement before injury",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Control Bleeding",
+          "subtitle": "Apply direct pressure if open fracture present",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Traction Splint Consideration",
+          "subtitle": "For mid-shaft femur fractures, consider traction",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Board Splint Application",
+          "subtitle": "Use long board splint from hip to ankle",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Padding & Securing",
+          "subtitle": "Add padding at pressure points, secure with straps",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Circulation Check",
+          "subtitle": "Ensure splint is not too tight, check distal pulse",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Patient Positioning",
+          "subtitle": "Keep leg elevated and prepare for immediate transport",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        }
+      ]
+    },
+
+    {
+      "id": "ankle_fracture_sprain",
+      "title": "Ankle fracture/sprain protocol",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Mechanism Assessment",
+          "subtitle": "Determine if inversion, eversion, or high-energy trauma",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Neurovascular Check",
+          "subtitle": "Assess dorsalis pedis and posterior tibial pulses",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Position Assessment",
+          "subtitle": "Check if deformity is present, note position of foot",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Pillow Splint Application",
+          "subtitle": "Wrap pillows around ankle and foot for support. Use posterior splint if available.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Ankle Elevation",
+          "subtitle": "Raise ankle above heart level to reduce swelling",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Pain Management",
+          "subtitle": "Apply ice pack over splint for 20 minutes",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Transport Preparation",
+          "subtitle": "Monitor for compartment syndrome signs",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        }
+      ]
+    },
+
+    {
+      "id": "wrist_fracture",
+      "title": "Wrist fracture protocol",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Injury Assessment",
+          "subtitle": "Evaluate mechanism and check for open wounds",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Neurovascular Baseline",
+          "subtitle": "Test radial pulse and finger sensation/movement",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Position of Function",
+          "subtitle": "Place wrist in slight extension, fingers curved",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Volar Splint Application",
+          "subtitle": "Apply rigid splint to palm side of forearm",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Padding & Securing",
+          "subtitle": "Use gauze padding, secure with elastic wrap",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Sling Application",
+          "subtitle": "Support arm in sling for comfort and elevation",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Circulation Recheck",
+          "subtitle": "Verify fingers remain pink with good capillary refill",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Ice & Elevation",
+          "subtitle": "Apply cold pack and keep hand elevated above heart",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        }
+      ]
+    },
+
+    {
+      "id": "finger_fracture",
+      "title": "Finger fracture protocol",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Digit Assessment",
+          "subtitle": "Examine for deformity, rotation, or open wounds",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Neurovascular Check",
+          "subtitle": "Test sensation and capillary refill in fingertip",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Buddy Taping Method",
+          "subtitle": "Tape injured finger to adjacent uninjured finger",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Aluminum Splint Alternative",
+          "subtitle": "Use small aluminum splint if available",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Splint Securing",
+          "subtitle": "Secure with medical tape; avoid circumferential wrapping",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Hand Positioning",
+          "subtitle": "Keep hand in position of function with slight curve",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Pain & Swelling Control",
+          "subtitle": "Apply ice for 20 minutes, elevate hand",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Function Assessment",
+          "subtitle": "Check ability to make fist and finger movement",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        }
+      ]
+    },
+
+    {
+      "id": "spinal_immobilization",
+      "title": "Spinal immobilization protocol",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Mechanism Evaluation",
+          "subtitle": "High-risk mechanism requires full spinal precautions",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Neurological Assessment",
+          "subtitle": "Check motor, sensory function in all extremities",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "C-Spine Stabilization",
+          "subtitle": "Manually hold head in neutral alignment",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Log Roll Technique",
+          "subtitle": "Move patient as single unit onto backboard",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Backboard Application",
+          "subtitle": "Secure patient to long spine board with straps",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Head Immobilization",
+          "subtitle": "Use head blocks and tape to prevent movement",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Padding & Comfort",
+          "subtitle": "Add padding for pressure points and comfort",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Monitoring & Transport",
+          "subtitle": "Continuously monitor neurological status during transport",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
         }
       ]
     }

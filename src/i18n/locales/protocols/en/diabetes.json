@@ -1,91 +1,114 @@
 {
-  "id": "heart_attack",
-  "title": "Heart Attack",
-  "sections": [
+  "id": "diabetes",
+  "title": "Diabetes",
+  "category": [
     {
-      "title": "Critical",
-      "type": "text",
-      "content": "Heart attacks are medical emergencies. Every second counts. Follow the protocol immediately."
-    },
-    {
-      "title": "Common Symptoms",
-      "type": "list",
-      "items": [
-        "Chest pain or discomfort",
-        "Pain in arms, neck, jaw, or back",
-        "Shortness of breath",
-        "Nausea or vomiting"
+      "name": "Types & recognition",
+      "sections": [
+        {
+          "title": "High Priority",
+          "type": "text",
+          "content": "Diabetes emergencies require immediate assessment and intervention. Blood glucose levels can be life-threatening."
+        },
+        {
+          "title": "Low blood sugar (Hypoglycemia)",
+          "type": "list",
+          "items": [
+            "Confusion, altered mental status",
+            "Profuse sweating",
+            "Shakiness, tremors",
+            "Rapid heartbeat",
+            "Unconsciousness (severe)"
+          ]
+        },
+        {
+          "title": "High blood sugar (Hyperglycemia)",
+          "type": "list",
+          "items": [
+            "Fruity breath odor",
+            "Rapid, deep breathing",
+            "Severe dehydration",
+            "Nausea and vomiting",
+            "Altered consciousness"
+          ]
+        }
       ]
     },
     {
-      "title": "Additional Signs",
-      "type": "list",
-      "items": ["Cold sweats", "Lightheadedness", "Unusual fatigue", "Heartburn-like feeling"]
-    },
-    {
-      "title": "Quick action",
-      "type": "text",
-      "content": "325mg Aspirin, chew slowly."
+      "name": "Professional reference",
+      "sections": [
+        {
+          "title": "Blood glucose reference",
+          "type": "list",
+          "items": [
+            "Normal: 70–140 mg/dL",
+            "Hypoglycemia: <70 mg/dL",
+            "Hyperglycemia: >180 mg/dL",
+            "Critical High: >250 mg/dL",
+            "DKA Range: >300 mg/dL + ketones"
+          ]
+        },
+        {
+          "title": "Treatment protocols",
+          "type": "list",
+          "items": [
+            "Oral glucose: 15–20g for conscious patients",
+            "Glucagon: 1mg IM/SC for unconscious",
+            "IV Dextrose: D50W 25g IV push",
+            "Monitor q15min post-treatment",
+            "ALS transport for severe cases"
+          ]
+        }
+      ]
     }
   ],
-  "steps": [
+  "protocols": [
     {
-      "id": "heart_attack_protocol",
-      "title": "Heart Attack Protocol",
-      "category": "Cardiac Emergencies",
-      "severity": "critical",
+      "id": "diabetes_protocol",
+      "title": "Diabetes protocol",
       "steps": [
         {
           "id": 1,
-          "title": "Scene Safety & Initial Assessment",
-          "subtitle": "Ensure scene safety, check responsiveness, and assess breathing",
+          "title": "Assess Consciousness Level",
+          "subtitle": "Check if patient is alert, confused, or unconscious.",
           "timeframe": "Immediate",
-          "type": "instruction",
-          "video": "sample_video.mp4",
-          "status": "completed"
+          "video": "treat_hypoglycemia.mp4"
         },
         {
           "id": 2,
-          "title": "Call Emergency Services",
-          "subtitle": "Call 911 immediately – time is critical for cardiac events",
-          "timeframe": "Within 1 minute",
-          "type": "action",
-          "icon": "phone",
-          "status": "completed"
+          "title": "Check Blood Sugar if Possible",
+          "subtitle": "Use glucometer if available to determine blood glucose level.",
+          "timeframe": "Within 2 minutes",
+          "video": null
         },
         {
           "id": 3,
-          "title": "Administer Aspirin",
-          "subtitle": "Give 325mg aspirin if patient is conscious and not allergic",
-          "timeframe": "Within 5 minutes",
-          "type": "instruction",
-          "video": "sample_video.mp4",
-          "status": "completed"
+          "title": "Treat Hypoglycemia",
+          "subtitle": "If blood sugar is low and patient is conscious, give glucose.",
+          "timeframe": "Within 3 minutes",
+          "video": "treat_hypoglycemia.mp4"
         },
         {
           "id": 4,
-          "title": "Position Patient",
-          "subtitle": "Place patient in comfortable upright position",
+          "title": "Call Emergency Services",
+          "subtitle": "Call 911 if patient is unconscious or condition worsens.",
           "timeframe": "Immediate",
-          "type": "instruction",
-          "status": "completed"
+          "video": "treat_hypoglycemia.mp4",
+          "shouldDisplayEmergencyCall": true
         },
         {
           "id": 5,
-          "title": "Monitor Vital Signs",
-          "subtitle": "Continuously monitor breathing, pulse, and consciousness",
-          "timeframe": "Ongoing",
-          "type": "monitor",
-          "status": "completed"
+          "title": "Position for Safety",
+          "subtitle": "Place unconscious patient in recovery position.",
+          "timeframe": "Immediate",
+          "video": null
         },
         {
           "id": 6,
-          "title": "Prepare for CPR",
-          "subtitle": "Be ready to start CPR if patient loses consciousness",
-          "timeframe": "If needed",
-          "type": "alert",
-          "link": "cpr_protocol",
-          "status": "completed"
+          "title": "Monitor and Reassess",
+          "subtitle": "Continuously monitor patient condition and glucose levels.",
+          "timeframe": "Ongoing",
+          "video": null
         }
       ]
     }

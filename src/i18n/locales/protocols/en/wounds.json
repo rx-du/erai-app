@@ -1,0 +1,63 @@
+{
+  "id": "wound_care",
+  "title": "Wound Care First Aid",
+  "category": [],
+  "steps": [
+    {
+      "id": "wound_care_protocol",
+      "title": "Wound care first aid",
+      "category": "Trauma Emergencies",
+      "severity": "critical",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Wound Assessment",
+          "subtitle": "Evaluate depth, length, location, and contamination of wound.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Control Bleeding",
+          "subtitle": "Apply direct pressure with sterile gauze or clean cloth.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Irrigate if Needed",
+          "subtitle": "Clean wound with sterile saline if heavily contaminated.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Apply Dressing",
+          "subtitle": "Use sterile gauze pad secured with tape or bandage.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Tetanus Consideration",
+          "subtitle": "Determine tetanus vaccination status for dirty wounds.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Monitor for Infection",
+          "subtitle": "Watch for signs of redness, swelling, warmth, discharge.",
+          "timeframe": "Critical",
+          "type": "monitor",
+          "status": "pending"
+        }
+      ]
+    }
+  ]
+}

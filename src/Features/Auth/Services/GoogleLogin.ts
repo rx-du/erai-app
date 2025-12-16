@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 // these api keys are just for test
@@ -7,13 +8,16 @@ GoogleSignin.configure({
 });
 
 export async function signInWithGoogle(navigation: any) {
-  try {
-    const userInfo = await GoogleSignin.signIn();
+  const userInfo = await GoogleSignin.signIn();
 
-    if (userInfo?.data?.user?.id) {
-      navigation.navigate('MainTabs');
+  if (userInfo?.data?.user?.id) {
+    const hasSeenOnboarding = await AsyncStorage.getItem('hasSeenOnboarding');
+
+    if (!hasSeenOnboarding) {
+      await AsyncStorage.setItem('hasSeenOnboarding', 'true');
+      navigation.replace('Onboarding');
+    } else {
+      navigation.replace('MainTabs');
     }
-  } catch (err) {
-    console.log('Google Sign-In error', err);
   }
 }

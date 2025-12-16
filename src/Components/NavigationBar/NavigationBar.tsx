@@ -13,10 +13,13 @@ import NoHandsIcon from '../../Icons/no-hands-32.svg';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { CustomButton } from '../CustomButton';
 import { useTheme } from '../../Theme/ThemeContext';
+import { NoHandsModeModal } from '../../Features/Emergency/NoHandsModeModal';
 
 export default function NavigationBar({ navigation, state }: BottomTabBarProps) {
   const { colors } = useTheme();
   const [activeTab, setActiveTab] = useState<string>('Emergency');
+
+  const [showNoHandModeModal, setShowNoHandModeModal] = useState(false);
 
   const handlePress = (tab: keyof RootTabParamList) => {
     setActiveTab(tab);
@@ -54,7 +57,7 @@ export default function NavigationBar({ navigation, state }: BottomTabBarProps) 
       />
       <CustomButton
         type="tertiary"
-        onPress={() => {}}
+        onPress={() => setShowNoHandModeModal(true)}
         Icon={(props) => <NoHandsIcon {...props} color={colors.Text.neutral.white} />}
         width={48}
         style={{ backgroundColor: colors.Button.accent.primary }}
@@ -78,6 +81,11 @@ export default function NavigationBar({ navigation, state }: BottomTabBarProps) 
               ? colors.Button.accent.primary
               : colors.Button.neutral.quaternary,
         }}
+      />
+
+      <NoHandsModeModal
+        visible={showNoHandModeModal}
+        onClose={() => setShowNoHandModeModal(false)}
       />
     </View>
   );

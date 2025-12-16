@@ -1,91 +1,358 @@
 {
-  "id": "heart_attack",
-  "title": "Heart Attack",
-  "sections": [
+  "id": "mental_health",
+  "title": "Mental health",
+  "category": [
     {
-      "title": "Critical",
-      "type": "text",
-      "content": "Heart attacks are medical emergencies. Every second counts. Follow the protocol immediately."
-    },
-    {
-      "title": "Common Symptoms",
-      "type": "list",
-      "items": [
-        "Chest pain or discomfort",
-        "Pain in arms, neck, jaw, or back",
-        "Shortness of breath",
-        "Nausea or vomiting"
+      "name": "Contacts",
+      "sections": [
+        {
+          "title": "Critical safety alert",
+          "type": "text",
+          "content": "Professional crisis intervention protocols for mental health emergencies, suicidal ideation, and psychiatric crises require immediate assessment and intervention. All mental health emergencies require immediate safety assessment. If risk indicators are present, take steps to ensure patient safety, remove access to means, and consider emergency intervention."
+        },
+        {
+          "title": "Emergency contacts",
+          "type": "contacts",
+          "items": ["Call 988 (Suicide & Crisis Lifeline)", "Call 911", "Text \"HOME\" to 741741"]
+        }
       ]
     },
+
     {
-      "title": "Additional Signs",
-      "type": "list",
-      "items": ["Cold sweats", "Lightheadedness", "Unusual fatigue", "Heartburn-like feeling"]
-    },
-    {
-      "title": "Quick action",
-      "type": "text",
-      "content": "325mg Aspirin, chew slowly."
+      "name": "Suicide risk factors",
+      "sections": [
+        {
+          "title": "High risk factors",
+          "type": "list",
+          "items": [
+            "Previous suicide attempts",
+            "Access to lethal means",
+            "Active suicidal intent",
+            "Substance abuse",
+            "Isolation or lack of support"
+          ]
+        },
+        {
+          "title": "Protective factors",
+          "type": "list",
+          "items": [
+            "Strong social support",
+            "Religious/spiritual beliefs",
+            "Responsibility for living",
+            "Therapeutic engagement",
+            "Hope for future"
+          ]
+        },
+        {
+          "title": "Warning signs",
+          "type": "list",
+          "items": [
+            "Talking about dying/suicide",
+            "Giving away belongings",
+            "Sudden calmness after distress",
+            "Risk-taking behavior",
+            "Withdrawal from others",
+            "Reckless behavior"
+          ]
+        }
+      ]
     }
   ],
-  "steps": [
+
+  "protocols": [
     {
-      "id": "heart_attack_protocol",
-      "title": "Heart Attack Protocol",
-      "category": "Cardiac Emergencies",
-      "severity": "critical",
+      "id": "active_suicidal_ideation",
+      "title": "Active suicidal ideation protocol",
+      "priority": "Imminent",
+      "symptoms": ["Detailed plan", "Access to means", "Previous attempts", "Social isolation"],
       "steps": [
         {
           "id": 1,
-          "title": "Scene Safety & Initial Assessment",
-          "subtitle": "Ensure scene safety, check responsiveness, and assess breathing",
-          "timeframe": "Immediate",
+          "title": "Immediate Safety Assessment",
+          "subtitle": "Ensure scene safety. Remove potential weapons/means. Ask directly: “Are you thinking about killing yourself right now?”",
+          "timeframe": "2–5 minutes",
           "type": "instruction",
-          "video": "sample_video.mp4",
-          "status": "completed"
+          "status": "pending"
         },
         {
           "id": 2,
-          "title": "Call Emergency Services",
-          "subtitle": "Call 911 immediately – time is critical for cardiac events",
-          "timeframe": "Within 1 minute",
-          "type": "action",
-          "icon": "phone",
-          "status": "completed"
+          "title": "Establish Rapport & Support",
+          "subtitle": "Use empathetic approach: “I’m here to help you stay safe.” Validate feelings without judgment.",
+          "timeframe": "3–5 minutes",
+          "type": "instruction",
+          "status": "pending"
         },
         {
           "id": 3,
-          "title": "Administer Aspirin",
-          "subtitle": "Give 325mg aspirin if patient is conscious and not allergic",
-          "timeframe": "Within 5 minutes",
+          "title": "Risk Assessment",
+          "subtitle": "Assess intent, plan specificity, means access, timeline. Use SAMHSA suicide risk assessment protocol.",
+          "timeframe": "5–10 minutes",
           "type": "instruction",
-          "video": "sample_video.mp4",
-          "status": "completed"
+          "status": "pending"
         },
         {
           "id": 4,
-          "title": "Position Patient",
-          "subtitle": "Place patient in comfortable upright position",
-          "timeframe": "Immediate",
+          "title": "Crisis Intervention",
+          "subtitle": "Explore ambivalence, identify protective factors, discuss reasons for living, validate emotional pain.",
+          "timeframe": "10–15 minutes",
           "type": "instruction",
-          "status": "completed"
+          "status": "pending"
         },
         {
           "id": 5,
-          "title": "Monitor Vital Signs",
-          "subtitle": "Continuously monitor breathing, pulse, and consciousness",
-          "timeframe": "Ongoing",
-          "type": "monitor",
-          "status": "completed"
+          "title": "Safety Planning",
+          "subtitle": "Assess airway, breathing, circulation. Treat overdose, bleeding, or other medical threats.",
+          "timeframe": "0–10 minutes",
+          "type": "instruction",
+          "status": "pending"
         },
         {
           "id": 6,
-          "title": "Prepare for CPR",
-          "subtitle": "Be ready to start CPR if patient loses consciousness",
+          "title": "Disposition Planning",
+          "subtitle": "Determine appropriate level of care: emergency hold, psychiatric evaluation, or outpatient follow-up.",
+          "timeframe": "Ongoing",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Resource Connection",
+          "subtitle": "Assess airway, breathing, circulation. Treat overdose, bleeding, or other medical threats.",
+          "timeframe": "Ongoing",
+          "type": "instruction",
+          "status": "pending"
+        }
+      ]
+    },
+
+    {
+      "id": "suicide_attempt_in_progress",
+      "title": "Suicide attempt in progress protocol",
+      "priority": "Imminent",
+      "symptoms": ["Overdose", "Self-injury", "Hanging attempt", "Weapon access"],
+      "steps": [
+        {
+          "id": 1,
+          "title": "Medical Stabilization",
+          "subtitle": "Assess airway, breathing, circulation. Treat overdose, bleeding, or other medical threats.",
+          "timeframe": "0–10 minutes",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Continuous Monitoring",
+          "subtitle": "Establish 1:1 observation. Remove all harmful objects. Place in safe, monitored environment.",
+          "timeframe": "Ongoing",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Emergency Medical Care",
+          "subtitle": "IV access, vital signs, O2 monitoring. Consider antidotes (Narcan, activated charcoal). Protect C-spine if indicated.",
+          "timeframe": "5–15 minutes",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Psychiatric Assessment",
+          "subtitle": "Complete mental status exam when medically stable. Assess ongoing suicide risk using standardized tools.",
+          "timeframe": "15–30 minutes",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Safety Measures",
+          "subtitle": "Consider involuntary psychiatric hold. Family notification per safety protocol. Document all interventions.",
           "timeframe": "If needed",
-          "type": "alert",
-          "link": "cpr_protocol",
-          "status": "completed"
+          "type": "instruction",
+          "status": "pending"
+        }
+      ]
+    },
+
+    {
+      "id": "homicidal_ideation",
+      "title": "Homicidal ideation protocol",
+      "priority": "Imminent",
+      "symptoms": [
+        {
+          "id": 1,
+          "title": "Immediate Threat Assessment",
+          "subtitle": "Assess immediate danger to others. Identify specific threatened individuals. Document exact threats.",
+          "timeframe": "0–3 minutes",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Scene Safety",
+          "subtitle": "Ensure scene safety. Consider law enforcement involvement. Evaluate access to weapons or means of harm.",
+          "timeframe": "1–5 minutes",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Duty to Warn Protocol",
+          "subtitle": "Tarasoff duty: Warn identifiable potential victims. Contact law enforcement if imminent danger exists.",
+          "timeframe": "If needed",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Emergency Services",
+          "subtitle": "Notify psychiatric emergency services immediately. Consider emergency psychiatric hold (72-hour hold).",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending",
+          "shouldDisplayEmergencyCall": true
+        },
+        {
+          "id": 5,
+          "title": "De-escalation",
+          "subtitle": "Use calm, non-threatening approach. Avoid challenging delusions directly. Maintain safe distance.",
+          "timeframe": "5–15 minutes",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Documentation & Transport",
+          "subtitle": "Document all notifications made. Coordinate with law enforcement for safe transport if needed.",
+          "timeframe": "If needed",
+          "type": "instruction",
+          "status": "pending"
+        }
+      ]
+    },
+
+    {
+      "id": "passive_suicidal_ideation",
+      "title": "Passive suicidal ideation protocol",
+      "priority": "High",
+      "symptoms": ["Depression", "Hopelessness", "Chronic illness", "Recent loss"],
+      "steps": [
+        {
+          "id": 1,
+          "title": "Stay Calm",
+          "subtitle": "Take a deep breath and assess the situation calmly.",
+          "timeframe": null,
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Call Emergency Service",
+          "subtitle": "Call emergency services and provide clear information about the emergency.",
+          "timeframe": null,
+          "type": "action",
+          "status": "pending",
+          "shouldDisplayEmergencyCall": true
+        },
+        {
+          "id": 3,
+          "title": "Provide Information",
+          "subtitle": "Give your exact location, nature of emergency, and number of people involved.",
+          "timeframe": null,
+          "type": "instruction",
+          "status": "pending",
+          "shouldDisplayLocation": true
+        }
+      ]
+    },
+
+    {
+      "id": "acute_psychiatric_crisis",
+      "title": "Acute psychiatric crisis protocol",
+      "priority": "High",
+      "symptoms": ["Psychosis", "Severe agitation", "Command hallucinations", "Paranoia"],
+      "steps": [
+        {
+          "id": 1,
+          "title": "Safety & De-escalation",
+          "subtitle": "Ensure scene safety. Use calm, non-confrontational approach. Assess for agitation, psychosis, or disorientation.",
+          "timeframe": "2–5 minutes",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Mental Status Assessment",
+          "subtitle": "Assess orientation, thought process, perceptions. Look for hallucinations, delusions, or command voices.",
+          "timeframe": "5–10 minutes",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Risk Assessment",
+          "subtitle": "Evaluate risk to self and others. Assess need for involuntary treatment. Consider substance use influence.",
+          "timeframe": "5–10 minutes",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Crisis Intervention",
+          "subtitle": "Provide reality orientation. Use therapeutic communication. Avoid arguing with delusions.",
+          "timeframe": "10–20 minutes",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Medical Evaluation",
+          "subtitle": "Rule out medical causes: infection, metabolic issues, substance intoxication/withdrawal, head injury.",
+          "timeframe": "15–30 minutes",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Treatment Planning",
+          "subtitle": "Consider medication for severe agitation. Plan for psychiatric evaluation and appropriate disposition.",
+          "timeframe": "Ongoing",
+          "type": "instruction",
+          "status": "pending"
+        }
+      ]
+    },
+
+    {
+      "id": "post_suicide_attempt_care",
+      "title": "Post-suicide attempt care protocol",
+      "priority": "Moderate",
+      "symptoms": ["Medical complications", "Continued ideation", "Shame/guilt", "Family distress"],
+      "steps": [
+        {
+          "id": 1,
+          "title": "Stay Calm",
+          "subtitle": "Take a deep breath and assess the situation calmly.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Call Emergency Service",
+          "subtitle": "Call emergency services and provide clear information about the emergency.",
+          "timeframe": "Immediate",
+          "type": "action",
+          "shouldDisplayEmergencyCall": true,
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Provide Information",
+          "subtitle": "Give your exact location, nature of emergency, and number of people involved.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
         }
       ]
     }

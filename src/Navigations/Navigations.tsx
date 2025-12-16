@@ -16,6 +16,12 @@ import ProtocolScreen from '../Screens/Aid/Protocol/ProtocolScreen';
 import { SvgProps } from 'react-native-svg';
 import ProtocolStepScreen from '../Screens/Aid/Protocol/ProtocolStepScreen';
 import EmergencyContactScreen from '../Screens/Emergency/EmergencyContactScreen';
+import SubscriptionScreen from '../Screens/Subscription/SubscriptionScreen';
+import EducationalPurposesScreen from '../Screens/Access/EducationalPurposesScreen';
+import PrivacyPolicyScreen from '../Screens/Access/PrivacyPolicyScreen';
+import TermsOfServiceScreen from '../Screens/Access/TermsOfServiceScreen';
+import { OnboardingScreen } from '../Screens/Onboarding/OnboardingScreen';
+import SearchAidScreen from '../Screens/Aid/SearchAidScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -46,30 +52,46 @@ export type RootStackParamList = {
   Login: undefined;
   SignUp: undefined;
   SetPassword: undefined;
-  MainTabs: undefined;
+  MainTabs: { screen: keyof RootTabParamList } | undefined;
   Protocol: {
     protocolData: any;
     title: string;
     icon: FC<SvgProps>;
+    categoryIndex?: number;
+    onBack?: () => void;
   };
   ProtocolStep: {
     protocolData: any;
+    icon: any;
   };
   EmergencyContact: undefined;
+  Subscription: undefined;
+  EducatiionalPurposes: undefined;
+  PrivacyPolicy: undefined;
+  TermsOfService: undefined;
+  SearchAid: undefined;
+  AidScreen: undefined;
 };
 
 export default function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="MainTabs" component={MainTabs} />
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="SignUp" component={RegisterScreen} />
         <Stack.Screen name="SetPassword" component={SetPasswordScreen} />
-        <Stack.Screen name="MainTabs" component={MainTabs} />
+        {/* <Stack.Screen name="MainTabs" component={MainTabs} /> */}
         <Stack.Screen name="Protocol" component={ProtocolScreen} />
         <Stack.Screen name="ProtocolStep" component={ProtocolStepScreen} />
         <Stack.Screen name="EmergencyContact" component={EmergencyContactScreen} />
+        <Stack.Screen name="Subscription" component={SubscriptionScreen} />
+        <Stack.Screen name="EducationalPurposes" component={EducationalPurposesScreen} />
+        <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicyScreen} />
+        <Stack.Screen name="TermsOfService" component={TermsOfServiceScreen} />
+        <Stack.Screen name="Onboarding" component={OnboardingScreen} />
+        <Stack.Screen name="SearchAid" component={SearchAidScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -4,7 +4,6 @@ import { SvgProps } from 'react-native-svg';
 import { Styles } from './Styles';
 import { getButtonStyle } from './Helpers';
 import { ButtonType, ButtonDimension } from './Types';
-import { isAndroid } from '../../Constants/Device';
 
 type CustomButtonProps = {
   text?: string;
@@ -67,7 +66,6 @@ export function CustomButton({
           style={{
             ...Styles.text,
             color: textColor,
-            marginHorizontal: isAndroid ? 16 : 0,
           }}
         >
           {text}

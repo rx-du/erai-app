@@ -18,4 +18,8 @@ buildscript {
     }
 }
 
+ext {
+    googlePlayServicesVersion = "21.0.1"
+}
+
 apply plugin: "com.facebook.react.rootproject"

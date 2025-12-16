@@ -1,23 +1,83 @@
 {
   "id": "anaphylaxis",
   "title": "Anaphylaxis",
-  "sections": [
+  "category": [
     {
-      "title": "High Priority",
-      "type": "text",
-      "content": "Anaphylaxis is a severe, life-threatening allergic reaction that requires immediate intervention."
+      "name": "Severity assessment",
+      "sections": [
+        {
+          "title": "High Priority",
+          "type": "text",
+          "content": "Diabetes emergencies require immediate assessment and intervention. Blood glucose levels can be life-threatening."
+        },
+        {
+          "title": "Mild Reaction",
+          "type": "list",
+          "items": ["Localized hives", "Mild itching", "Nasal congestion", "Mild GI upset"]
+        },
+        {
+          "title": "Moderate Reaction",
+          "type": "list",
+          "items": ["Generalized hives", "Mild airway swelling", "Vomiting", "Anxiety"]
+        },
+        {
+          "title": "Notes",
+          "type": "text",
+          "content": "Monitor closely, consider antihistamines. Prepare epinephrine, close monitoring."
+        },
+        {
+          "title": "Severe Anaphylaxis",
+          "type": "text",
+          "content": "Requires immediate epinephrine injection and emergency medical support."
+        }
+      ]
     },
     {
-      "title": "Mild Reaction",
-      "type": "list",
-      "items": ["Localized hives", "Mild itching", "Nasal congestion", "Mild GI upset"],
-      "note": "Monitor closely, consider antihistamines."
+      "name": "Professional reference",
+      "sections": [
+        {
+          "title": "Blood Glucose Reference",
+          "type": "list",
+          "items": [
+            "Normal: 70–140 mg/dL",
+            "Hypoglycemia: <70 mg/dL",
+            "Hyperglycemia: >180 mg/dL",
+            "Critical High: >250 mg/dL",
+            "DKA Range: >300 mg/dL + ketones"
+          ]
+        },
+        {
+          "title": "Treatment Protocols",
+          "type": "list",
+          "items": [
+            "Oral glucose: 15–20g for conscious patients",
+            "Glucagon: 1mg IM/SC for unconscious",
+            "IV Dextrose: D50W 25g IV push",
+            "Monitor q15min post-treatment",
+            "ALS transport for severe cases"
+          ]
+        }
+      ]
     },
     {
-      "title": "Moderate Reaction",
-      "type": "list",
-      "items": ["Generalized hives", "Mild airway swelling", "Vomiting", "Anxiety"],
-      "note": "Prepare epinephrine, close monitoring."
+      "name": "Epinephrine dose",
+      "sections": [
+        {
+          "title": "Adult",
+          "type": "text",
+          "content": "0.3–0.5mg IM"
+        },
+        {
+          "title": "Child",
+          "type": "text",
+          "content": "0.01mg/kg IM (max 0.3mg)"
+        },
+        {
+          "title": "Infant",
+          "type": "text",
+          "content": "0.1–0.15mg IM"
+        }
+      ]
     }
   ],
   "steps": [
@@ -30,54 +90,60 @@
         {
           "id": 1,
           "title": "Recognize Anaphylaxis",
-          "subtitle": "Identify signs of severe allergic reaction: difficulty breathing, swelling, hives",
+          "subtitle": "Identify signs of severe allergic reaction",
           "timeframe": "Immediate",
           "type": "instruction",
-          "video": "sample_video.mp4",
-          "status": "completed"
+          "video": "recognize_anaphylaxis.mp4",
+          "status": "pending"
         },
         {
           "id": 2,
           "title": "Call Emergency Services",
           "subtitle": "Call 911 immediately for suspected anaphylaxis",
-          "timeframe": "Immediate",
+          "timeframe": "Within 1 minute",
           "type": "action",
           "icon": "phone",
-          "status": "completed"
+          "actionText": "Call 911",
+          "status": "pending",
+          "shouldDisplayEmergencyCall": true
         },
         {
           "id": 3,
           "title": "Administer Epinephrine",
-          "subtitle": "Use EpiPen or equivalent if available - inject into outer thigh",
-          "timeframe": "Immediate",
+          "subtitle": "Use EpiPen or epinephrine auto-injector if available",
+          "timeframe": "Within 2 minutes",
           "type": "instruction",
-          "video": "sample_video.mp4",
-          "status": "completed"
+          "video": "administer_epinephrine.mp4",
+          "link": "epinephrine_dose",
+          "status": "pending",
+          "shouldDisplayEpinephineDose": true
         },
         {
           "id": 4,
           "title": "Position Patient",
-          "subtitle": "Lay patient flat, elevate legs (unless vomiting or breathing difficulty)",
-          "timeframe": "Immediate",
+          "subtitle": "Keep patient lying down with legs elevated",
+          "timeframe": "After epinephrine",
           "type": "instruction",
-          "video": "sample_video.mp4",
-          "status": "completed"
+          "video": "position_patient.mp4",
+          "status": "pending"
         },
         {
           "id": 5,
           "title": "Monitor Breathing",
-          "subtitle": "Continuously monitor airway, breathing, and circulation",
+          "subtitle": "Continuously monitor airway and breathing",
           "timeframe": "Ongoing",
           "type": "monitor",
-          "status": "completed"
+          "status": "pending"
         },
         {
           "id": 6,
           "title": "Prepare Second Dose",
-          "subtitle": "Be ready to give second epinephrine dose after 5-15 minutes if needed",
-          "timeframe": "5-15 minutes",
-          "type": "instruction",
-          "status": "completed"
+          "subtitle": "Be ready to give second epinephrine dose if needed",
+          "timeframe": "If needed",
+          "type": "alert",
+          "link": "epinephrine_dose",
+          "status": "pending",
+          "shouldDisplayEpinephineDose": true
         }
       ]
     }

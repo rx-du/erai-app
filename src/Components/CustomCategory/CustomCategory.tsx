@@ -1,15 +1,22 @@
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './Styles';
 import { useTheme } from '../../Theme/ThemeContext';
 import { SvgProps } from 'react-native-svg';
+import { ReactNode } from 'react';
 
 type CustomCategoryProps = {
-  label: string;
-  icon: React.FC<SvgProps>;
+  label?: string | ReactNode;
+  icon?: React.FC<SvgProps>;
   onPress?: () => void;
+  children?: React.ReactNode;
 };
 
-export default function CustomCategory({ label, icon: Icon, onPress }: CustomCategoryProps) {
+export default function CustomCategory({
+  label,
+  icon: Icon,
+  children,
+  onPress,
+}: CustomCategoryProps) {
   const { colors } = useTheme();
 
   return (
@@ -20,8 +27,9 @@ export default function CustomCategory({ label, icon: Icon, onPress }: CustomCat
         { backgroundColor: colors.Bg.primary, borderColor: colors.Divider.primary },
       ]}
     >
-      <Icon color={colors.Button.accent.primary} />
-      <Text>{label}</Text>
+      {Icon && <Icon color={colors.Button.accent.primary} />}
+      {label && <Text>{label}</Text>}
+      {children}
     </TouchableOpacity>
   );
 }

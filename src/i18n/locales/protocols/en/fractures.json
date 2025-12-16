@@ -1,0 +1,63 @@
+{
+  "id": "fracture_immobilization",
+  "title": "Fracture & Immobilization First Aid",
+  "category": [],
+  "steps": [
+    {
+      "id": "fracture_immobilization_protocol",
+      "title": "Fracture immobilization first aid",
+      "category": "Trauma Emergencies",
+      "severity": "critical",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Assess Circulation",
+          "subtitle": "Check pulse, motor function, and sensation distal to injury.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Immobilize Joint",
+          "subtitle": "Splint fracture including joints above and below the injury.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Check for Bleeding",
+          "subtitle": "Look for open fractures, control bleeding with direct pressure.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Apply Splint",
+          "subtitle": "Use rigid splint materials, pad bony prominences.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Reassess Circulation",
+          "subtitle": "Recheck pulse and sensation after splinting.",
+          "timeframe": "Critical",
+          "type": "monitor",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Pain Management",
+          "subtitle": "Provide appropriate pain relief, apply ice if available.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        }
+      ]
+    }
+  ]
+}

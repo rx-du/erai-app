@@ -1,91 +1,217 @@
 {
-  "id": "heart_attack",
-  "title": "Heart Attack",
-  "sections": [
+  "id": "CPR",
+  "title": "CPR",
+  "category": [
     {
-      "title": "Critical",
-      "type": "text",
-      "content": "Heart attacks are medical emergencies. Every second counts. Follow the protocol immediately."
-    },
-    {
-      "title": "Common Symptoms",
-      "type": "list",
-      "items": [
-        "Chest pain or discomfort",
-        "Pain in arms, neck, jaw, or back",
-        "Shortness of breath",
-        "Nausea or vomiting"
+      "sections": [
+        {
+          "title": "AHA Accredited",
+          "type": "text",
+          "content": "This protocol follows American Heart Association Basic Life Support guidelines. For certification, complete an official AHA course."
+        }
       ]
-    },
-    {
-      "title": "Additional Signs",
-      "type": "list",
-      "items": ["Cold sweats", "Lightheadedness", "Unusual fatigue", "Heartburn-like feeling"]
-    },
-    {
-      "title": "Quick action",
-      "type": "text",
-      "content": "325mg Aspirin, chew slowly."
     }
   ],
-  "steps": [
+  "protocols": [
     {
-      "id": "heart_attack_protocol",
-      "title": "Heart Attack Protocol",
-      "category": "Cardiac Emergencies",
-      "severity": "critical",
+      "id": "cpr_adult",
+      "title": "CPR protocol for adults",
+      "ageRange": "8+ years",
       "steps": [
         {
           "id": 1,
-          "title": "Scene Safety & Initial Assessment",
-          "subtitle": "Ensure scene safety, check responsiveness, and assess breathing",
+          "title": "Check Adult Response",
+          "subtitle": "Tap shoulders firmly and shout: 'Are you OK? Can you hear me?' Check for Breathing and Carotid Pulse no more than 10 seconds.",
           "timeframe": "Immediate",
           "type": "instruction",
-          "video": "sample_video.mp4",
-          "status": "completed"
+          "video": "check_adult_response.mp4",
+          "status": "pending"
         },
         {
           "id": 2,
-          "title": "Call Emergency Services",
-          "subtitle": "Call 911 immediately – time is critical for cardiac events",
-          "timeframe": "Within 1 minute",
+          "title": "Call for Help",
+          "subtitle": "Call 911 immediately. Ask someone to find an AED. Start CPR right away.",
+          "timeframe": "Immediate",
           "type": "action",
           "icon": "phone",
-          "status": "completed"
+          "actionText": "Call 911",
+          "status": "pending",
+          "shouldDisplayEmergencyCall": true
         },
         {
           "id": 3,
-          "title": "Administer Aspirin",
-          "subtitle": "Give 325mg aspirin if patient is conscious and not allergic",
-          "timeframe": "Within 5 minutes",
+          "title": "Position Adult",
+          "subtitle": "Place person on firm surface. Tilt head back, lift chin to open airway.",
+          "timeframe": "Immediate",
           "type": "instruction",
-          "video": "sample_video.mp4",
-          "status": "completed"
+          "video": "position_adult.mp4",
+          "status": "pending"
         },
         {
           "id": 4,
-          "title": "Position Patient",
-          "subtitle": "Place patient in comfortable upright position",
+          "title": "Hand Position",
+          "subtitle": "Place heel of one hand on center of chest between nipples. Place other hand on top, interlace fingers.",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "completed"
+          "status": "pending",
+          "details": {
+            "depth": "At least 2 inches (5 cm)."
+          }
         },
         {
           "id": 5,
-          "title": "Monitor Vital Signs",
-          "subtitle": "Continuously monitor breathing, pulse, and consciousness",
-          "timeframe": "Ongoing",
-          "type": "monitor",
-          "status": "completed"
+          "title": "Start Compressions",
+          "subtitle": "Push hard and fast with both hands. Keep arms straight. Allow complete chest recoil.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending",
+          "details": {
+            "duration": "30 compressions",
+            "rate": "100–120/min",
+            "depth": "At least 2 inches (5 cm)."
+          }
         },
         {
           "id": 6,
-          "title": "Prepare for CPR",
-          "subtitle": "Be ready to start CPR if patient loses consciousness",
-          "timeframe": "If needed",
-          "type": "alert",
-          "link": "cpr_protocol",
-          "status": "completed"
+          "title": "Rescue Breaths",
+          "subtitle": "Tilt head, lift chin. Pinch nose, seal mouth. Give 2 breaths, each lasting 1 second.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "cpr_children",
+      "title": "CPR protocol for children",
+      "ageRange": "1-8 years",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Check Child Response",
+          "subtitle": "Tap shoulders gently and call their name. Look for normal breathing for no more than 10 seconds.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": "check_child_response.mp4",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Call for Help",
+          "subtitle": "If alone, perform CPR for 2 minutes first, then call 911. If someone is with you, have them call immediately.",
+          "timeframe": "Immediate",
+          "type": "action",
+          "icon": "phone",
+          "actionText": "Call 911",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Position Child",
+          "subtitle": "Place child on firm surface. Tilt head back slightly, lift chin to open airway.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": "position_child.mp4",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Hand Position",
+          "subtitle": "Use one or two hands (depending on child's size) on center of chest between nipples.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending",
+          "details": {
+            "depth": "About 2 inches (5 cm) or 1/3 chest depth."
+          }
+        },
+        {
+          "id": 5,
+          "title": "Start Compressions",
+          "subtitle": "Push hard and fast. Keep arms straight. Allow complete chest recoil between compressions.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending",
+          "details": {
+            "duration": "30 compressions",
+            "rate": "100–120/min",
+            "depth": "About 2 inches (5 cm) or 1/3 chest depth."
+          }
+        },
+        {
+          "id": 6,
+          "title": "Rescue Breaths",
+          "subtitle": "Tilt head, lift chin. Pinch nose, seal mouth. Give 2 gentle breaths, each lasting 1 second.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "cpr_infants",
+      "title": "CPR protocol for infants",
+      "ageRange": "0-1 year",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Check Infant Response",
+          "subtitle": "Tap bottom of feet gently. Look for normal breathing for no more than 10 seconds.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": "check_infant_response.mp4",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Call for Help",
+          "subtitle": "If alone, perform CPR for 2 minutes first, then call 911. If someone is with you, have them call immediately.",
+          "timeframe": "Immediate",
+          "type": "action",
+          "icon": "phone",
+          "actionText": "Call 911",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Position Infant",
+          "subtitle": "Place infant on firm surface. Tilt head back slightly, lift chin gently to open airway.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "video": "position_infant.mp4",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Finger Position",
+          "subtitle": "Use two fingers (index and middle) on center of chest, just below nipple line.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending",
+          "details": {
+            "depth": "About 1.5 inches (4 cm) or 1/3 chest depth."
+          }
+        },
+        {
+          "id": 5,
+          "title": "Start Compressions",
+          "subtitle": "Push hard and fast with two fingers. Allow complete chest recoil between compressions.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending",
+          "details": {
+            "duration": "30 compressions",
+            "rate": "100–120/min",
+            "depth": "About 1.5 inches (4 cm) or 1/3 chest depth."
+          }
+        },
+        {
+          "id": 6,
+          "title": "Rescue Breaths",
+          "subtitle": "Cover infant's nose and mouth with your mouth. Give 2 gentle puffs, each lasting 1 second.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending"
         }
       ]
     }

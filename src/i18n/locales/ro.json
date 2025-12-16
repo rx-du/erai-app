@@ -73,8 +73,7 @@
       "step": "Pasul",
       "of": "din",
       "close": "Închide",
-      "stepCompleted": "Pas completat",
-      "stepCompletedCheck": "✓ Pas completat"
+      "stepCompleted": "Pas completat"
     }
   },
   "location": {

@@ -2,139 +2,86 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    paddingHorizontal: 16,
+    paddingHorizontal: 24,
     paddingTop: 60,
   },
-  title: {
-    fontSize: 28,
-    fontWeight: '700',
-    marginBottom: 12,
+  headerContainer: {
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    gap: 12,
+    paddingBottom: 24,
   },
-  subtitle: {
-    fontSize: 15,
-    lineHeight: 22,
-    marginBottom: 8,
+  bodyContainer: {
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    gap: 24,
+    paddingBottom: 120,
   },
-  email: {
-    color: '#000000',
-    fontWeight: '400',
+  sectionBodyContainer: {
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    gap: 12,
   },
-  logoutButton: {
-    marginBottom: 32,
+  card: {
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    gap: 4,
   },
-  logout: {
-    color: '#FF4E48',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  section: {
-    marginBottom: 32,
-  },
-  sectionTitle: {
-    fontSize: 13,
-    color: '#7C7C83',
-    marginBottom: 12,
-    fontWeight: '400',
-  },
-  subscriptionCard: {
-    borderRadius: 12,
-    padding: 16,
+  settingItem: {
+    borderRadius: 16,
+    paddingHorizontal: 16,
+    paddingVertical: 18.5,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: 8,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.05,
-    shadowRadius: 2,
-    elevation: 2,
+    width: '100%',
+    shadowOpacity: 0.03,
+    shadowRadius: 20,
+    shadowOffset: { width: 0, height: 0 },
   },
-  subscriptionContent: {
+  selector: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 12,
   },
-  subscriptionLabel: {
-    fontSize: 16,
-    color: '#000000',
-    fontWeight: '400',
+  title: {
+    fontSize: 24,
+    fontWeight: '700',
   },
-  badge: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    backgroundColor: '#4A90E2',
+  subtitle: {
+    fontSize: 15,
+    lineHeight: 22,
+  },
+  logout: {
+    fontSize: 15,
+    fontWeight: '600',
+  },
+  titleDrawer: {
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  badgeText: {
-    color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  upgradeText: {
-    color: '#FF4E48',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  menuItem: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 12,
-    padding: 16,
+  item: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'space-between',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.05,
-    shadowRadius: 2,
-    elevation: 2,
+    paddingVertical: 16,
+    borderBottomWidth: 1,
   },
-  menuItemText: {
-    fontSize: 16,
-    color: '#000000',
+  titleText: {
+    textAlign: 'center',
+    fontSize: 13,
     fontWeight: '400',
+    lineHeight: 19.5,
   },
-  chevronRight: {
-    transform: [{ rotate: '-90deg' }],
-  },
-  settingItem: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 12,
-    padding: 16,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginBottom: 8,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.05,
-    shadowRadius: 2,
-    elevation: 2,
-  },
-  settingLabel: {
-    fontSize: 16,
-    color: '#000000',
-    fontWeight: '400',
-  },
-  settingValue: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  settingValueText: {
-    fontSize: 16,
-    color: '#FF4E48',
-    fontWeight: '400',
+  itemText: {
+    textAlign: 'center',
+    fontSize: 15,
+    fontWeight: '500',
+    lineHeight: 19.5,
   },
 });

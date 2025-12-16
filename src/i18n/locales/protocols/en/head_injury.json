@@ -1,93 +1,162 @@
 {
-  "id": "neurological_decline",
-  "title": "Neurological Decline / Head Trauma",
-  "sections": [
+  "id": "head_injury",
+  "title": "Head injury",
+  "category": [
     {
-      "title": "Critical",
-      "type": "text",
-      "content": "Any decline in GCS, new focal deficits, or signs of herniation require immediate ALS intervention and trauma center transport!"
-    },
-    {
-      "title": "Critical Signs",
-      "type": "list",
-      "items": [
-        "Altered level of consciousness",
-        "Unequal or non-reactive pupils",
-        "Clear fluid from ears/nose (CSF leak)",
-        "Raccoon eyes or Battle’s sign",
-        "Severe headache or vomiting"
+      "name": "Critical signs and immediate actions",
+      "sections": [
+        {
+          "title": "Critical",
+          "type": "text",
+          "content": "Any decline in GCS, new focal deficits, or signs of herniation require immediate ALS intervention and trauma center transport!"
+        },
+        {
+          "title": "Critical Signs",
+          "type": "list",
+          "items": [
+            "Altered level of consciousness",
+            "Unequal or non-reactive pupils",
+            "Clear fluid from ears/nose (CSF leak)",
+            "Raccoon eyes or Battle's sign",
+            "Severe headache or vomiting"
+          ]
+        },
+        {
+          "title": "Immediate Actions",
+          "type": "list",
+          "items": [
+            "Scene safety and C-spine control",
+            "Glasgow Coma Scale assessment",
+            "Airway management with C-spine",
+            "Neurological baseline establishment",
+            "Rapid transport preparation"
+          ]
+        }
       ]
     },
     {
-      "title": "Immediate Actions",
-      "type": "list",
-      "items": [
-        "Scene safety and C-spine control",
-        "Glasgow Coma Scale assessment",
-        "Airway management with C-spine",
-        "Neurological baseline establishment",
-        "Rapid transport preparation"
+      "name": "Professional first responder notes",
+      "sections": [
+        {
+          "title": "Critical Transport Criteria",
+          "type": "list",
+          "items": [
+            "GCS ≤13 or decline ≥2 points",
+            "Loss of consciousness > 5 minutes",
+            "Post-traumatic amnesia > 30 minutes",
+            "Repeated vomiting (≥2 episodes)",
+            "Seizures post-injury",
+            "Focal neurological deficits"
+          ]
+        },
+        {
+          "title": "Management Priorities",
+          "type": "list",
+          "items": [
+            "Maintain C-spine immobilization",
+            "Prevent secondary brain injury",
+            "Optimize oxygenation/ventilation",
+            "Monitor for ICP signs",
+            "Frequent neurological reassessment",
+            "Transport to trauma center"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Glasgow Coma scale",
+      "sections": [
+        {
+          "title": "Assessment Components",
+          "type": "list",
+          "items": [
+            "Eye Opening (E1–4)",
+            "Verbal Response (V1–5)",
+            "Motor Response (M1–6)",
+            "Total Score: 3–15",
+            "Reassess every 15 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "C-Spine management",
+      "sections": [
+        {
+          "title": "Immobilization Steps",
+          "type": "list",
+          "items": [
+            "Manual inline stabilization",
+            "Cervical collar application",
+            "Backboard or scoop stretcher",
+            "Head blocks and straps",
+            "Maintain alignment during transport"
+          ]
+        }
       ]
     }
   ],
   "steps": [
     {
-      "id": "heart_attack_protocol",
-      "title": "Heart Attack Protocol",
-      "category": "Cardiac Emergencies",
+      "id": "head_injury_protocol",
+      "title": "Head injury protocol",
+      "category": "Trauma Emergencies",
       "severity": "critical",
       "steps": [
         {
           "id": 1,
-          "title": "Scene Safety & Initial Assessment",
-          "subtitle": "Ensure scene safety, check responsiveness, and assess breathing",
+          "title": "Scene Safety & C-Spine Control",
+          "subtitle": "Ensure scene safety and establish manual C-spine stabilization",
           "timeframe": "Immediate",
           "type": "instruction",
-          "video": "sample_video.mp4",
-          "status": "completed"
+          "link": "C-Spine management",
+          "status": "pending",
+          "shouldDisplayCSpineManagement": true
         },
         {
           "id": 2,
-          "title": "Call Emergency Services",
-          "subtitle": "Call 911 immediately – time is critical for cardiac events",
-          "timeframe": "Within 1 minute",
-          "type": "action",
-          "icon": "phone",
-          "status": "completed"
+          "title": "Primary Assessment & Glasgow Coma Scale",
+          "subtitle": "Assess airway, breathing, circulation, and neurological function",
+          "timeframe": "Within 2 minutes",
+          "type": "instruction",
+          "link": "Glasgow Coma scale",
+          "status": "pending",
+          "shouldDisplayGlasgowComaScale": true
         },
         {
           "id": 3,
-          "title": "Administer Aspirin",
-          "subtitle": "Give 325mg aspirin if patient is conscious and not allergic",
+          "title": "Neurological Assessment",
+          "subtitle": "Check pupils, cranial nerves, and motor function",
           "timeframe": "Within 5 minutes",
           "type": "instruction",
-          "video": "sample_video.mp4",
-          "status": "completed"
+          "status": "pending"
         },
         {
           "id": 4,
-          "title": "Position Patient",
-          "subtitle": "Place patient in comfortable upright position",
-          "timeframe": "Immediate",
-          "type": "instruction",
-          "status": "completed"
+          "title": "Call Emergency Services & Transport Decision",
+          "subtitle": "Activate EMS and determine need for trauma center",
+          "timeframe": "Within 3 minutes",
+          "type": "action",
+          "icon": "phone",
+          "actionText": "Call 911",
+          "status": "pending",
+          "shouldDisplayEmergencyCall": true
         },
         {
           "id": 5,
-          "title": "Monitor Vital Signs",
-          "subtitle": "Continuously monitor breathing, pulse, and consciousness",
-          "timeframe": "Ongoing",
-          "type": "monitor",
-          "status": "completed"
+          "title": "Immobilization & Airway Management",
+          "subtitle": "Apply cervical collar and prepare for transport",
+          "timeframe": "During assessment",
+          "type": "instruction",
+          "status": "pending"
         },
         {
           "id": 6,
-          "title": "Prepare for CPR",
-          "subtitle": "Be ready to start CPR if patient loses consciousness",
-          "timeframe": "If needed",
-          "type": "alert",
-          "link": "cpr_protocol",
-          "status": "completed"
+          "title": "Continuous Monitoring & Transport",
+          "subtitle": "Monitor for deterioration and prepare for rapid transport",
+          "timeframe": "Ongoing",
+          "type": "monitor",
+          "status": "pending"
         }
       ]
     }

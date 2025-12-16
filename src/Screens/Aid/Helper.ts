@@ -12,8 +12,14 @@ import ShockIcon from '../../Icons/shock-24.svg';
 import BurnsIcon from '../../Icons/burns-24.svg';
 import FracturesIcon from '../../Icons/fractures-24.svg';
 import WoundsIcon from '../../Icons/wounds-24.svg';
+import ActiveShooterIcon from '../../Icons/active-shooter.svg';
 
 const getCategoriesEmergency = () => [
+  {
+    label: i18n.t('aid.categories.activeShooter'),
+    icon: ActiveShooterIcon,
+    pageContent: getProtocolData('active_shooter'),
+  },
   {
     label: i18n.t('aid.categories.heartAttack'),
     icon: HeartAttackIcon,
@@ -45,14 +51,51 @@ const getCategoriesEmergency = () => [
     pageContent: getProtocolData('burn_injury'),
   },
   { label: i18n.t('aid.categories.cpr'), icon: CPRIcon, pageContent: getProtocolData('CPR') },
+  {
+    label: i18n.t('aid.categories.choking'),
+    icon: BurnInjuryIcon,
+    pageContent: getProtocolData('choking'),
+  },
+  {
+    label: i18n.t('aid.categories.diabetes'),
+    icon: BurnInjuryIcon,
+    pageContent: getProtocolData('diabetes'),
+  },
+  {
+    label: i18n.t('aid.categories.splinting'),
+    icon: BurnInjuryIcon,
+    pageContent: getProtocolData('splinting'),
+  },
+  {
+    label: i18n.t('aid.categories.mentalHealth'),
+    icon: BurnInjuryIcon,
+    pageContent: getProtocolData('mental_health'),
+  },
+  {
+    label: i18n.t('aid.categories.fluidElectrolyte'),
+    icon: BurnInjuryIcon,
+    pageContent: getProtocolData('fluid_electrolyte'),
+  },
 ];
 
 const getCategoriesFirstAid = () => [
-  { label: i18n.t('aid.categories.bleeding'), icon: BleedingIcon, pageContent: null },
-  { label: i18n.t('aid.categories.shock'), icon: ShockIcon, pageContent: null },
-  { label: i18n.t('aid.categories.burns'), icon: BurnsIcon, pageContent: null },
-  { label: i18n.t('aid.categories.fractures'), icon: FracturesIcon, pageContent: null },
-  { label: i18n.t('aid.categories.wounds'), icon: WoundsIcon, pageContent: null },
+  {
+    label: i18n.t('aid.categories.bleeding'),
+    icon: BleedingIcon,
+    pageContent: getProtocolData('bleeding'),
+  },
+  { label: i18n.t('aid.categories.shock'), icon: ShockIcon, pageContent: getProtocolData('shock') },
+  { label: i18n.t('aid.categories.burns'), icon: BurnsIcon, pageContent: getProtocolData('burns') },
+  {
+    label: i18n.t('aid.categories.fractures'),
+    icon: FracturesIcon,
+    pageContent: getProtocolData('fractures'),
+  },
+  {
+    label: i18n.t('aid.categories.wounds'),
+    icon: WoundsIcon,
+    pageContent: getProtocolData('wounds'),
+  },
 ];
 
 export const getTabs = () => [

@@ -36,7 +36,12 @@ export const useGetLocation = () => {
 
         try {
           const response = await fetch(
-            `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`
+            `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`,
+            {
+              headers: {
+                'User-Agent': 'EraiApp',
+              },
+            }
           );
           const data = await response.json();
 

@@ -1,42 +1,68 @@
-import React from 'react';
-import { View, Text, Alert, Linking, TouchableOpacity } from 'react-native';
+import React, { useCallback, useEffect, useState } from 'react';
+import { View, Text } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { MainLayout } from '../Layout/MainLayout';
 import { styles } from './Styles';
-
-import EmergencyIcon from '../../Icons/emergency-button.svg';
 import { useTheme } from '../../Theme/ThemeContext';
 import { CustomButton } from '../../Components/CustomButton';
+import { EmergencyButton } from '../../Features/Emergency/EmergencyButton';
+import { useLoading } from '../../Context/LoadingContext';
+import { useCountry } from '../../Hooks/useCountry';
+import { EMERGENCY_NUMBERS } from './Helper';
 
 export default function EmergencyScreen({ navigation }: any) {
   const { colors } = useTheme();
   const { t } = useTranslation();
+  const { showLoading, hideLoading } = useLoading();
+  const { countryCode } = useCountry('US');
+  const [emergencyNumber, setEmergencyNumber] = useState(EMERGENCY_NUMBERS[countryCode]?.police);
 
-  const handleCall = () => {
-    Linking.openURL('tel:123');
+  useEffect(() => {
+    showLoading('Loading...');
+
+    const emergency = EMERGENCY_NUMBERS[countryCode];
+    if (emergency) {
+      setEmergencyNumber(emergency.police);
+    }
+
+    const timer = setTimeout(() => {
+      hideLoading();
+    }, 500);
+
+    return () => {
+      clearTimeout(timer);
+      hideLoading();
+    };
+  }, []);
+
+  const handleShowAllContacts = () => {
+    showLoading('Loading...');
+
+    setTimeout(() => {
+      navigation.navigate('EmergencyContact');
+      hideLoading();
+    }, 300);
   };
 
   return (
     <MainLayout>
       <View style={styles.container}>
-        <Text style={[styles.title, { color: colors.Text.neutral.primary }]}>
-          {t('emergency.whatIsEmergency')}
-        </Text>
+        <View style={styles.headerContainer}>
+          <Text style={[styles.title, { color: colors.Text.neutral.primary }]}>
+            {t('emergency.whatIsEmergency')}
+          </Text>
 
-        <Text style={[styles.subtitle, { color: colors.Text.neutral.secondary }]}>
-          {t('emergency.holdButton')}
-        </Text>
-        <TouchableOpacity onPress={handleCall} style={styles.emergencyButtonContainer}>
-          <EmergencyIcon />
-          <View style={styles.emergencyTextOverlay}>
-            <Text style={styles.emergencyText}>SOS</Text>
-          </View>
-        </TouchableOpacity>
+          <Text style={[styles.subtitle, { color: colors.Text.neutral.secondary }]}>
+            {t('emergency.holdButton')}
+          </Text>
+        </View>
+
+        <EmergencyButton emergencyNumber={emergencyNumber} />
 
         <CustomButton
           type="tertiary"
           text={t('emergency.showAllContacts')}
-          onPress={() => navigation.navigate('EmergencyContact')}
+          onPress={handleShowAllContacts}
         />
       </View>
     </MainLayout>

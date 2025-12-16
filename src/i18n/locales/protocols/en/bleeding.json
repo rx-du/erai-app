@@ -1,0 +1,71 @@
+{
+  "id": "bleeding_control",
+  "title": "Bleeding Control",
+  "category": [],
+  "steps": [
+    {
+      "id": "bleeding_control_protocol",
+      "title": "Bleeding Control Protocol",
+      "category": "Trauma Emergencies",
+      "severity": "critical",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Scene Safety & BSI",
+          "subtitle": "Ensure scene safety, apply gloves and eye protection. Check for hazards.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Assess the Bleeding",
+          "subtitle": "Identify bleeding source and severity. Look for arterial vs venous bleeding.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Direct Pressure",
+          "subtitle": "Apply firm, direct pressure with clean cloth or gauze over bleeding site.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Elevate if Possible",
+          "subtitle": "Elevate injured area above heart level if no spinal injury suspected.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Pressure Points",
+          "subtitle": "If bleeding continues, apply pressure to arterial pressure points.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Tourniquet Application",
+          "subtitle": "For severe extremity bleeding, apply tourniquet 2–3 inches above wound.",
+          "timeframe": "Critical",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Monitor & Document",
+          "subtitle": "Monitor vital signs, document time of interventions, prepare for transport.",
+          "timeframe": "Critical",
+          "type": "monitor",
+          "status": "pending"
+        }
+      ]
+    }
+  ]
+}

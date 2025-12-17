@@ -36,7 +36,7 @@ PODS:
   - hermes-engine (0.82.1):
     - hermes-engine/Pre-built (= 0.82.1)
   - hermes-engine/Pre-built (0.82.1)
-  - NitroIap (14.4.46):
+  - NitroIap (14.6.2):
     - boost
     - DoubleConversion
     - fast_float
@@ -44,7 +44,7 @@ PODS:
     - glog
     - hermes-engine
     - NitroModules
-    - openiap (~> 1.2.39)
+    - openiap (= 1.3.5)
     - RCT-Folly
     - RCT-Folly/Fabric
     - RCTRequired
@@ -96,7 +96,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - openiap (1.2.39)
+  - openiap (1.3.5)
   - PromisesObjC (2.4.0)
   - RCT-Folly (2024.11.18.00):
     - boost
@@ -1902,9 +1902,9 @@ PODS:
     - Yoga
   - react-native-geolocation-service (5.3.1):
     - React
-  - react-native-maps (1.26.19):
-    - react-native-maps/Maps (= 1.26.19)
-  - react-native-maps/Generated (1.26.19):
+  - react-native-maps (1.26.20):
+    - react-native-maps/Maps (= 1.26.20)
+  - react-native-maps/Generated (1.26.20):
     - boost
     - DoubleConversion
     - fast_float
@@ -1932,7 +1932,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-maps/Maps (1.26.19):
+  - react-native-maps/Maps (1.26.20):
     - boost
     - DoubleConversion
     - fast_float
@@ -1961,7 +1961,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - react-native-pager-view (7.0.1):
+  - react-native-pager-view (7.0.2):
     - boost
     - DoubleConversion
     - fast_float
@@ -2786,7 +2786,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - RNScreens (4.18.0):
+  - RNScreens (4.19.0):
     - boost
     - DoubleConversion
     - fast_float
@@ -2813,10 +2813,10 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - RNScreens/common (= 4.18.0)
+    - RNScreens/common (= 4.19.0)
     - SocketRocket
     - Yoga
-  - RNScreens/common (4.18.0):
+  - RNScreens/common (4.19.0):
     - boost
     - DoubleConversion
     - fast_float
@@ -2873,7 +2873,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - RNSVG (15.15.0):
+  - RNSVG (15.15.1):
     - boost
     - DoubleConversion
     - fast_float
@@ -2899,10 +2899,10 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - RNSVG/common (= 15.15.0)
+    - RNSVG/common (= 15.15.1)
     - SocketRocket
     - Yoga
-  - RNSVG/common (15.15.0):
+  - RNSVG/common (15.15.1):
     - boost
     - DoubleConversion
     - fast_float
@@ -3227,9 +3227,9 @@ SPEC CHECKSUMS:
   GTMAppAuth: 217a876b249c3c585a54fd6f73e6b58c4f5c4238
   GTMSessionFetcher: 5aea5ba6bd522a239e236100971f10cb71b96ab6
   hermes-engine: 273e30e7fb618279934b0b95ffab60ecedb7acf5
-  NitroIap: 5d5df09e1fd3edf133d4ee56c59f6a433019adad
+  NitroIap: 0ce343d4ec39c2fdd4488a119d11314f88987f9e
   NitroModules: 5bc319d441f4983894ea66b1d392c519536e6d23
-  openiap: d374c792df4c6047c8f846394b9c00815d64f327
+  openiap: 8e6a58d311215bde63d36bdd61c475291f6b889a
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   RCT-Folly: 846fda9475e61ec7bcbf8a3fe81edfcaeb090669
   RCTDeprecation: f17e2ebc07876ca9ab8eb6e4b0a4e4647497ae3a
@@ -3266,8 +3266,8 @@ SPEC CHECKSUMS:
   React-microtasksnativemodule: d1ee999dc9052e23f6488b730fa2d383a4ea40e5
   react-native-contacts: aff87a9bbd66e06cefe6e173be4102e95a824cd1
   react-native-geolocation-service: 32b2c2a3b91e70ce2a8d0c684801aaeb0a07e0ec
-  react-native-maps: cafe1c96d1d05b9b3789795be9bb6697a9bacebb
-  react-native-pager-view: 6132f46ae73440fa7c83ae9d8dfdda3edece5222
+  react-native-maps: 48cbc77581f2ffc121a296f9abe071fe4a7ea4ee
+  react-native-pager-view: 5c3098839820aa73d75873e7b1a7eb9f119602b7
   react-native-safe-area-context: c00143b4823773bba23f2f19f85663ae89ceb460
   react-native-video: 7b821291837d8ba7b9d7574bfeb0cd651e910141
   React-NativeModulesApple: 46690a0fe94ec28fc6fc686ec797b911d251ded0
@@ -3305,9 +3305,9 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: 29f0230e1a25f36c20b05f65e2eb8958d6526e82
   RNGestureHandler: e1cf8ef3f11045536eed6bd4f132b003ef5f9a5f
   RNGoogleSignin: 697e3dada7f92669272adec16892107afdc4dafa
-  RNScreens: d821082c6dd1cb397cc0c98b026eeafaa68be479
+  RNScreens: ffbb0296608eb3560de641a711bbdb663ed1f6b4
   RNSound: d5dd3ca86d9978e1c2736dfa943ba619fc9fc504
-  RNSVG: 005860704c95493cd23a417dfbeb76dcd8bb7042
+  RNSVG: 1bbfeab22b26db18b73d2e36b37a0f02a1180838
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: 689c8e04277f3ad631e60fe2a08e41d411daf8eb
 

@@ -69,6 +69,7 @@ export type RootStackParamList = {
   EducatiionalPurposes: undefined;
   PrivacyPolicy: undefined;
   TermsOfService: undefined;
+  Onboarding: { goToAccount?: boolean };
   SearchAid: undefined;
   AidScreen: undefined;
 };
@@ -77,12 +78,11 @@ export default function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="MainTabs" component={MainTabs} />
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="SignUp" component={RegisterScreen} />
         <Stack.Screen name="SetPassword" component={SetPasswordScreen} />
-        {/* <Stack.Screen name="MainTabs" component={MainTabs} /> */}
+        <Stack.Screen name="MainTabs" component={MainTabs} />
         <Stack.Screen name="Protocol" component={ProtocolScreen} />
         <Stack.Screen name="ProtocolStep" component={ProtocolStepScreen} />
         <Stack.Screen name="EmergencyContact" component={EmergencyContactScreen} />

@@ -6,8 +6,12 @@ import { MainLayout } from '../Layout/MainLayout';
 import { useTheme } from '../../Theme/ThemeContext';
 import { CustomButton } from '../../Components/CustomButton';
 import { TrialScreen } from '../Access/TrialScreen';
+import { useRoute, RouteProp } from '@react-navigation/native';
+import { RootStackParamList } from '../../Navigations/Navigations';
 
 export function OnboardingScreen({ navigation }: any) {
+  const route = useRoute<RouteProp<RootStackParamList, 'Onboarding'>>();
+  const { goToAccount } = route.params || false;
   const { colors } = useTheme();
   const pagerRef = useRef<PagerView>(null);
   const [page, setPage] = useState(0);
@@ -36,12 +40,21 @@ export function OnboardingScreen({ navigation }: any) {
     },
   ];
 
+  const isLastPage = page === pages.length - 1;
+  const isBeforeLastPage = page === pages.length - 2;
+
   const handleContinue = () => {
-    if (page < pages.length - 1) {
-      pagerRef.current?.setPage(page + 1);
-    } else {
-      navigation.navigate('MainTabs');
+    if (goToAccount && isBeforeLastPage) {
+      navigation.navigate('MainTabs', { screen: 'Account' });
+      return;
     }
+
+    if (!isLastPage) {
+      pagerRef.current?.setPage(page + 1);
+      return;
+    }
+
+    navigation.navigate('MainTabs');
   };
 
   return (

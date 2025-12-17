@@ -4,7 +4,11 @@ import { styles } from './Styles';
 import { useTheme } from '../../Theme/ThemeContext';
 import { PhoneInput } from './PhoneInput';
 import { useCountry } from '../../Hooks/useCountry';
-import { getAllCountries, ICountry } from 'react-native-international-phone-number';
+import {
+  getAllCountries,
+  ICountry,
+  isValidPhoneNumber,
+} from 'react-native-international-phone-number';
 import { CustomDrawer } from '../../Components/CustomDrawer';
 import { CustomModal } from '../../Components/CustomModal';
 
@@ -47,7 +51,7 @@ export default function ManualAddContactModal({
     }
   }, [defaultCountry, visible, initialName, initialPhone]);
 
-  const isFormValid = name.trim().length > 0 && phone.trim().length > 0;
+  const isFormValid = name.trim().length > 0 && !!country && isValidPhoneNumber(phone, country);
 
   const handleAdd = () => {
     onAdd(name, country?.idd.root + ' ' + phone);

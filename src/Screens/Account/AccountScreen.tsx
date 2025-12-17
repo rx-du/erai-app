@@ -201,7 +201,7 @@ export default function AccountScreen({ navigation }: any) {
             <TouchableOpacity
               style={[styles.settingItem, { backgroundColor: colors.Bg.pure }]}
               onPress={() => {
-                navigation.navigate('Onboarding');
+                navigation.navigate('Onboarding', { goToAccount: true });
               }}
             >
               <Text style={[styles.subtitle, { color: colors.Text.neutral.secondary }]}>

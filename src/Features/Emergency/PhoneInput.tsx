@@ -23,7 +23,7 @@ export const PhoneInput = ({ onPressCountry, phone, onChangePhone, country }: Pr
 
       <View style={phoneInptuStyles.phone}>
         <TouchableOpacity onPress={onPressCountry} style={phoneInptuStyles.prefixPhone}>
-          <Text style={{ fontSize: 24 }}>{country?.flag}</Text>
+          <Text style={{ fontSize: 15 }}>{country?.flag}</Text>
           <Text style={[phoneInptuStyles.callingCodeText, { color: colors.Text.neutral.primary }]}>
             {country?.idd.root}
           </Text>

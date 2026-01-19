@@ -133,11 +133,9 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
   };
 
   useEffect(() => {
-    // Enable playback in silence mode (iOS)
     Sound.setCategory('Playback');
 
     return () => {
-      // Cleanup audio on unmount
       if (audioRef.current) {
         audioRef.current.release();
         audioRef.current = null;
@@ -156,9 +154,7 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
     if (isVideoFile) {
       setIsPlaying(!isPlaying);
     } else {
-      // Handle audio playback
       if (audioRef.current) {
-        // If audio is already loaded
         if (isPlaying) {
           audioRef.current.pause();
           setIsPlaying(false);
@@ -172,7 +168,6 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
           setIsPlaying(true);
         }
       } else {
-        // Load and play new audio
         const sound = new Sound(mediaFile, (error: Error | null) => {
           if (error) {
             console.error('Failed to load audio', error);
@@ -183,7 +178,6 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
           sound.play((success: boolean) => {
             if (success) {
               setIsPlaying(false);
-              // Release the audio resource when finished
               sound.release();
               audioRef.current = null;
             } else {
@@ -198,7 +192,6 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
   };
 
   useEffect(() => {
-    // Stop and cleanup audio when changing steps
     if (audioRef.current) {
       audioRef.current.stop(() => {
         if (audioRef.current) {
@@ -437,7 +430,7 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
                 )}
               </View>
 
-              {isPlaying && stepIsVideoFile && isCurrentStep && (
+              {/* {isPlaying && stepIsVideoFile && isCurrentStep && (
                 <View
                   style={{
                     flex: 1,
@@ -481,7 +474,7 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
                     </TouchableOpacity>
                   )}
                 </View>
-              )}
+              )} */}
             </View>
           );
         })}

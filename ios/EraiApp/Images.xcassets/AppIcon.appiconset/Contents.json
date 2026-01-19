@@ -26,11 +26,13 @@
       "size" : "40x40"
     },
     {
+      "filename" : "APP-ICON (1) (1).jpg",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
+      "filename" : "APP-ICON (1) (1) 1.jpg",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
@@ -41,6 +43,7 @@
       "size" : "60x60"
     },
     {
+      "filename" : "APP-ICON (1).jpg",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"

@@ -24,6 +24,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     gap: 12,
+    width: '100%',
   },
   card: {
     flexDirection: 'column',
@@ -83,5 +84,52 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '500',
     lineHeight: 19.5,
+  },
+  subscriptionSection: {
+    paddingVertical: 20,
+    gap: 8,
+  },
+  subscriptionRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 20,
+  },
+  subscriptionLabel: {
+    fontSize: 15,
+    fontWeight: '400',
+    lineHeight: 19.5,
+  },
+  subscriptionValue: {
+    fontSize: 15,
+    fontWeight: '500',
+    lineHeight: 19.5,
+    textAlign: 'right',
+  },
+  subscriptionIncludes: {
+    fontSize: 13,
+    fontWeight: '400',
+    lineHeight: 16.9,
+  },
+  divider: {
+    height: 1,
+    width: '100%',
+  },
+  subscriptionActions: {
+    marginTop: 32,
+    gap: 16,
+    alignItems: 'center',
+  },
+  actionButton: {
+    fontSize: 15,
+    fontWeight: '600',
+    lineHeight: 22,
+    textAlign: 'center',
+  },
+  subscriptionDisclaimer: {
+    fontSize: 13,
+    fontWeight: '400',
+    lineHeight: 19.5,
+    textAlign: 'center',
   },
 });

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useContext, useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -22,6 +22,9 @@ import PrivacyPolicyScreen from '../Screens/Access/PrivacyPolicyScreen';
 import TermsOfServiceScreen from '../Screens/Access/TermsOfServiceScreen';
 import { OnboardingScreen } from '../Screens/Onboarding/OnboardingScreen';
 import SearchAidScreen from '../Screens/Aid/SearchAidScreen';
+
+import { useAuth } from '../Context/AuthContext';
+import { useLoading } from '../Context/LoadingContext';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -75,23 +78,43 @@ export type RootStackParamList = {
 };
 
 export default function Navigation() {
+  const { isAuthenticated } = useAuth();
+  const { showLoading, hideLoading } = useLoading();
+
+  console.log('isAuthenticated', isAuthenticated);
+
+  useEffect(() => {
+    if (isAuthenticated === null) {
+      showLoading('Loading...');
+    } else {
+      hideLoading();
+    }
+  }, [isAuthenticated]);
+
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Welcome" component={WelcomeScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="SignUp" component={RegisterScreen} />
-        <Stack.Screen name="SetPassword" component={SetPasswordScreen} />
-        <Stack.Screen name="MainTabs" component={MainTabs} />
-        <Stack.Screen name="Protocol" component={ProtocolScreen} />
-        <Stack.Screen name="ProtocolStep" component={ProtocolStepScreen} />
-        <Stack.Screen name="EmergencyContact" component={EmergencyContactScreen} />
-        <Stack.Screen name="Subscription" component={SubscriptionScreen} />
-        <Stack.Screen name="EducationalPurposes" component={EducationalPurposesScreen} />
-        <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicyScreen} />
-        <Stack.Screen name="TermsOfService" component={TermsOfServiceScreen} />
-        <Stack.Screen name="Onboarding" component={OnboardingScreen} />
-        <Stack.Screen name="SearchAid" component={SearchAidScreen} />
+        {isAuthenticated ? (
+          <>
+            <Stack.Screen name="MainTabs" component={MainTabs} />
+            <Stack.Screen name="Protocol" component={ProtocolScreen} />
+            <Stack.Screen name="ProtocolStep" component={ProtocolStepScreen} />
+            <Stack.Screen name="EmergencyContact" component={EmergencyContactScreen} />
+            <Stack.Screen name="Subscription" component={SubscriptionScreen} />
+            <Stack.Screen name="EducationalPurposes" component={EducationalPurposesScreen} />
+            <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicyScreen} />
+            <Stack.Screen name="TermsOfService" component={TermsOfServiceScreen} />
+            <Stack.Screen name="SearchAid" component={SearchAidScreen} />
+            <Stack.Screen name="Onboarding" component={OnboardingScreen} />
+          </>
+        ) : (
+          <>
+            <Stack.Screen name="Welcome" component={WelcomeScreen} />
+            <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="SignUp" component={RegisterScreen} />
+            <Stack.Screen name="SetPassword" component={SetPasswordScreen} />
+          </>
+        )}
       </Stack.Navigator>
     </NavigationContainer>
   );

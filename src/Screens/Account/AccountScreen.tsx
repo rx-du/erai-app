@@ -13,6 +13,13 @@ import CheckIcon from '../../Icons/check-24.svg';
 import { CustomDrawer } from '../../Components/CustomDrawer';
 import { getAllCountries } from 'react-native-international-phone-number';
 import { Languages, Themes } from './Helper';
+import { CustomModal } from '../../Components/CustomModal';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useSubscription } from '../../Context/SubscriptionContext';
+import { useAuth } from '../../Context/AuthContext';
+import { CustomButton } from '../../Components/CustomButton';
+import CustomCategory from '../../Components/CustomCategory/CustomCategory';
+import { BorderRadius } from '../../Constants/BorderRadius';
 
 export default function AccountScreen({ navigation }: any) {
   const { colors, theme, toggleTheme } = useTheme();
@@ -23,6 +30,14 @@ export default function AccountScreen({ navigation }: any) {
   const [showCountryDropdown, setShowCountryDropdown] = useState(false);
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   const [showThemeDropdown, setShowThemeDropdown] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showSubscriptionDetails, setShowSubscriptionDetails] = useState(false);
+  const [showUpgradeSubscription, setShowUpgradeSubscription] = useState(false);
+
+  const { subscriptionDetails, openSubscriptionManagement, startSubscription } = useSubscription();
+
+  console.log('subscriptionDetails', subscriptionDetails.isTrial);
+  const { logout } = useAuth();
 
   useEffect(() => {
     let isMounted = true;
@@ -66,6 +81,12 @@ export default function AccountScreen({ navigation }: any) {
   };
 
   const handleLogout = async () => {
+    await AsyncStorage.clear();
+    await logout();
+  };
+
+  const handleDeleteAccount = async () => {
+    await AsyncStorage.clear();
     await GoogleSignin.revokeAccess();
     await GoogleSignin.signOut();
     navigation.replace('Welcome');
@@ -116,6 +137,38 @@ export default function AccountScreen({ navigation }: any) {
             </Text>
 
             <View style={styles.card}>
+              <TouchableOpacity
+                style={[styles.settingItem, { backgroundColor: colors.Bg.pure }]}
+                onPress={() =>
+                  subscriptionDetails.currentPlan
+                    ? setShowSubscriptionDetails(true)
+                    : setShowUpgradeSubscription(true)
+                }
+              >
+                {!subscriptionDetails.isCanceled && (
+                  <Text style={[styles.subtitle, { color: colors.Text.neutral.secondary }]}>
+                    Subscription
+                  </Text>
+                )}
+
+                {subscriptionDetails.isCanceled && (
+                  <Text style={[styles.subtitle, { color: colors.Text.neutral.secondary }]}>
+                    Subscription (canceled)
+                  </Text>
+                )}
+                <View style={styles.selector}>
+                  <Text
+                    style={[
+                      styles.subtitle,
+                      { color: colors.Text.accent.primary, fontWeight: 500 },
+                    ]}
+                  >
+                    {subscriptionDetails.currentPlan ?? 'Free'}
+                  </Text>
+                  <ArrowDown width={12} height={7} />
+                </View>
+              </TouchableOpacity>
+
               <TouchableOpacity
                 style={[styles.settingItem, { backgroundColor: colors.Bg.pure }]}
                 onPress={() => setShowLanguageDropdown(true)}
@@ -245,6 +298,23 @@ export default function AccountScreen({ navigation }: any) {
               </Text>
               <ArrowRight color={colors.Text.accent.primary} />
             </TouchableOpacity>
+            <TouchableOpacity
+              style={[
+                styles.settingItem,
+                {
+                  backgroundColor: colors.Button.accent.secondary,
+                  borderColor: colors.Button.accent.primary,
+                  borderWidth: 1,
+                },
+              ]}
+              onPress={() => {
+                setShowDeleteModal(true);
+              }}
+            >
+              <Text style={[styles.subtitle, { color: colors.Text.accent.primary }]}>
+                Delete account
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
@@ -336,6 +406,391 @@ export default function AccountScreen({ navigation }: any) {
             </TouchableOpacity>
           ))}
         </ScrollView>
+      </CustomDrawer>
+
+      <CustomModal
+        visible={showDeleteModal}
+        title="Delete my account"
+        subtitle="If you delete your account, all your data will be permanently removed and cannot be recovered."
+        onCancel={() => setShowDeleteModal(false)}
+        onAction={handleDeleteAccount}
+        actionName="Delete"
+      />
+
+      <CustomDrawer
+        isVisible={showSubscriptionDetails}
+        title="Subscription details"
+        isSmallDrawer
+        onClose={() => {
+          setShowSubscriptionDetails(false);
+        }}
+      >
+        <View>
+          {subscriptionDetails.isCanceled && (
+            <View
+              style={{
+                flexDirection: 'column',
+                paddingBottom: 32,
+              }}
+            >
+              <View style={{ flexDirection: 'column', paddingHorizontal: 24, paddingBottom: 24 }}>
+                <View
+                  style={{
+                    flexDirection: 'column',
+                    paddingVertical: 16,
+                    gap: 16,
+                  }}
+                >
+                  <View
+                    style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%' }}
+                  >
+                    <Text
+                      style={[styles.subscriptionLabel, { color: colors.Text.neutral.secondary }]}
+                    >
+                      Current plan canceled
+                    </Text>
+                    <Text
+                      style={[styles.subscriptionValue, { color: colors.Text.neutral.primary }]}
+                    >
+                      {subscriptionDetails.currentPlan || 'N/A'}
+                    </Text>
+                  </View>
+                  <View
+                    style={{
+                      flexDirection: 'column',
+                      gap: 4,
+                    }}
+                  >
+                    <Text
+                      style={[styles.subscriptionIncludes, { color: colors.Text.neutral.tertiary }]}
+                    >
+                      Includes
+                    </Text>
+                    <Text
+                      style={[
+                        styles.subscriptionIncludes,
+                        { color: colors.Text.neutral.secondary },
+                      ]}
+                    >
+                      Access to all the guides and protocols.
+                    </Text>
+                  </View>
+                </View>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    paddingVertical: 16,
+                    borderTopWidth: 1,
+                    borderTopColor: colors.Divider.primary,
+                  }}
+                >
+                  <Text
+                    style={[styles.subscriptionLabel, { color: colors.Text.neutral.secondary }]}
+                  >
+                    Started on
+                  </Text>
+                  <Text style={[styles.subscriptionValue, { color: colors.Text.neutral.primary }]}>
+                    {subscriptionDetails.activatedOn || 'N/A'}
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    paddingVertical: 16,
+                    borderTopWidth: 1,
+                    borderTopColor: colors.Divider.primary,
+                  }}
+                >
+                  <Text
+                    style={[styles.subscriptionLabel, { color: colors.Text.neutral.secondary }]}
+                  >
+                    Ends on
+                  </Text>
+                  <Text style={[styles.subscriptionValue, { color: colors.Text.neutral.primary }]}>
+                    {subscriptionDetails.billingStartingOn || 'N/A'}
+                  </Text>
+                </View>
+              </View>
+              <View
+                style={{
+                  flexDirection: 'column',
+                  gap: 32,
+                  paddingHorizontal: 24,
+                }}
+              >
+                <View style={{ flexDirection: 'column', gap: 24 }}>
+                  <TouchableOpacity>
+                    <Text style={[styles.actionButton, { color: colors.Text.accent.primary }]}>
+                      Get help
+                    </Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity
+                    onPress={() => {
+                      openSubscriptionManagement();
+                    }}
+                  >
+                    <Text style={[styles.actionButton, { color: colors.Text.accent.primary }]}>
+                      Re-activate the Premium plan
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+
+                <Text
+                  style={[styles.subscriptionDisclaimer, { color: colors.Text.neutral.secondary }]}
+                >
+                  If you re-activate the Premium plan, your will be charged $99 on the expiration
+                  date to keep the Premium plan.
+                </Text>
+              </View>
+            </View>
+          )}
+          {!subscriptionDetails.isCanceled && (
+            <View
+              style={{
+                flexDirection: 'column',
+                paddingBottom: 32,
+              }}
+            >
+              <View style={{ flexDirection: 'column', paddingHorizontal: 24, paddingBottom: 24 }}>
+                <View
+                  style={{
+                    flexDirection: 'column',
+                    paddingVertical: 16,
+                    gap: 16,
+                  }}
+                >
+                  <View
+                    style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%' }}
+                  >
+                    <Text
+                      style={[styles.subscriptionLabel, { color: colors.Text.neutral.secondary }]}
+                    >
+                      Current plan
+                    </Text>
+                    <Text
+                      style={[styles.subscriptionValue, { color: colors.Text.neutral.primary }]}
+                    >
+                      {subscriptionDetails.currentPlan || 'N/A'}
+                    </Text>
+                  </View>
+                  <View
+                    style={{
+                      flexDirection: 'column',
+                      gap: 4,
+                    }}
+                  >
+                    <Text
+                      style={[styles.subscriptionIncludes, { color: colors.Text.neutral.tertiary }]}
+                    >
+                      Includes
+                    </Text>
+                    <Text
+                      style={[
+                        styles.subscriptionIncludes,
+                        { color: colors.Text.neutral.secondary },
+                      ]}
+                    >
+                      {subscriptionDetails.isTrial
+                        ? 'Access to CPR protocol for adults.'
+                        : 'Access to all the guides and protocols.'}
+                    </Text>
+                  </View>
+                </View>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    paddingVertical: 16,
+                    borderTopWidth: 1,
+                    borderTopColor: colors.Divider.primary,
+                  }}
+                >
+                  <Text
+                    style={[styles.subscriptionLabel, { color: colors.Text.neutral.secondary }]}
+                  >
+                    Activated on
+                  </Text>
+                  <Text style={[styles.subscriptionValue, { color: colors.Text.neutral.primary }]}>
+                    {subscriptionDetails.activatedOn || 'N/A'}
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    paddingVertical: 16,
+                    borderTopWidth: 1,
+                    borderTopColor: colors.Divider.primary,
+                  }}
+                >
+                  <Text
+                    style={[styles.subscriptionLabel, { color: colors.Text.neutral.secondary }]}
+                  >
+                    Ends in
+                  </Text>
+                  <Text style={[styles.subscriptionValue, { color: colors.Text.neutral.primary }]}>
+                    {subscriptionDetails.endsIn || 'N/A'}
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    paddingVertical: 16,
+                    borderTopWidth: 1,
+                    borderTopColor: colors.Divider.primary,
+                  }}
+                >
+                  <Text
+                    style={[styles.subscriptionLabel, { color: colors.Text.neutral.secondary }]}
+                  >
+                    {subscriptionDetails.isTrial ? 'Billing starting on' : 'Renews annualy on'}
+                  </Text>
+                  <Text style={[styles.subscriptionValue, { color: colors.Text.neutral.primary }]}>
+                    {subscriptionDetails.billingStartingOn || 'N/A'}
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    paddingVertical: 16,
+                    borderTopWidth: 1,
+                    borderTopColor: colors.Divider.primary,
+                  }}
+                >
+                  <Text
+                    style={[styles.subscriptionLabel, { color: colors.Text.neutral.secondary }]}
+                  >
+                    Payment
+                  </Text>
+                  <Text style={[styles.subscriptionValue, { color: colors.Text.neutral.primary }]}>
+                    {subscriptionDetails.payment || 'N/A'} / Year
+                  </Text>
+                </View>
+              </View>
+              <View
+                style={{
+                  flexDirection: 'column',
+                  gap: 32,
+                  paddingHorizontal: 24,
+                }}
+              >
+                <View style={{ flexDirection: 'column', gap: 24 }}>
+                  <TouchableOpacity>
+                    <Text style={[styles.actionButton, { color: colors.Text.accent.primary }]}>
+                      Get help
+                    </Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity
+                    onPress={() => {
+                      openSubscriptionManagement();
+                    }}
+                  >
+                    <Text style={[styles.actionButton, { color: colors.Text.accent.primary }]}>
+                      Cancel my subscription
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+
+                <Text
+                  style={[styles.subscriptionDisclaimer, { color: colors.Text.neutral.secondary }]}
+                >
+                  If you cancel your subscription, your Free trial will remain active until its
+                  expiration. After that, you'll be switched to the Free plan.
+                </Text>
+              </View>
+            </View>
+          )}
+        </View>
+      </CustomDrawer>
+
+      <CustomDrawer
+        isVisible={showUpgradeSubscription}
+        isSmallDrawer
+        onClose={() => {
+          setShowUpgradeSubscription(false);
+        }}
+      >
+        <View style={{ flexDirection: 'column', paddingHorizontal: 24, paddingTop: 48, gap: 48 }}>
+          <View
+            style={{
+              flexDirection: 'column',
+              justifyContent: 'flex-start',
+              alignItems: 'center',
+              gap: 12,
+            }}
+          >
+            <Text style={{ fontSize: 24, fontWeight: '700', lineHeight: 31.2 }}>Get premium</Text>
+            <Text
+              style={{
+                fontSize: 15,
+                fontWeight: '400',
+                lineHeight: 22.5,
+                textAlign: 'center',
+                color: colors.Text.neutral.secondary,
+              }}
+            >
+              Unlock all the power of this mobile tool and get access to all the guides and
+              protocols.
+            </Text>
+          </View>
+          <View style={{ gap: 16, justifyContent: 'flex-start', alignItems: 'center' }}>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                width: '100%',
+                paddingVertical: 12,
+                paddingHorizontal: 16,
+                backgroundColor: colors.Button.neutral.secondary,
+                borderRadius: BorderRadius.s,
+                height: 50,
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: 15,
+                  fontWeight: '400',
+                  lineHeight: 22.5,
+                  textAlign: 'center',
+                  color: colors.Text.neutral.secondary,
+                }}
+              >
+                Annual
+              </Text>
+              <Text
+                style={{
+                  fontSize: 15,
+                  fontWeight: '700',
+                  lineHeight: 22.5,
+                  textAlign: 'center',
+                  color: colors.Text.neutral.primary,
+                }}
+              >
+                $29.99/Year
+              </Text>
+            </View>
+            <CustomButton
+              onPress={() => {
+                setShowUpgradeSubscription(false);
+                startSubscription();
+              }}
+              text="Upgrade now"
+              type="primary"
+              dimension="large"
+              width={145}
+            />
+          </View>
+          <Text style={[styles.subscriptionDisclaimer, { color: colors.Text.neutral.secondary }]}>
+            Your subscription renews annually. Cancel anytime. By placing this order, you agree to
+            the Terms of Service and Privacy Policy.
+          </Text>
+        </View>
       </CustomDrawer>
     </MainLayout>
   );

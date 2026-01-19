@@ -116,3 +116,8 @@ buck-out/
 
 # iOS build outputs
 ios/build/
+
+# Android keystore
+*.jks
+*.keystore
+android/app/upload-key.jks

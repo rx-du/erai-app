@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { useTheme } from '../../Theme/ThemeContext';
 import { CustomButton } from '../../Components/CustomButton';
 import XIcon from '../../Icons/x-icon.svg';
 import { MainLayout } from '../Layout/MainLayout';
 import FreeTrialArrow from '../../Icons/free-trial-arrow.svg';
+import { useSubscription } from '../../Context/SubscriptionContext';
 
 export function TrialScreen({ navigation }: any) {
   const { colors } = useTheme();
+  const { startSubscription, initializeIAP } = useSubscription();
+
+  useEffect(() => {
+    initializeIAP(() => {
+      navigation.navigate('MainTabs');
+    });
+  }, [navigation, initializeIAP]);
 
   return (
     <MainLayout>
@@ -32,7 +40,7 @@ export function TrialScreen({ navigation }: any) {
             </Text>
 
             <Text style={[trialStyles.subtitle, { color: colors.Text.neutral.secondary }]}>
-              First 14 days free,{'\n'}then $ 99.00/year
+              First 7 days free,{'\n'}then $ 29.99/year
             </Text>
           </View>
 
@@ -42,7 +50,7 @@ export function TrialScreen({ navigation }: any) {
                 Today
               </Text>
               <Text style={[trialStyles.todaySubtitle, { color: colors.Text.accent.secondary }]}>
-                Unlock all features and emergency{'\n'}protocols.
+                Unlock CPR protocol for adults.
               </Text>
             </View>
 
@@ -50,10 +58,10 @@ export function TrialScreen({ navigation }: any) {
 
             <View style={{ gap: 4, alignItems: 'center' }}>
               <Text style={[trialStyles.todayTitle, { color: colors.Text.neutral.primary }]}>
-                In 14 days
+                In 7 days
               </Text>
               <Text style={[trialStyles.todaySubtitle, { color: colors.Text.neutral.secondary }]}>
-                You’ll be charged $ 99.00, cancel{'\n'}anytime before.
+                Unlock all protocols. You’ll be{'\n'}charged $ 29.99, cancel anytime{'\n'}before.
               </Text>
             </View>
           </View>
@@ -62,7 +70,10 @@ export function TrialScreen({ navigation }: any) {
             text="Start my free trial"
             type="primary"
             width={180}
-            onPress={() => navigation.navigate('MainTabs')}
+            onPress={() => {
+              startSubscription();
+              navigation.navigate('MainTabs');
+            }}
           />
         </View>
 

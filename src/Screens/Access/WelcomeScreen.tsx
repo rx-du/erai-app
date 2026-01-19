@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Platform, Dimensions } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { CustomButton } from '../../Components/CustomButton';
 import { MainLayout } from '../Layout/MainLayout';
 
@@ -8,22 +9,41 @@ import HeaderIconFirst from '../../Icons/hello-vector.svg';
 import AppleIcon from '../../Icons/apple-24.svg';
 import GoogleIcon from '../../Icons/google-24.svg';
 import { welcomeStyles } from './Styles';
-import { signInWithGoogle } from '../../Features/Auth/Services/GoogleLogin';
 import { signInWithApple } from '../../Features/Auth/Services/AppleLogin';
 import { useTheme } from '../../Theme/ThemeContext';
 import { isAndroid } from '../../Constants/Device';
+import { useAuth } from '../../Context/AuthContext';
 
 export default function WelcomeScreen({ navigation }: any) {
   const { colors } = useTheme();
   const { t } = useTranslation();
+  const { loginWithGoogle, loginWithApple } = useAuth();
 
   const { height } = Dimensions.get('window');
 
   const translateValue = isAndroid ? -height * 0.2 : -height * 0.1;
 
+  const handleGoogleSignIn = async () => {
+    try {
+      await loginWithGoogle();
+
+      const hasSeenOnboarding = await AsyncStorage.getItem('hasSeenOnboarding');
+
+      console.log('hasSeenOnboarding', hasSeenOnboarding);
+
+      if (!hasSeenOnboarding) {
+        navigation.replace('Onboarding');
+      } else {
+        navigation.replace('MainTabs');
+      }
+    } catch (error) {
+      console.error('Google Sign-In Error:', error);
+    }
+  };
+
   return (
     <MainLayout>
-      <View style={[welcomeStyles.mainContainer, { transform: [{ translateY: translateValue }] }]}>
+      <View style={[welcomeStyles.mainContainer]}>
         <HeaderIconFirst />
 
         <View style={welcomeStyles.container}>
@@ -38,7 +58,7 @@ export default function WelcomeScreen({ navigation }: any) {
 
           <View style={welcomeStyles.buttonsContainer}>
             <CustomButton
-              onPress={() => signInWithGoogle(navigation)}
+              onPress={handleGoogleSignIn}
               text={t('welcome.continueWithGoogle')}
               Icon={GoogleIcon}
               type="social"
@@ -48,7 +68,7 @@ export default function WelcomeScreen({ navigation }: any) {
 
             {Platform.OS === 'ios' && (
               <CustomButton
-                onPress={() => signInWithApple(navigation)}
+                onPress={loginWithApple}
                 text={t('welcome.continueWithApple')}
                 Icon={AppleIcon}
                 type="social"

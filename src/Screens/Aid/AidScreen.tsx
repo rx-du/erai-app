@@ -13,11 +13,15 @@ import { RootStackParamList } from '../../Navigations/Navigations';
 import { useLoading } from '../../Context/LoadingContext';
 import MinimizedProtocolOverlay from '../../Features/Protocol/MinimizedProtocolOverlay';
 import { SearchInput } from '../../Components/SearchInput';
+import { useSubscription } from '../../Context/SubscriptionContext';
+import UpgradeSubscriptionDrawer from '../../Features/Subscription/UpgradeSubscriptionDrawer';
 
 export default function AidScreen() {
   const { colors } = useTheme();
   const { t, i18n } = useTranslation();
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const [showUpgradeSubscription, setShowUpgradeSubscription] = useState(false);
+  const { subscriptionDetails } = useSubscription();
 
   const [activeTab, setActiveTab] = useState(t('aid.emergencyResponse'));
 
@@ -54,6 +58,12 @@ export default function AidScreen() {
     const isFirstAid = currentTab.key === t('aid.firstAid');
 
     if (isFirstAid) {
+      const isFreeUser = subscriptionDetails.currentPlan === null;
+
+      if (isFreeUser) {
+        setShowUpgradeSubscription(true);
+        return;
+      }
       const protocolData = item.pageContent;
       const firstProtocol = protocolData?.steps?.[0];
 
@@ -125,6 +135,11 @@ export default function AidScreen() {
           ))}
       </ScrollView>
       <MinimizedProtocolOverlay />
+
+      <UpgradeSubscriptionDrawer
+        isVisible={showUpgradeSubscription}
+        onClose={() => setShowUpgradeSubscription(false)}
+      />
     </MainLayout>
   );
 }

@@ -46,7 +46,7 @@
           "subtitle": "Ensure scene safety, check responsiveness, and assess breathing",
           "timeframe": "Immediate",
           "type": "instruction",
-          "video": "sample_video.mp4",
+          "video": null,
           "status": "completed"
         },
         {
@@ -65,7 +65,7 @@
           "subtitle": "Give 325mg aspirin if patient is conscious and not allergic",
           "timeframe": "Within 5 minutes",
           "type": "instruction",
-          "video": "sample_video.mp4",
+          "video": null,
           "status": "completed"
         },
         {

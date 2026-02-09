@@ -31,7 +31,13 @@ export default function Header({
 
   return (
     <View style={headerStyle.container}>
-      <BackIcon color={colors.Button.accent.primary} onPress={onBack} />
+      <TouchableOpacity
+        onPress={onBack}
+        activeOpacity={0.7}
+        hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
+      >
+        <BackIcon color={colors.Button.accent.primary} />
+      </TouchableOpacity>
       <View style={headerStyle.subContainer}>
         {Icon && <Icon color={colors.Text.neutral.primary} />}
         <Text style={[headerStyle.text, { color: colors.Text.neutral.primary }]}>{title}</Text>

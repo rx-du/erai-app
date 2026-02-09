@@ -233,12 +233,10 @@ const PrivacyPolicyScreen = () => {
           </Text>
 
           <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
-            Your information, including Personal Data, may be transferred to — and maintained on —
-            computers located outside of your state, province, country or other governmental
-            jurisdiction where the data protection laws may differ from those of your jurisdiction.
-            If you are located outside United States and choose to provide information to us, please
-            note that we transfer the data, including Personal Data, to United States and process it
-            there.
+            Your data may be processed in the United States or other countries where our servers or
+            partners are located. We use appropriate safeguards (e.g., EU Standard Contractual
+            Clauses) when transferring data from the EU, UK, Switzerland, or other protected
+            regions.
           </Text>
 
           <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
@@ -322,16 +320,8 @@ const PrivacyPolicyScreen = () => {
           </Text>
 
           <Text style={[styles.bulletPoint, { color: colors.Text.neutral.secondary }]}>
-            • Email: privacy@emergencyapp.com
+            • Email: support@legacystudioapp.io
           </Text>
-          <Text style={[styles.bulletPoint, { color: colors.Text.neutral.secondary }]}>
-            • Address: [Your Company Address]
-          </Text>
-          <Text style={[styles.bulletPoint, { color: colors.Text.neutral.secondary }]}>
-            • Phone: [Your Contact Number]
-          </Text>
-
-          {/* Add extra padding at bottom for scroll space */}
           <View style={styles.bottomPadding} />
         </ScrollView>
       </View>

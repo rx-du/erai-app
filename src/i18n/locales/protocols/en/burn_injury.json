@@ -78,7 +78,7 @@
           "subtitle": "Remove patient from burn source and ensure area is safe",
           "timeframe": "Immediate",
           "type": "instruction",
-          "video": "burn_scene_safety.mp4",
+          "video": null,
           "status": "pending"
         },
         {
@@ -87,7 +87,7 @@
           "subtitle": "Stop, drop, and roll for flames; remove from heat source",
           "timeframe": "Immediate",
           "type": "instruction",
-          "video": "stop_burning_process.mp4",
+          "video": null,
           "status": "pending"
         },
         {
@@ -96,7 +96,7 @@
           "subtitle": "Apply cool running water for 10–20 minutes",
           "timeframe": "Within 5 minutes",
           "type": "instruction",
-          "video": "cool_the_burn.mp4",
+          "video": null,
           "status": "pending"
         },
         {
@@ -105,7 +105,7 @@
           "subtitle": "Determine burn degree and percentage of body affected",
           "timeframe": "After cooling",
           "type": "instruction",
-          "video": "assess_burn_severity.mp4",
+          "video": null,
           "status": "pending"
         },
         {

@@ -64,6 +64,7 @@ export default function AidScreen() {
         setShowUpgradeSubscription(true);
         return;
       }
+
       const protocolData = item.pageContent;
       const firstProtocol = protocolData?.steps?.[0];
 
@@ -122,7 +123,7 @@ export default function AidScreen() {
                     color:
                       index === 0 && activeTab !== i18n.t('aid.firstAid')
                         ? colors.Text.accent.primary
-                        : undefined,
+                        : colors.Text.neutral.secondary,
                   }}
                 >
                   {item.label}

@@ -41,7 +41,12 @@ export const ProtocolProvider = ({ children }: { children: ReactNode }) => {
 
   const setCurrentProtocol = (protocolId: string, protocolData: any, icon?: any) => {
     setProtocolState((prev) => {
-      if (prev.protocolId !== protocolId) {
+      const isNewProtocol = prev.protocolId !== protocolId;
+      const hasSelectedProtocolChanged =
+        protocolData?.selectedProtocol &&
+        prev.protocolData?.selectedProtocol?.id !== protocolData?.selectedProtocol?.id;
+
+      if (isNewProtocol || hasSelectedProtocolChanged) {
         return {
           protocolId,
           protocolData,
@@ -52,6 +57,15 @@ export const ProtocolProvider = ({ children }: { children: ReactNode }) => {
           compressions: 30,
         };
       }
+
+      if (prev.protocolId === protocolId) {
+        return {
+          ...prev,
+          protocolData,
+          icon: icon || prev.icon,
+        };
+      }
+
       return prev;
     });
   };

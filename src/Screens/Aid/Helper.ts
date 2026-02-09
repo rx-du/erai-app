@@ -13,6 +13,12 @@ import BurnsIcon from '../../Icons/burns-24.svg';
 import FracturesIcon from '../../Icons/fractures-24.svg';
 import WoundsIcon from '../../Icons/wounds-24.svg';
 import ActiveShooterIcon from '../../Icons/active-shooter.svg';
+import ChockingIcon from '../../Icons/chocking.svg';
+import DiabetesIcon from '../../Icons/diabetes.svg';
+import SplintingIcon from '../../Icons/splinting.svg';
+import MentalHealthIcon from '../../Icons/mental_health.svg';
+import FluiElectrolyteIcon from '../../Icons/fluid_electrolyte.svg';
+import CovidIcon from '../../Icons/virus.svg';
 
 const getCategoriesEmergency = () => [
   {
@@ -53,28 +59,33 @@ const getCategoriesEmergency = () => [
   { label: i18n.t('aid.categories.cpr'), icon: CPRIcon, pageContent: getProtocolData('CPR') },
   {
     label: i18n.t('aid.categories.choking'),
-    icon: BurnInjuryIcon,
+    icon: ChockingIcon,
     pageContent: getProtocolData('choking'),
   },
   {
     label: i18n.t('aid.categories.diabetes'),
-    icon: BurnInjuryIcon,
+    icon: DiabetesIcon,
     pageContent: getProtocolData('diabetes'),
   },
   {
     label: i18n.t('aid.categories.splinting'),
-    icon: BurnInjuryIcon,
+    icon: SplintingIcon,
     pageContent: getProtocolData('splinting'),
   },
   {
     label: i18n.t('aid.categories.mentalHealth'),
-    icon: BurnInjuryIcon,
+    icon: MentalHealthIcon,
     pageContent: getProtocolData('mental_health'),
   },
   {
     label: i18n.t('aid.categories.fluidElectrolyte'),
-    icon: BurnInjuryIcon,
+    icon: FluiElectrolyteIcon,
     pageContent: getProtocolData('fluid_electrolyte'),
+  },
+  {
+    label: i18n.t('aid.categories.fluidCovid'),
+    icon: CovidIcon,
+    pageContent: getProtocolData('fluid_covid'),
   },
 ];
 

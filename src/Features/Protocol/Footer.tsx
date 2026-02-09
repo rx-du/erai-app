@@ -3,6 +3,7 @@ import { footerStyle } from './Styles';
 
 import NoHands from '../../Icons/no-hands-32.svg';
 import Clock from '../../Icons/clock.svg';
+import Locker from '../../Icons/locked-24.svg';
 import { useTheme } from '../../Theme/ThemeContext';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -29,13 +30,10 @@ export default function Footer({ protocolData, icon, onChooseProtocol }: FooterP
   const protocols = protocolData?.protocols || [];
   const hasMultipleProtocols = protocols.length > 1;
 
-  const isCPRProtocol = protocolData?.id === 'CPR';
-  const isInFreeTrial = subscriptionDetails.isTrial === true;
   const isFreeUser = subscriptionDetails.currentPlan === null;
-  const shouldShowUpgrade = isFreeUser || (isInFreeTrial && !isCPRProtocol);
 
   const handleStartProtocol = () => {
-    if (shouldShowUpgrade) {
+    if (isFreeUser) {
       setShowUpgradeSubscription(true);
       return;
     }
@@ -49,27 +47,18 @@ export default function Footer({ protocolData, icon, onChooseProtocol }: FooterP
     });
   };
 
-  const handleChooseProtocol = () => {
-    if (shouldShowUpgrade) {
-      setShowUpgradeSubscription(true);
-      return;
-    }
-
-    onChooseProtocol?.();
-  };
-
   return (
     <View style={footerStyle.container}>
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={[footerStyle.firstContainer, { backgroundColor: colors.Button.accent.secondary }]}
         onPress={() => setShowNoHandModeModal(true)}
       >
         <NoHands color={colors.Button.accent.primary} />
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       {hasMultipleProtocols && onChooseProtocol ? (
         <TouchableOpacity
           style={[footerStyle.secondContainer, { backgroundColor: colors.Button.accent.primary }]}
-          onPress={handleChooseProtocol}
+          onPress={onChooseProtocol}
         >
           <Text style={[footerStyle.text, { color: colors.Text.neutral.white }]}>
             Choose protocol
@@ -90,15 +79,15 @@ export default function Footer({ protocolData, icon, onChooseProtocol }: FooterP
           </Text>
           <View style={footerStyle.timeContainer}>
             <Text style={[footerStyle.text, { color: colors.Text.neutral.white }]}>15 min</Text>
-            <Clock />
+            {isFreeUser ? <Locker color={colors.Text.neutral.white} /> : <Clock />}
           </View>
         </TouchableOpacity>
       )}
 
-      <NoHandsModeModal
+      {/* <NoHandsModeModal
         visible={showNoHandModeModal}
         onClose={() => setShowNoHandModeModal(false)}
-      />
+      /> */}
 
       <UpgradeSubscriptionDrawer
         isVisible={showUpgradeSubscription}

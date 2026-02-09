@@ -72,7 +72,7 @@
           "title": "Assess Consciousness Level",
           "subtitle": "Check if patient is alert, confused, or unconscious.",
           "timeframe": "Immediate",
-          "video": "treat_hypoglycemia.mp4"
+          "video": null
         },
         {
           "id": 2,
@@ -86,14 +86,14 @@
           "title": "Treat Hypoglycemia",
           "subtitle": "If blood sugar is low and patient is conscious, give glucose.",
           "timeframe": "Within 3 minutes",
-          "video": "treat_hypoglycemia.mp4"
+          "video": null
         },
         {
           "id": 4,
           "title": "Call Emergency Services",
           "subtitle": "Call 911 if patient is unconscious or condition worsens.",
           "timeframe": "Immediate",
-          "video": "treat_hypoglycemia.mp4",
+          "video": null,
           "shouldDisplayEmergencyCall": true
         },
         {

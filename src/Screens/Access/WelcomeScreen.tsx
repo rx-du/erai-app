@@ -19,22 +19,12 @@ export default function WelcomeScreen({ navigation }: any) {
   const { t } = useTranslation();
   const { loginWithGoogle, loginWithApple } = useAuth();
 
-  const { height } = Dimensions.get('window');
-
-  const translateValue = isAndroid ? -height * 0.2 : -height * 0.1;
-
-  const handleGoogleSignIn = async () => {
+  const handleSignIn = async (provider: string) => {
     try {
-      await loginWithGoogle();
-
-      const hasSeenOnboarding = await AsyncStorage.getItem('hasSeenOnboarding');
-
-      console.log('hasSeenOnboarding', hasSeenOnboarding);
-
-      if (!hasSeenOnboarding) {
-        navigation.replace('Onboarding');
+      if (provider === 'google') {
+        await loginWithGoogle();
       } else {
-        navigation.replace('MainTabs');
+        await loginWithApple();
       }
     } catch (error) {
       console.error('Google Sign-In Error:', error);
@@ -58,7 +48,7 @@ export default function WelcomeScreen({ navigation }: any) {
 
           <View style={welcomeStyles.buttonsContainer}>
             <CustomButton
-              onPress={handleGoogleSignIn}
+              onPress={() => handleSignIn('google')}
               text={t('welcome.continueWithGoogle')}
               Icon={GoogleIcon}
               type="social"
@@ -68,7 +58,7 @@ export default function WelcomeScreen({ navigation }: any) {
 
             {Platform.OS === 'ios' && (
               <CustomButton
-                onPress={loginWithApple}
+                onPress={() => handleSignIn('apple')}
                 text={t('welcome.continueWithApple')}
                 Icon={AppleIcon}
                 type="social"

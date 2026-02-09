@@ -38,241 +38,51 @@
       ]
     }
   ],
-
   "protocols": [
     {
-      "id": "severe_dehydration",
-      "title": "Severe dehydration protocol",
-      "severity": "Critical",
-      "tags": ["Fluid loss >10%", "Altered mental status", "Shock (elderly, children)"],
+      "id": "fluid_electrolyte_imbalance",
+      "title": "Fluid & Electrolyte Imbalance",
       "steps": [
         {
           "id": 1,
-          "title": "Immediate Safety Assessment",
-          "subtitle": "Ensure scene safety. Rapidly assess airway, breathing, circulation. Check mental status and vital signs.",
-          "timeframe": "30 seconds",
+          "title": "Pay Attention to Your Body",
+          "subtitle": "Notice signs like thirst, swelling, dizziness, or fatigue. Keep an eye on how often you pee and its color. Sudden weight changes can mean fluid changes.",
           "type": "instruction",
           "status": "pending"
         },
         {
           "id": 2,
-          "title": "Calculate Fluid Deficit",
-          "subtitle": "Assess dehydration severity: Mild (3–5%), Moderate (6–9%), Severe (>10%). Calculate deficit: % dehydration × weight (kg) × 10mL.",
-          "timeframe": "1 minute",
+          "title": "Drink Enough Fluids",
+          "subtitle": "Drink water regularly, especially in heat or when active. If you’re sick with vomiting or diarrhea, increase fluids. Don’t wait until you feel very thirsty.",
           "type": "instruction",
           "status": "pending"
         },
         {
           "id": 3,
-          "title": "Establish IV Access",
-          "subtitle": "Obtain large bore IV access (16–18G if possible). Consider two large bore IVs for severe dehydration.",
-          "timeframe": "2–3 minutes",
+          "title": "Avoid Too Much Fluid",
+          "subtitle": "Drinking too much water can also be a problem. Swelling in feet, hands, or shortness of breath are warning signs. Balance is key—not too little, not too much.",
           "type": "instruction",
           "status": "pending"
         },
         {
           "id": 4,
-          "title": "Initial Fluid Resuscitation",
-          "subtitle": "Adults: 500–1000ml NS bolus over 15–30 min. Pediatric: 20ml/kg NS bolus over 20 min. Reassess after each bolus.",
-          "timeframe": "15–30 minutes",
+          "title": "Replace Lost Minerals",
+          "subtitle": " When you sweat a lot, you lose minerals like salt and potassium. Eat balanced meals with fruits, vegetables, and light salts. Sports drinks can help after heavy sweating (not all the time).",
           "type": "instruction",
           "status": "pending"
         },
         {
           "id": 5,
-          "title": "Monitor Response",
-          "subtitle": "Assess improvement in BP, HR, mental status, urine output. May repeat bolus 2–3 times if needed.",
-          "timeframe": "Ongoing",
-          "type": "instruction",
-          "status": "pending"
-        }
-      ]
-    },
-
-    {
-      "id": "hyperkalemia",
-      "title": "Hyperkalemia protocol",
-      "severity": "Critical",
-      "tags": ["K+ > 6.5 mEq/L", "Cardiac arrest risk", "Peaked T-waves", "Renal failure"],
-      "steps": [
-        {
-          "id": 1,
-          "title": "Immediate Cardiac Assessment",
-          "subtitle": "Obtain 12-lead ECG immediately. Look for peaked T waves, wide QRS, sine wave pattern. Continuous cardiac monitoring.",
-          "timeframe": "1 minute",
+          "title": "Limit Excess Minerals",
+          "subtitle": "Too much salt or supplements can stress your body. Follow food labels and don’t overuse electrolyte drinks. Only take mineral supplements if advised.",
           "type": "instruction",
           "status": "pending"
         },
         {
-          "id": 2,
-          "title": "Cardiac Membrane Stabilization",
-          "subtitle": "If K+ > 6.5 mEq/L or ECG changes: Calcium gluconate 1–2g (10–20mL of 10%) IV over 5–10 minutes. May repeat once.",
-          "timeframe": "5–10 minutes",
-          "type": "instruction",
-          "status": "pending"
-        },
-        {
-          "id": 3,
-          "title": "Shift Potassium Intracellularly",
-          "subtitle": "Insulin 10 units + D50W 25g IV. Albuterol 10–20mg nebulized. Sodium bicarbonate 50mEq IV if acidotic.",
-          "timeframe": "15–30 minutes",
-          "type": "instruction",
-          "status": "pending"
-        },
-        {
-          "id": 4,
-          "title": "Remove Potassium",
-          "subtitle": "Kayexalate 15–30g PO/PR. Furosemide 40–80mg IV if not volume depleted. Consider dialysis for refractory cases.",
-          "timeframe": "30–60 minutes",
-          "type": "instruction",
-          "status": "pending"
-        },
-        {
-          "id": 5,
-          "title": "Monitor and Reassess",
-          "subtitle": "Recheck K+ in 1–2 hours. Monitor glucose q30min × 4 hours. Continuous cardiac monitoring.",
-          "timeframe": "Ongoing",
-          "type": "instruction",
-          "status": "pending"
-        }
-      ]
-    },
-
-    {
-      "id": "severe_hypokalemia",
-      "title": "Severe hypokalemia protocol",
-      "severity": "Critical",
-      "tags": ["K+ < 2.5 mEq/L", "Arrhythmias", "Paralysis", "Diuretics"],
-      "steps": [
-        {
-          "id": 1,
-          "title": "Stay Calm",
-          "subtitle": "Take a deep breath and assess the situation calmly.",
-          "type": "instruction",
-          "status": "pending"
-        },
-        {
-          "id": 2,
-          "title": "Call Emergency Service",
-          "subtitle": "Call emergency services and provide clear information about the emergency.",
+          "id": 6,
+          "title": "Know When to Get Help",
+          "subtitle": "Seek help if symptoms are severe or don’t improve. Confusion, chest discomfort, or extreme weakness need attention. Children and teens especially need proper hydration.",
           "type": "action",
-          "shouldDisplayEmergencyCall": true,
-          "status": "pending"
-        },
-        {
-          "id": 3,
-          "title": "Provide Information",
-          "subtitle": "Give your exact location, nature of emergency, and number of people involved.",
-          "type": "action",
-          "icon": "location",
-          "actionText": "My current location",
-          "status": "pending"
-        }
-      ]
-    },
-
-    {
-      "id": "hypernatremia",
-      "title": "Hypernatremia protocol",
-      "severity": "Severe",
-      "tags": ["Na > 145 mEq/L", "Seizures", "Altered consciousness", "Diabetes insipidus"],
-      "steps": [
-        {
-          "id": 1,
-          "title": "Stay Calm",
-          "subtitle": "Take a deep breath and assess the situation calmly.",
-          "type": "instruction",
-          "status": "pending"
-        },
-        {
-          "id": 2,
-          "title": "Call Emergency Service",
-          "subtitle": "Call emergency services and provide clear information about the emergency.",
-          "type": "action",
-          "shouldDisplayEmergencyCall": true,
-          "status": "pending"
-        },
-        {
-          "id": 3,
-          "title": "Provide Information",
-          "subtitle": "Give your exact location, nature of emergency, and number of people involved.",
-          "type": "action",
-          "icon": "location",
-          "actionText": "My current location",
-          "status": "pending"
-        }
-      ]
-    },
-
-    {
-      "id": "hyponatremia",
-      "title": "Hyponatremia protocol",
-      "severity": "Severe",
-      "tags": ["Na < 135 mEq/L", "Neurological symptoms", "Seizures"],
-      "steps": [
-        {
-          "id": 1,
-          "title": "Safety & De-escalation",
-          "subtitle": "Ensure scene safety. Use calm, non-confrontational approach. Assess for agitation, psychosis, or disorientation.",
-          "timeframe": "2–5 minutes",
-          "type": "instruction",
-          "status": "pending"
-        },
-        {
-          "id": 2,
-          "title": "Mental Status Assessment",
-          "subtitle": "Assess orientation, thought process, perceptions. Look for hallucinations, delusions, or command voices.",
-          "timeframe": "5–10 minutes",
-          "type": "instruction",
-          "status": "pending"
-        },
-        {
-          "id": 3,
-          "title": "Risk Assessment",
-          "subtitle": "Evaluate risk to self and others. Assess need for involuntary treatment. Consider substance use influence.",
-          "timeframe": "5–10 minutes",
-          "type": "instruction",
-          "status": "pending"
-        },
-        {
-          "id": 4,
-          "title": "Treatment Planning",
-          "subtitle": "Consider medication for severe agitation. Plan for psychiatric evaluation and appropriate disposition.",
-          "timeframe": "Ongoing",
-          "type": "instruction",
-          "status": "pending"
-        }
-      ]
-    },
-
-    {
-      "id": "fluid_overload",
-      "title": "Fluid overload protocol",
-      "severity": "Severe",
-      "tags": ["Pulmonary edema", "CHF exacerbation", "Hypertension"],
-      "steps": [
-        {
-          "id": 1,
-          "title": "Stay Calm",
-          "subtitle": "Take a deep breath and assess the situation calmly.",
-          "type": "instruction",
-          "status": "pending"
-        },
-        {
-          "id": 2,
-          "title": "Call Emergency Service",
-          "subtitle": "Call emergency services and provide clear information about the emergency.",
-          "type": "action",
-          "shouldDisplayEmergencyCall": true,
-          "status": "pending"
-        },
-        {
-          "id": 3,
-          "title": "Provide Information",
-          "subtitle": "Give your exact location, nature of emergency, and number of people involved.",
-          "type": "action",
-          "icon": "location",
-          "actionText": "My current location",
           "status": "pending"
         }
       ]

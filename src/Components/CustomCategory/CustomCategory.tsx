@@ -28,7 +28,7 @@ export default function CustomCategory({
       ]}
     >
       {Icon && <Icon color={colors.Button.accent.primary} />}
-      {label && <Text>{label}</Text>}
+      {label && <Text style={{ color: colors.Text.neutral.secondary }}>{label}</Text>}
       {children}
     </TouchableOpacity>
   );

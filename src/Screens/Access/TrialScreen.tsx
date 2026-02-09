@@ -1,30 +1,33 @@
-import React, { useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useTheme } from '../../Theme/ThemeContext';
 import { CustomButton } from '../../Components/CustomButton';
 import XIcon from '../../Icons/x-icon.svg';
 import { MainLayout } from '../Layout/MainLayout';
 import FreeTrialArrow from '../../Icons/free-trial-arrow.svg';
 import { useSubscription } from '../../Context/SubscriptionContext';
+import { useAuth } from '../../Context/AuthContext';
+import { BorderRadius } from '../../Constants/BorderRadius';
+import { MONTHLY_SUBSCRIPTION_PRICE } from '../../Context/SubscriptionContext/constants';
+import UpgradeSubscriptionDrawer from '../../Features/Subscription/UpgradeSubscriptionDrawer';
 
 export function TrialScreen({ navigation }: any) {
   const { colors } = useTheme();
-  const { startSubscription, initializeIAP } = useSubscription();
-
-  useEffect(() => {
-    initializeIAP(() => {
-      navigation.navigate('MainTabs');
-    });
-  }, [navigation, initializeIAP]);
+  const { completeOnboarding } = useAuth();
+  const [showUpgradeSubscription, setShowUpgradeSubscription] = useState(false);
 
   return (
     <MainLayout>
       <View style={trialStyles.container}>
         <View style={trialStyles.closeButton}>
-          <XIcon
-            color={colors.Text.neutral.primary}
-            onPress={() => navigation.navigate('MainTabs')}
-          />
+          <TouchableOpacity
+            onPress={async () => {
+              await completeOnboarding();
+            }}
+            hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
+          >
+            <XIcon color={colors.Text.neutral.primary} />
+          </TouchableOpacity>
         </View>
 
         <View
@@ -35,12 +38,31 @@ export function TrialScreen({ navigation }: any) {
           }}
         >
           <View style={trialStyles.section}>
-            <Text style={[trialStyles.title, { color: colors.Text.neutral.primary }]}>
-              How your trial works
+            <Text style={[trialStyles.title, { color: colors.Text.neutral.secondary }]}>
+              Premium subscription
             </Text>
 
-            <Text style={[trialStyles.subtitle, { color: colors.Text.neutral.secondary }]}>
-              First 7 days free,{'\n'}then $ 29.99/year
+            <View
+              style={{
+                paddingVertical: 12,
+                paddingHorizontal: 24,
+                borderRadius: BorderRadius.full,
+                borderColor: colors.Text.accent.primary,
+                borderWidth: 1,
+                backgroundColor: colors.Button.accent.secondary,
+                alignItems: 'center',
+              }}
+            >
+              <Text
+                style={{ fontSize: 24, fontWeight: '800', color: colors.Button.accent.primary }}
+              >
+                {' '}
+                From {MONTHLY_SUBSCRIPTION_PRICE}/month{' '}
+              </Text>
+            </View>
+
+            <Text style={[trialStyles.subtitle, { color: colors.Text.neutral.primary }]}>
+              First 7 days free
             </Text>
           </View>
 
@@ -50,7 +72,7 @@ export function TrialScreen({ navigation }: any) {
                 Today
               </Text>
               <Text style={[trialStyles.todaySubtitle, { color: colors.Text.accent.secondary }]}>
-                Unlock CPR protocol for adults.
+                Unlock all protocols.
               </Text>
             </View>
 
@@ -61,7 +83,7 @@ export function TrialScreen({ navigation }: any) {
                 In 7 days
               </Text>
               <Text style={[trialStyles.todaySubtitle, { color: colors.Text.neutral.secondary }]}>
-                Unlock all protocols. You’ll be{'\n'}charged $ 29.99, cancel anytime{'\n'}before.
+                Your will be charged and your subscription{'\n'}becomes active. Cancel anytime.
               </Text>
             </View>
           </View>
@@ -71,8 +93,7 @@ export function TrialScreen({ navigation }: any) {
             type="primary"
             width={180}
             onPress={() => {
-              startSubscription();
-              navigation.navigate('MainTabs');
+              setShowUpgradeSubscription(true);
             }}
           />
         </View>
@@ -98,6 +119,11 @@ export function TrialScreen({ navigation }: any) {
           </Text>
         </View>
       </View>
+
+      <UpgradeSubscriptionDrawer
+        isVisible={showUpgradeSubscription}
+        onClose={() => setShowUpgradeSubscription(false)}
+      />
     </MainLayout>
   );
 }
@@ -121,15 +147,15 @@ export const trialStyles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 24,
-    fontWeight: '800',
+    fontSize: 15,
+    fontWeight: '400',
     textAlign: 'center',
   },
 
   subtitle: {
     fontSize: 15,
     textAlign: 'center',
-    fontWeight: '400',
+    fontWeight: '600',
   },
 
   section: {

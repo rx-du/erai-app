@@ -17,12 +17,11 @@ import { NoHandsModeModal } from '../../Features/Emergency/NoHandsModeModal';
 
 export default function NavigationBar({ navigation, state }: BottomTabBarProps) {
   const { colors } = useTheme();
-  const [activeTab, setActiveTab] = useState<string>('Emergency');
-
   const [showNoHandModeModal, setShowNoHandModeModal] = useState(false);
 
+  const activeTab = state.routes[state.index].name;
+
   const handlePress = (tab: keyof RootTabParamList) => {
-    setActiveTab(tab);
     navigation.navigate(tab);
   };
 
@@ -55,13 +54,13 @@ export default function NavigationBar({ navigation, state }: BottomTabBarProps) 
               : colors.Button.neutral.quaternary,
         }}
       />
-      <CustomButton
+      {/* <CustomButton
         type="tertiary"
         onPress={() => setShowNoHandModeModal(true)}
         Icon={(props) => <NoHandsIcon {...props} color={colors.Text.neutral.white} />}
         width={48}
         style={{ backgroundColor: colors.Button.accent.primary }}
-      />
+      /> */}
       <CustomVerticalButton
         label="Aid"
         icon={AidIcon}

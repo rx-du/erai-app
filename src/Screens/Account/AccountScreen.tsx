@@ -17,9 +17,14 @@ import { CustomModal } from '../../Components/CustomModal';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useSubscription } from '../../Context/SubscriptionContext';
 import { useAuth } from '../../Context/AuthContext';
-import { CustomButton } from '../../Components/CustomButton';
-import CustomCategory from '../../Components/CustomCategory/CustomCategory';
-import { BorderRadius } from '../../Constants/BorderRadius';
+import UpgradeSubscriptionDrawer from '../../Features/Subscription/UpgradeSubscriptionDrawer';
+import AndroidManageSubscriptionDrawer from '../../Features/Subscription/AndroidManageSubscriptionDrawer';
+import { isAndroid } from '../../Constants/Device';
+import {
+  ANNUAL_SUBSCRIPTION_PRICE,
+  ANNUAL_SUBSCRIPTION_PRODUCT,
+  MONTHLY_SUBSCRIPTION_PRICE,
+} from '../../Context/SubscriptionContext/constants';
 
 export default function AccountScreen({ navigation }: any) {
   const { colors, theme, toggleTheme } = useTheme();
@@ -33,11 +38,11 @@ export default function AccountScreen({ navigation }: any) {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showSubscriptionDetails, setShowSubscriptionDetails] = useState(false);
   const [showUpgradeSubscription, setShowUpgradeSubscription] = useState(false);
+  const [showAndroidManageSubscriptionDrawer, setShowAndroidManageSubscriptionDrawer] =
+    useState(false);
+  const { subscriptionDetails, openSubscriptionManagement } = useSubscription();
 
-  const { subscriptionDetails, openSubscriptionManagement, startSubscription } = useSubscription();
-
-  console.log('subscriptionDetails', subscriptionDetails.isTrial);
-  const { logout } = useAuth();
+  const { logout, replayOnboarding } = useAuth();
 
   useEffect(() => {
     let isMounted = true;
@@ -81,15 +86,12 @@ export default function AccountScreen({ navigation }: any) {
   };
 
   const handleLogout = async () => {
-    await AsyncStorage.clear();
     await logout();
   };
 
   const handleDeleteAccount = async () => {
     await AsyncStorage.clear();
-    await GoogleSignin.revokeAccess();
-    await GoogleSignin.signOut();
-    navigation.replace('Welcome');
+    await logout();
   };
 
   const openAppSettings = () => {
@@ -117,11 +119,13 @@ export default function AccountScreen({ navigation }: any) {
             {t('account.title')}
           </Text>
 
-          <Text style={[styles.subtitle, { color: colors.Text.neutral.secondary }]}>
-            {t('account.loggedInAs')}
-            {'\n'}
-            {email}
-          </Text>
+          {email && (
+            <Text style={[styles.subtitle, { color: colors.Text.neutral.secondary }]}>
+              {t('account.loggedInAs')}
+              {'\n'}
+              {email}
+            </Text>
+          )}
 
           <TouchableOpacity onPress={handleLogout}>
             <Text style={[styles.logout, { color: colors.Text.accent.primary }]}>
@@ -253,7 +257,8 @@ export default function AccountScreen({ navigation }: any) {
 
             <TouchableOpacity
               style={[styles.settingItem, { backgroundColor: colors.Bg.pure }]}
-              onPress={() => {
+              onPress={async () => {
+                await replayOnboarding();
                 navigation.navigate('Onboarding', { goToAccount: true });
               }}
             >
@@ -410,8 +415,8 @@ export default function AccountScreen({ navigation }: any) {
 
       <CustomModal
         visible={showDeleteModal}
-        title="Delete my account"
-        subtitle="If you delete your account, all your data will be permanently removed and cannot be recovered."
+        title="Delete account"
+        subtitle="This action is irreversible. Deleting your account will remove all your personal data from our systems."
         onCancel={() => setShowDeleteModal(false)}
         onAction={handleDeleteAccount}
         actionName="Delete"
@@ -529,7 +534,7 @@ export default function AccountScreen({ navigation }: any) {
 
                   <TouchableOpacity
                     onPress={() => {
-                      openSubscriptionManagement();
+                      openSubscriptionManagement(subscriptionDetails.productId || '');
                     }}
                   >
                     <Text style={[styles.actionButton, { color: colors.Text.accent.primary }]}>
@@ -541,8 +546,11 @@ export default function AccountScreen({ navigation }: any) {
                 <Text
                   style={[styles.subscriptionDisclaimer, { color: colors.Text.neutral.secondary }]}
                 >
-                  If you re-activate the Premium plan, your will be charged $99 on the expiration
-                  date to keep the Premium plan.
+                  If you re-activate the Premium plan, you will be charged{' '}
+                  {subscriptionDetails.productId === ANNUAL_SUBSCRIPTION_PRODUCT
+                    ? `${ANNUAL_SUBSCRIPTION_PRICE}`
+                    : `${MONTHLY_SUBSCRIPTION_PRICE}`}{' '}
+                  on the expiration date to keep the Premium plan.
                 </Text>
               </View>
             </View>
@@ -617,6 +625,28 @@ export default function AccountScreen({ navigation }: any) {
                     {subscriptionDetails.activatedOn || 'N/A'}
                   </Text>
                 </View>
+                {subscriptionDetails.isTrial && (
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      justifyContent: 'space-between',
+                      paddingVertical: 16,
+                      borderTopWidth: 1,
+                      borderTopColor: colors.Divider.primary,
+                    }}
+                  >
+                    <Text
+                      style={[styles.subscriptionLabel, { color: colors.Text.neutral.secondary }]}
+                    >
+                      Ends in
+                    </Text>
+                    <Text
+                      style={[styles.subscriptionValue, { color: colors.Text.neutral.primary }]}
+                    >
+                      {subscriptionDetails.endsIn || 'N/A'}
+                    </Text>
+                  </View>
+                )}
                 <View
                   style={{
                     flexDirection: 'row',
@@ -629,25 +659,7 @@ export default function AccountScreen({ navigation }: any) {
                   <Text
                     style={[styles.subscriptionLabel, { color: colors.Text.neutral.secondary }]}
                   >
-                    Ends in
-                  </Text>
-                  <Text style={[styles.subscriptionValue, { color: colors.Text.neutral.primary }]}>
-                    {subscriptionDetails.endsIn || 'N/A'}
-                  </Text>
-                </View>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    paddingVertical: 16,
-                    borderTopWidth: 1,
-                    borderTopColor: colors.Divider.primary,
-                  }}
-                >
-                  <Text
-                    style={[styles.subscriptionLabel, { color: colors.Text.neutral.secondary }]}
-                  >
-                    {subscriptionDetails.isTrial ? 'Billing starting on' : 'Renews annualy on'}
+                    {subscriptionDetails.isTrial ? 'Billing starting on' : 'Renews on'}
                   </Text>
                   <Text style={[styles.subscriptionValue, { color: colors.Text.neutral.primary }]}>
                     {subscriptionDetails.billingStartingOn || 'N/A'}
@@ -668,7 +680,9 @@ export default function AccountScreen({ navigation }: any) {
                     Payment
                   </Text>
                   <Text style={[styles.subscriptionValue, { color: colors.Text.neutral.primary }]}>
-                    {subscriptionDetails.payment || 'N/A'} / Year
+                    {subscriptionDetails.productId === ANNUAL_SUBSCRIPTION_PRODUCT
+                      ? `${ANNUAL_SUBSCRIPTION_PRICE}/Year`
+                      : `${MONTHLY_SUBSCRIPTION_PRICE}/Month`}
                   </Text>
                 </View>
               </View>
@@ -688,11 +702,16 @@ export default function AccountScreen({ navigation }: any) {
 
                   <TouchableOpacity
                     onPress={() => {
-                      openSubscriptionManagement();
+                      if (isAndroid) {
+                        setShowSubscriptionDetails(false);
+                        setShowAndroidManageSubscriptionDrawer(true);
+                      } else {
+                        openSubscriptionManagement(subscriptionDetails.productId || '');
+                      }
                     }}
                   >
                     <Text style={[styles.actionButton, { color: colors.Text.accent.primary }]}>
-                      Cancel my subscription
+                      Manage my subscription
                     </Text>
                   </TouchableOpacity>
                 </View>
@@ -700,8 +719,9 @@ export default function AccountScreen({ navigation }: any) {
                 <Text
                   style={[styles.subscriptionDisclaimer, { color: colors.Text.neutral.secondary }]}
                 >
-                  If you cancel your subscription, your Free trial will remain active until its
-                  expiration. After that, you'll be switched to the Free plan.
+                  If you cancel your subscription, your{' '}
+                  {subscriptionDetails.isTrial ? 'Free trial' : 'Premium plan'} will remain active
+                  until its expiration. After that, you'll be switched to the Free plan.
                 </Text>
               </View>
             </View>
@@ -709,89 +729,15 @@ export default function AccountScreen({ navigation }: any) {
         </View>
       </CustomDrawer>
 
-      <CustomDrawer
+      <UpgradeSubscriptionDrawer
         isVisible={showUpgradeSubscription}
-        isSmallDrawer
-        onClose={() => {
-          setShowUpgradeSubscription(false);
-        }}
-      >
-        <View style={{ flexDirection: 'column', paddingHorizontal: 24, paddingTop: 48, gap: 48 }}>
-          <View
-            style={{
-              flexDirection: 'column',
-              justifyContent: 'flex-start',
-              alignItems: 'center',
-              gap: 12,
-            }}
-          >
-            <Text style={{ fontSize: 24, fontWeight: '700', lineHeight: 31.2 }}>Get premium</Text>
-            <Text
-              style={{
-                fontSize: 15,
-                fontWeight: '400',
-                lineHeight: 22.5,
-                textAlign: 'center',
-                color: colors.Text.neutral.secondary,
-              }}
-            >
-              Unlock all the power of this mobile tool and get access to all the guides and
-              protocols.
-            </Text>
-          </View>
-          <View style={{ gap: 16, justifyContent: 'flex-start', alignItems: 'center' }}>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                width: '100%',
-                paddingVertical: 12,
-                paddingHorizontal: 16,
-                backgroundColor: colors.Button.neutral.secondary,
-                borderRadius: BorderRadius.s,
-                height: 50,
-              }}
-            >
-              <Text
-                style={{
-                  fontSize: 15,
-                  fontWeight: '400',
-                  lineHeight: 22.5,
-                  textAlign: 'center',
-                  color: colors.Text.neutral.secondary,
-                }}
-              >
-                Annual
-              </Text>
-              <Text
-                style={{
-                  fontSize: 15,
-                  fontWeight: '700',
-                  lineHeight: 22.5,
-                  textAlign: 'center',
-                  color: colors.Text.neutral.primary,
-                }}
-              >
-                $29.99/Year
-              </Text>
-            </View>
-            <CustomButton
-              onPress={() => {
-                setShowUpgradeSubscription(false);
-                startSubscription();
-              }}
-              text="Upgrade now"
-              type="primary"
-              dimension="large"
-              width={145}
-            />
-          </View>
-          <Text style={[styles.subscriptionDisclaimer, { color: colors.Text.neutral.secondary }]}>
-            Your subscription renews annually. Cancel anytime. By placing this order, you agree to
-            the Terms of Service and Privacy Policy.
-          </Text>
-        </View>
-      </CustomDrawer>
+        onClose={() => setShowUpgradeSubscription(false)}
+      />
+
+      <AndroidManageSubscriptionDrawer
+        isVisible={showAndroidManageSubscriptionDrawer}
+        onClose={() => setShowAndroidManageSubscriptionDrawer(false)}
+      />
     </MainLayout>
   );
 }

@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { useTheme } from '../../Theme/ThemeContext';
 import { CustomDrawer } from '../../Components/CustomDrawer';
 import ArrowIcon from '../../Icons/arrow-protocol.svg';
+import Locker from '../../Icons/locked-24.svg';
+import { useSubscription } from '../../Context/SubscriptionContext';
+import { CustomModal } from '../../Components/CustomModal';
+import UpgradeSubscriptionDrawer from '../Subscription/UpgradeSubscriptionDrawer';
 
 type Protocol = {
   id: string;
@@ -27,41 +31,61 @@ export default function ProtocolSelectionModal({
   protocolTitle,
 }: ProtocolSelectionModalProps) {
   const { colors } = useTheme();
+  const [showUpgradeSubscription, setShowUpgradeSubscription] = useState(false);
 
   const handleSelectProtocol = (protocol: Protocol) => {
     onSelectProtocol(protocol);
     onClose();
   };
 
+  const handleShowUpgrade = () => {
+    onClose();
+    setTimeout(() => {
+      if (isFreeUser) {
+        setShowUpgradeSubscription(true);
+      }
+    }, 500);
+  };
+
+  const { subscriptionDetails } = useSubscription();
+  const isFreeUser = subscriptionDetails.currentPlan === null;
+
   return (
-    <CustomDrawer isVisible={visible} onClose={onClose} title={protocolTitle} isSmallDrawer>
-      <ScrollView style={styles.protocolList} showsVerticalScrollIndicator={false}>
-        {protocols.map((protocol) => (
-          <TouchableOpacity
-            key={protocol.id}
-            style={[
-              styles.protocolItem,
-              {
-                backgroundColor: colors.Bg.pure,
-              },
-            ]}
-            onPress={() => handleSelectProtocol(protocol)}
-          >
-            <View style={styles.protocolInfo}>
-              <Text style={[styles.protocolTitle, { color: colors.Text.neutral.primary }]}>
-                {protocol.title}
-              </Text>
-              {protocol.ageRange && (
-                <Text style={[styles.protocolAge, { color: colors.Text.neutral.secondary }]}>
-                  {protocol.ageRange}
+    <>
+      <CustomDrawer isVisible={visible} onClose={onClose} title={protocolTitle} isSmallDrawer>
+        <ScrollView style={styles.protocolList} showsVerticalScrollIndicator={false}>
+          {protocols.map((protocol) => (
+            <TouchableOpacity
+              key={protocol.id}
+              style={[
+                styles.protocolItem,
+                {
+                  backgroundColor: colors.Bg.pure,
+                },
+              ]}
+              onPress={isFreeUser ? handleShowUpgrade : () => handleSelectProtocol(protocol)}
+            >
+              <View style={styles.protocolInfo}>
+                <Text style={[styles.protocolTitle, { color: colors.Text.neutral.primary }]}>
+                  {protocol.title}
                 </Text>
-              )}
-            </View>
-            <ArrowIcon />
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
-    </CustomDrawer>
+                {protocol.ageRange && (
+                  <Text style={[styles.protocolAge, { color: colors.Text.neutral.secondary }]}>
+                    {protocol.ageRange}
+                  </Text>
+                )}
+              </View>
+              {isFreeUser ? <Locker color={colors.Text.accent.primary} /> : <ArrowIcon />}
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+      </CustomDrawer>
+
+      <UpgradeSubscriptionDrawer
+        isVisible={showUpgradeSubscription}
+        onClose={() => setShowUpgradeSubscription(false)}
+      />
+    </>
   );
 }
 

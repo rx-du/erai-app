@@ -16,7 +16,6 @@ import ProtocolScreen from '../Screens/Aid/Protocol/ProtocolScreen';
 import { SvgProps } from 'react-native-svg';
 import ProtocolStepScreen from '../Screens/Aid/Protocol/ProtocolStepScreen';
 import EmergencyContactScreen from '../Screens/Emergency/EmergencyContactScreen';
-import SubscriptionScreen from '../Screens/Subscription/SubscriptionScreen';
 import EducationalPurposesScreen from '../Screens/Access/EducationalPurposesScreen';
 import PrivacyPolicyScreen from '../Screens/Access/PrivacyPolicyScreen';
 import TermsOfServiceScreen from '../Screens/Access/TermsOfServiceScreen';
@@ -78,35 +77,35 @@ export type RootStackParamList = {
 };
 
 export default function Navigation() {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, hasSeenOnboarding } = useAuth();
   const { showLoading, hideLoading } = useLoading();
 
-  console.log('isAuthenticated', isAuthenticated);
-
   useEffect(() => {
-    if (isAuthenticated === null) {
+    if (isAuthenticated === null || hasSeenOnboarding === null) {
       showLoading('Loading...');
     } else {
       hideLoading();
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, hasSeenOnboarding]);
 
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {isAuthenticated ? (
-          <>
-            <Stack.Screen name="MainTabs" component={MainTabs} />
-            <Stack.Screen name="Protocol" component={ProtocolScreen} />
-            <Stack.Screen name="ProtocolStep" component={ProtocolStepScreen} />
-            <Stack.Screen name="EmergencyContact" component={EmergencyContactScreen} />
-            <Stack.Screen name="Subscription" component={SubscriptionScreen} />
-            <Stack.Screen name="EducationalPurposes" component={EducationalPurposesScreen} />
-            <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicyScreen} />
-            <Stack.Screen name="TermsOfService" component={TermsOfServiceScreen} />
-            <Stack.Screen name="SearchAid" component={SearchAidScreen} />
+          hasSeenOnboarding ? (
+            <>
+              <Stack.Screen name="MainTabs" component={MainTabs} />
+              <Stack.Screen name="Protocol" component={ProtocolScreen} />
+              <Stack.Screen name="ProtocolStep" component={ProtocolStepScreen} />
+              <Stack.Screen name="EmergencyContact" component={EmergencyContactScreen} />
+              <Stack.Screen name="EducationalPurposes" component={EducationalPurposesScreen} />
+              <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicyScreen} />
+              <Stack.Screen name="TermsOfService" component={TermsOfServiceScreen} />
+              <Stack.Screen name="SearchAid" component={SearchAidScreen} />
+            </>
+          ) : (
             <Stack.Screen name="Onboarding" component={OnboardingScreen} />
-          </>
+          )
         ) : (
           <>
             <Stack.Screen name="Welcome" component={WelcomeScreen} />

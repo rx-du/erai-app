@@ -93,7 +93,7 @@
           "subtitle": "Identify signs of severe allergic reaction",
           "timeframe": "Immediate",
           "type": "instruction",
-          "video": "recognize_anaphylaxis.mp4",
+          "video": null,
           "status": "pending"
         },
         {
@@ -113,7 +113,7 @@
           "subtitle": "Use EpiPen or epinephrine auto-injector if available",
           "timeframe": "Within 2 minutes",
           "type": "instruction",
-          "video": "administer_epinephrine.mp4",
+          "video": null,
           "link": "epinephrine_dose",
           "status": "pending",
           "shouldDisplayEpinephineDose": true
@@ -124,7 +124,7 @@
           "subtitle": "Keep patient lying down with legs elevated",
           "timeframe": "After epinephrine",
           "type": "instruction",
-          "video": "position_patient.mp4",
+          "video": null,
           "status": "pending"
         },
         {

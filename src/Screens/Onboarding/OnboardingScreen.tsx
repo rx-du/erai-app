@@ -8,6 +8,8 @@ import { CustomButton } from '../../Components/CustomButton';
 import { TrialScreen } from '../Access/TrialScreen';
 import { useRoute, RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from '../../Navigations/Navigations';
+import { useAuth } from '../../Context/AuthContext';
+import { useSubscription } from '../../Context/SubscriptionContext';
 
 export function OnboardingScreen({ navigation }: any) {
   const route = useRoute<RouteProp<RootStackParamList, 'Onboarding'>>();
@@ -15,6 +17,7 @@ export function OnboardingScreen({ navigation }: any) {
   const { colors } = useTheme();
   const pagerRef = useRef<PagerView>(null);
   const [page, setPage] = useState(0);
+  const { completeOnboarding } = useAuth();
 
   const pages = [
     {
@@ -42,10 +45,11 @@ export function OnboardingScreen({ navigation }: any) {
 
   const isLastPage = page === pages.length - 1;
   const isBeforeLastPage = page === pages.length - 2;
+  const { subscriptionDetails } = useSubscription();
 
-  const handleContinue = () => {
-    if (goToAccount && isBeforeLastPage) {
-      navigation.navigate('MainTabs', { screen: 'Account' });
+  const handleContinue = async () => {
+    if ((goToAccount || subscriptionDetails.currentPlan !== null) && isBeforeLastPage) {
+      await completeOnboarding();
       return;
     }
 
@@ -53,8 +57,6 @@ export function OnboardingScreen({ navigation }: any) {
       pagerRef.current?.setPage(page + 1);
       return;
     }
-
-    navigation.navigate('MainTabs');
   };
 
   return (

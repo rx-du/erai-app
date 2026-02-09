@@ -62,7 +62,11 @@ export default function MinimizedProtocolOverlay() {
         </View>
 
         <View style={stepFlowStyle.minimizedIconsContainer}>
-          <TouchableOpacity onPress={handleDropdownToggle} activeOpacity={0.7}>
+          <TouchableOpacity
+            onPress={handleDropdownToggle}
+            activeOpacity={0.7}
+            hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
+          >
             <PointsIcon />
           </TouchableOpacity>
           <TouchableOpacity onPress={handleExpand}>

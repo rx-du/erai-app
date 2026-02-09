@@ -10,12 +10,13 @@ import {
   checkIsTrialActive,
   getEmptySubscriptionDetails,
 } from './utils';
-import type { SubscriptionDetails } from './types';
+import type { ChangeSubscriptionParams, SubscriptionDetails } from './types';
 
 export class SubscriptionService {
   static async initializeConnection(): Promise<boolean> {
     try {
       const connected = await RNIAP.initConnection();
+
       if (!connected) {
         throw new Error(ERROR_MESSAGES.INIT_CONNECTION_FAILED);
       }
@@ -40,48 +41,21 @@ export class SubscriptionService {
 
       const subscription = activeSubs.find((sub) => SUBSCRIPTION_SKUS.includes(sub.productId));
 
-      const price = await this.fetchSubscriptionPrice(subscription);
-
       if (!subscription) {
         return getEmptySubscriptionDetails();
       }
 
-      return this.processSubscriptionDetails(subscription, isTrial, price);
+      return this.processSubscriptionDetails(subscription, isTrial);
     } catch (error) {
+      console.log('[RN-IAP]', 'Failed to get active subscriptions:', error);
       throw new Error(ERROR_MESSAGES.SUBSCRIPTION_CHECK_FAILED);
     }
   }
 
-  private static fetchSubscriptionPrice = async (subscription?: ActiveSubscription) => {
-    if (subscription?.productId) {
-      try {
-        const products = await RNIAP.fetchProducts({
-          skus: [subscription.productId],
-          type: 'subs',
-        });
-
-        console.log('products', products);
-        console.log('purchases', await RNIAP.getAvailablePurchases());
-        console.log('subs', await RNIAP.getActiveSubscriptions());
-
-        if (products && products.length > 0) {
-          return products[0].displayPrice;
-        }
-
-        return 'N/A';
-      } catch (error) {
-        console.error('Eroare la preluarea prețului:', error);
-        return 'N/A';
-      }
-    }
-    return 'N/A';
-  };
-
-  private static processSubscriptionDetails(
+  private static async processSubscriptionDetails(
     subscription: ActiveSubscription,
-    isTrial: boolean,
-    price: string
-  ): SubscriptionDetails {
+    isTrial: boolean
+  ): Promise<SubscriptionDetails> {
     const transactionDate = subscription.transactionDate
       ? new Date(subscription.transactionDate)
       : null;
@@ -94,41 +68,48 @@ export class SubscriptionService {
       subscription.autoRenewingAndroid === false ||
       subscription.renewalInfoIOS?.willAutoRenew === false;
 
-    let daysRemaining: number;
-    let endsIn: string;
-    let billingStartingOn: string | null = null;
+    const targetDate = this.getTargetDate(subscription, transactionDate, isTrial);
 
-    if (isTrial) {
-      const billingDate = calculateTrialBillingDate(transactionDate);
-      daysRemaining = calculateDaysRemaining(billingDate);
-      endsIn = `${daysRemaining} days`;
-      billingStartingOn = formatDate(billingDate);
-    } else {
-      const expirationDate = calculateExpirationDate(transactionDate);
-      billingStartingOn = formatDate(expirationDate);
-      daysRemaining = calculateDaysRemaining(expirationDate);
-      endsIn = `${daysRemaining} days`;
-    }
+    const daysRemaining = subscription.daysUntilExpirationIOS ?? calculateDaysRemaining(targetDate);
 
     return {
       currentPlan: isTrial ? 'Free trial' : 'Premium',
       activatedOn: formatDate(transactionDate),
-      endsIn,
-      billingStartingOn,
-      payment: price,
+      endsIn: `${daysRemaining} days`,
+      billingStartingOn: formatDate(targetDate),
       isTrial,
       isCanceled,
+      purchaseToken: subscription.purchaseToken || null,
+      productId: subscription.productId || null,
     };
   }
 
-  static async purchaseSubscription(): Promise<void> {
+  private static getTargetDate(
+    subscription: ActiveSubscription,
+    transactionDate: Date,
+    isTrial: boolean
+  ): Date {
+    const renewalDate = subscription.renewalInfoIOS?.renewalDate
+      ? new Date(subscription.renewalInfoIOS.renewalDate)
+      : null;
+
+    if (renewalDate) {
+      return renewalDate;
+    }
+
+    return isTrial
+      ? calculateTrialBillingDate(transactionDate)
+      : calculateExpirationDate(transactionDate, subscription.productId);
+  }
+
+  static async purchaseSubscription(sku: string): Promise<void> {
     try {
       if (Platform.OS === 'ios') {
         await RNIAP.requestPurchase({
           type: 'subs',
           request: {
             apple: {
-              sku: 'com.annual.premium',
+              sku: sku,
             },
           },
         });
@@ -137,7 +118,7 @@ export class SubscriptionService {
           type: 'subs',
           request: {
             android: {
-              skus: ['test3'],
+              skus: [sku],
             },
           },
         });
@@ -147,77 +128,56 @@ export class SubscriptionService {
     }
   }
 
-  // static async upgradeSubscription(
-  //   newSku: string,
-  //   replacementMode?:
-  //     | 'with-time-proration'
-  //     | 'charge-prorated-price'
-  //     | 'charge-full-price'
-  //     | 'without-proration'
-  //     | 'deferred'
-  // ): Promise<void> {
-  //   try {
-  //     if (Platform.OS !== 'android') {
-  //       throw new Error('Upgrade subscription is only available on Android');
-  //     }
+  static async changeSubscription({
+    newSku,
+    oldPurchaseToken,
+    mode,
+  }: ChangeSubscriptionParams): Promise<void> {
+    if (Platform.OS !== 'android') {
+      throw new Error('Subscription change only supported on Android');
+    }
 
-  //     const activeSubs = await RNIAP.getActiveSubscriptions();
+    await RNIAP.requestPurchase({
+      type: 'subs',
+      request: {
+        android: {
+          skus: [newSku],
+          purchaseTokenAndroid: oldPurchaseToken,
+          replacementModeAndroid: 6,
+        },
+      },
+    });
+  }
 
-  //     if (!activeSubs || activeSubs.length === 0) {
-  //       throw new Error('No active subscription found to upgrade');
-  //     }
+  static async upgradeSubscription(newSku: string, oldPurchaseToken: string): Promise<void> {
+    return this.changeSubscription({
+      newSku,
+      oldPurchaseToken,
+      mode: 'upgrade',
+    });
+  }
 
-  //     const currentSubscription = activeSubs.find((sub) =>
-  //       SUBSCRIPTION_SKUS.includes(sub.productId)
-  //     );
+  static async downgradeSubscription(newSku: string, oldPurchaseToken: string): Promise<void> {
+    return this.changeSubscription({
+      newSku,
+      oldPurchaseToken,
+      mode: 'downgrade',
+    });
+  }
 
-  //     if (!currentSubscription) {
-  //       throw new Error('No valid subscription found to upgrade');
-  //     }
-
-  //     const purchaseToken = currentSubscription.purchaseToken;
-  //     const oldProductId = currentSubscription.productId;
-
-  //     if (!purchaseToken) {
-  //       throw new Error('Purchase token not found for current subscription');
-  //     }
-
-  //     const selectedReplacementMode = replacementMode ?? 'charge-full-price';
-
-  //     await RNIAP.requestPurchase({
-  //       type: 'subs',
-  //       request: {
-  //         android: {
-  //           skus: [newSku],
-  //           purchaseTokenAndroid: purchaseToken,
-  //           subscriptionProductReplacementParams: {
-  //             oldProductId,
-  //             replacementMode: selectedReplacementMode,
-  //           },
-  //         },
-  //       },
-  //     });
-  //   } catch (error) {
-  //     if (error instanceof Error) {
-  //       throw error;
-  //     }
-  //     throw new Error('Failed to upgrade subscription. Please try again.');
-  //   }
-  // }
-
-  static async openSubscriptionManagement(): Promise<void> {
+  static async openSubscriptionManagement(productId: string): Promise<void> {
     try {
       const url =
         Platform.OS === 'ios'
           ? SUBSCRIPTION_MANAGEMENT_URLS.ios
-          : SUBSCRIPTION_MANAGEMENT_URLS.android;
+          : SUBSCRIPTION_MANAGEMENT_URLS.android + `&sku=${productId}`;
 
       const canOpen = await Linking.canOpenURL(url);
 
       if (!canOpen) {
         throw new Error(ERROR_MESSAGES.UNABLE_TO_OPEN_URL);
       }
-      console.log('url', url);
+
       await Linking.openURL(url);
     } catch (error) {
       throw new Error(ERROR_MESSAGES.CANCEL_SUBSCRIPTION_FAILED);

@@ -41,25 +41,7 @@ const TermsOfServiceScreen = () => {
           </Text>
 
           <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
-            2. Eligibility
-          </Text>
-
-          <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
-            You must be at least 13 years old to use this application. By using the Service, you
-            represent and warrant that you meet this age requirement.
-          </Text>
-
-          <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
-            3. Eligibility
-          </Text>
-
-          <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
-            You must be at least 13 years old to use this application. By using the Service, you
-            represent and warrant that you meet this age requirement.
-          </Text>
-
-          <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
-            4. License to Use the App
+            2. License to Use the App
           </Text>
 
           <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
@@ -69,7 +51,7 @@ const TermsOfServiceScreen = () => {
           </Text>
 
           <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
-            5. Compliance Notice of the DMCA - Children's Online Privacy Protection Act (COPPA)
+            3. Compliance Notice of the DMCA - Children's Online Privacy Protection Act (COPPA)
           </Text>
 
           <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
@@ -85,7 +67,7 @@ const TermsOfServiceScreen = () => {
           </Text>
 
           <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
-            6. No Provision of Scholarship
+            4. No Provision of Scholarship
           </Text>
 
           <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
@@ -95,7 +77,7 @@ const TermsOfServiceScreen = () => {
           </Text>
 
           <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
-            7. User Responsibilities
+            5. User Responsibilities
           </Text>
 
           <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
@@ -116,7 +98,7 @@ const TermsOfServiceScreen = () => {
           </Text>
 
           <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
-            8. Prohibited Conduct
+            6. Prohibited Conduct
           </Text>
 
           <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
@@ -137,7 +119,7 @@ const TermsOfServiceScreen = () => {
           </Text>
 
           <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
-            9. Condition: Part II
+            7. Condition: Part II
           </Text>
 
           <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
@@ -147,7 +129,7 @@ const TermsOfServiceScreen = () => {
           </Text>
 
           <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
-            10. Privacy
+            8. Privacy
           </Text>
 
           <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
@@ -157,7 +139,7 @@ const TermsOfServiceScreen = () => {
           </Text>
 
           <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
-            11. Third-Party Services
+            9. Third-Party Services
           </Text>
 
           <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
@@ -167,7 +149,7 @@ const TermsOfServiceScreen = () => {
           </Text>
 
           <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
-            12. Intellectual Property
+            10. Intellectual Property
           </Text>
 
           <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
@@ -177,7 +159,7 @@ const TermsOfServiceScreen = () => {
           </Text>
 
           <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
-            13. Termination
+            11. Termination
           </Text>
 
           <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
@@ -187,7 +169,7 @@ const TermsOfServiceScreen = () => {
           </Text>
 
           <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
-            14. Limitation of Liability
+            12. Limitation of Liability
           </Text>
 
           <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
@@ -198,7 +180,7 @@ const TermsOfServiceScreen = () => {
           </Text>
 
           <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
-            15. Indemnification
+            13. Indemnification
           </Text>
 
           <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
@@ -209,7 +191,7 @@ const TermsOfServiceScreen = () => {
           </Text>
 
           <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
-            16. Governing Law
+            14. Governing Law
           </Text>
 
           <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
@@ -218,7 +200,7 @@ const TermsOfServiceScreen = () => {
           </Text>
 
           <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
-            17. Changes to the Terms of Service
+            15. Changes to the Terms of Service
           </Text>
 
           <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
@@ -229,7 +211,7 @@ const TermsOfServiceScreen = () => {
           </Text>
 
           <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
-            18. Contact Information
+            16. Contact Information
           </Text>
 
           <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
@@ -237,10 +219,7 @@ const TermsOfServiceScreen = () => {
           </Text>
 
           <Text style={[styles.bulletPoint, { color: colors.Text.neutral.secondary }]}>
-            • Email: support@emergencyapp.com
-          </Text>
-          <Text style={[styles.bulletPoint, { color: colors.Text.neutral.secondary }]}>
-            • Address: [Your Company Address]
+            • Email: support@legacystudioapp.io
           </Text>
 
           {/* Add extra padding at bottom for scroll space */}

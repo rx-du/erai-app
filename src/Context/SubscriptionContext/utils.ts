@@ -1,5 +1,12 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { TRIAL_DURATION_DAYS, SUBSCRIPTION_DURATION_YEARS, STORAGE_KEYS } from './constants';
+import * as RNIAP from 'react-native-iap';
+import {
+  TRIAL_DURATION_DAYS,
+  STORAGE_KEYS,
+  SUBSCRIPTION_SKUS,
+  ANNUAL_SUBSCRIPTION_PRODUCT,
+} from './constants';
+import { isIos } from '../../Constants/Device';
 
 export const formatDate = (date: Date): string => {
   return date
@@ -17,9 +24,14 @@ export const calculateDaysRemaining = (expirationDate: Date): number => {
   return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 };
 
-export const calculateExpirationDate = (transactionDate: Date): Date => {
+export const calculateExpirationDate = (transactionDate: Date, productId: string): Date => {
   const expirationDate = new Date(transactionDate);
-  expirationDate.setFullYear(expirationDate.getFullYear() + SUBSCRIPTION_DURATION_YEARS);
+  if (productId === ANNUAL_SUBSCRIPTION_PRODUCT) {
+    expirationDate.setFullYear(expirationDate.getFullYear() + 1);
+  } else {
+    expirationDate.setMonth(expirationDate.getMonth() + 1);
+  }
+
   return expirationDate;
 };
 
@@ -31,6 +43,13 @@ export const calculateTrialBillingDate = (transactionDate: Date): Date => {
 
 export const checkIsTrialActive = async (): Promise<boolean> => {
   try {
+    if (isIos) {
+      const activePurchases = await RNIAP.getAvailablePurchases();
+      const purchase = activePurchases.find((p) => SUBSCRIPTION_SKUS.includes(p.productId));
+
+      return purchase?.offerIOS !== null;
+    }
+
     const freeTrialUntil = await AsyncStorage.getItem(STORAGE_KEYS.FREE_TRIAL_UNTIL);
     if (!freeTrialUntil) {
       return false;
@@ -47,13 +66,8 @@ export const checkIsTrialActive = async (): Promise<boolean> => {
 
 export const setTrialEndDate = async (): Promise<void> => {
   const now = new Date();
-  //const trialEnds = new Date(now.getTime() + TRIAL_DURATION_DAYS * 24 * 60 * 60 * 1000);
-  const trialEnds = new Date(now.getTime() + 5 * 60 * 1000);
+  const trialEnds = new Date(now.getTime() + TRIAL_DURATION_DAYS * 24 * 60 * 60 * 1000);
   await AsyncStorage.setItem(STORAGE_KEYS.FREE_TRIAL_UNTIL, trialEnds.toISOString());
-};
-
-export const markOnboardingComplete = async (): Promise<void> => {
-  await AsyncStorage.setItem(STORAGE_KEYS.HAS_SEEN_ONBOARDING, 'true');
 };
 
 export const getEmptySubscriptionDetails = () => ({
@@ -61,8 +75,9 @@ export const getEmptySubscriptionDetails = () => ({
   activatedOn: null,
   endsIn: null,
   billingStartingOn: null,
-  payment: null,
   isTrial: false,
   daysRemaining: null,
   isCanceled: false,
+  purchaseToken: null,
+  productId: null,
 });

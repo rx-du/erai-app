@@ -60,7 +60,12 @@ export default function ProtocolScreen() {
         categories={categoryNames}
         selectedCategoryIndex={selectedCategoryIndex}
         onCategorySelect={handleTabSelect}
-        onBack={onBack || (() => navigation.navigate('MainTabs', { screen: 'Aid' }))}
+        onBack={
+          onBack ||
+          (() => {
+            navigation.navigate('MainTabs', { screen: 'Aid' });
+          })
+        }
       />
       <PagerView
         ref={pagerRef}

@@ -1,0 +1,57 @@
+{
+  "id": "fluid_covid",
+  "title": "Flu & Covid Symptoms",
+  "category": [],
+  "protocols": [
+    {
+      "id": "flu_covid_symptoms",
+      "title": "Flu / COVID-Like Symptoms",
+      "severity": "Moderate",
+      "tags": ["Respiratory", "Infection", "Recovery"],
+      "steps": [
+        {
+          "id": 1,
+          "title": "Rest Your Body",
+          "subtitle": "Get plenty of sleep. Avoid sports or heavy activity. Let your body focus on healing.",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Stay Hydrated",
+          "subtitle": "Drink water, soup, or warm drinks. Small sips are okay if you don’t feel well. Fluids help specifically with fever and congestion.",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Manage Fever & Aches",
+          "subtitle": "Use fever-reducing medicine only as directed by a parent or doctor. Dress in light clothing. Lukewarm showers can help comfort.",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Ease Breathing & Congestion",
+          "subtitle": "Use a humidifier or warm showers. Rest with your head slightly raised.  Blow your nose gently and often.",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Prevent Spreading Illness",
+          "subtitle": "Stay home. Cover coughs. Wash hands often. Wear a mask if advised.",
+          "type": "instruction",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Know When to Get Help",
+          "subtitle": "Get help if symptoms worsen or don’t improve. Seek hospital care for trouble breathing, chest pain, or high fever. Call Emergency Medical Services for advanced Medical Care.",
+          "type": "action",
+          "status": "pending"
+        }
+      ]
+    }
+  ]
+}

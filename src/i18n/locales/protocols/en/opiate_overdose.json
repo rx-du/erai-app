@@ -136,7 +136,7 @@
         {
           "id": 4,
           "title": "Assess Breathing & Pulse",
-          "subtitle": "Check for adequate breathing (rate 8–10/min, good depth). Assess pulse and skin color. Look for cyanosis.",
+          "subtitle": "Check for adequate breathing (rate >10/min, good depth). Assess pulse, skin color, look for cyanosis. Check Pupils (pin-point pupils sign of opiate overdose).",
           "timeframe": "Immediate",
           "type": "instruction",
           "status": "pending"

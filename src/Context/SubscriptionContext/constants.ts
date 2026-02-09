@@ -1,31 +1,31 @@
 import { Platform } from 'react-native';
 
-// Subscription Product IDs
 export const SUBSCRIPTION_SKUS = Platform.select({
-  ios: ['com.annual.premium'],
-  android: ['test3'],
+  ios: ['com.annual.premium', 'com.monthly.premium'],
+  android: ['com.annual.premium', 'com.monthly.premium'],
   default: [],
 });
 
-// Trial Configuration
 export const TRIAL_DURATION_DAYS = 7;
 
-// Subscription Configuration
-export const SUBSCRIPTION_DURATION_YEARS = 1;
+export const ANNUAL_SUBSCRIPTION_PRICE = '$24.99';
 
-// Storage Keys
+export const MONTHLY_SUBSCRIPTION_PRICE = '$2.99';
+
+export const ANNUAL_SUBSCRIPTION_PRODUCT = 'com.annual.premium';
+
+export const MONTHLY_SUBSCRIPTION_PRODUCT = 'com.monthly.premium';
+
 export const STORAGE_KEYS = {
   FREE_TRIAL_UNTIL: 'freeTrialUntil',
   HAS_SEEN_ONBOARDING: 'hasSeenOnboarding',
 } as const;
 
-// Platform URLs
 export const SUBSCRIPTION_MANAGEMENT_URLS = {
   ios: 'https://apps.apple.com/account/subscriptions',
-  android: 'https://play.google.com/store/account/subscriptions?package=com.eraiapp&sku=test3',
+  android: 'https://play.google.com/store/account/subscriptions?package=com.eraiapp',
 } as const;
 
-// Error Messages
 export const ERROR_MESSAGES = {
   INIT_CONNECTION_FAILED: 'Failed to initialize in-app purchases',
   SUBSCRIPTION_CHECK_FAILED: 'Failed to verify subscription status',

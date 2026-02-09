@@ -33,7 +33,7 @@ type ProtocolStepFlowProps = {
 };
 
 const MEDIA_MAP: Record<string, any> = {
-  'sample_video.mp4': require('../../i18n/locales/protocols/en/sample_video.mp4'),
+  'ADULT_CPR.mp4': require('../../i18n/locales/protocols/en/ADULT_CPR.mp4'),
 };
 
 export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolStepFlowProps) {
@@ -73,11 +73,6 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
 
     if (shouldNavigateBack) {
       navigation.goBack();
-      // navigation.navigate('Protocol', {
-      //   protocolData: protocolData,
-      //   title: protocolData.title,
-      //   icon: Icon,
-      // });
     }
   };
 
@@ -145,7 +140,6 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
 
   const handlePlayMedia = () => {
     if (!currentStep?.video) {
-      console.log('No media file for this step');
       return;
     }
 
@@ -240,7 +234,11 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
         </View>
 
         <View style={stepFlowStyle.settingsContainer}>
-          <TouchableOpacity onPress={handleDropdownToggle} activeOpacity={0.7}>
+          <TouchableOpacity
+            onPress={handleDropdownToggle}
+            activeOpacity={0.7}
+            hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
+          >
             <PointsIcon />
           </TouchableOpacity>
           <TouchableOpacity
@@ -430,14 +428,13 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
                 )}
               </View>
 
-              {/* {isPlaying && stepIsVideoFile && isCurrentStep && (
-                <View
+              {stepIsVideoFile && isCurrentStep && (
+                <TouchableOpacity
+                  onPress={() => setIsPlaying(true)}
                   style={{
-                    flex: 1,
                     width: '100%',
+                    aspectRatio: 16 / 9,
                     backgroundColor: '#000',
-                    justifyContent: 'center',
-                    alignItems: 'center',
                     borderRadius: 24,
                     overflow: 'hidden',
                   }}
@@ -445,16 +442,14 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
                   <Video
                     ref={videoRef}
                     source={MEDIA_MAP[step.video]}
+                    viewType={0}
                     style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      bottom: 0,
-                      right: 0,
+                      width: '100%',
+                      height: '100%',
                     }}
-                    controls={true}
-                    paused={false}
-                    resizeMode="cover"
+                    paused={!isPlaying}
+                    controls={isPlaying}
+                    resizeMode="contain"
                     repeat={false}
                     onEnd={() => {
                       setIsPlaying(false);
@@ -463,18 +458,48 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
                       setIsPlaying(false);
                     }}
                   />
-                </View>
-              )}
 
-              {(!isPlaying || !isCurrentStep) && (
-                <View style={stepFlowStyle.secondSubContainer}>
-                  {step.video && (
-                    <TouchableOpacity onPress={handlePlayMedia}>
-                      <VideoIcon />
-                    </TouchableOpacity>
+                  {!isPlaying && (
+                    <View
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                      }}
+                    >
+                      <View
+                        style={{
+                          width: 64,
+                          height: 64,
+                          borderRadius: 32,
+                          backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                        }}
+                      >
+                        <View
+                          style={{
+                            width: 0,
+                            height: 0,
+                            marginLeft: 4,
+                            borderLeftWidth: 20,
+                            borderTopWidth: 12,
+                            borderBottomWidth: 12,
+                            borderLeftColor: '#000',
+                            borderTopColor: 'transparent',
+                            borderBottomColor: 'transparent',
+                          }}
+                        />
+                      </View>
+                    </View>
                   )}
-                </View>
-              )} */}
+                </TouchableOpacity>
+              )}
             </View>
           );
         })}

@@ -31,7 +31,9 @@ export function EmergencyButton({ emergencyNumber }: EmergencyButtonProps) {
         <View style={{ position: 'relative' }}>
           <Image source={require('../../Icons/emergency-button.png')} />
           <View style={emergencyButtonStyles.emergencyTextOverlay}>
-            <Text style={[emergencyButtonStyles.emergencyText, { color: colors.Bg.pure }]}>
+            <Text
+              style={[emergencyButtonStyles.emergencyText, { color: colors.Text.neutral.white }]}
+            >
               {emergencyNumber}
             </Text>
           </View>

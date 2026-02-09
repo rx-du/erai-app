@@ -54,9 +54,11 @@ export function CustomModal({
     >
       <SafeAreaView style={[Styles.modal, { backgroundColor: colors.Bg.primary }]}>
         <View style={{ alignItems: 'center', gap: 24 }}>
-          {Icon && <Icon />}
+          {Icon && <Icon color={colors.Text.neutral.primary} />}
           <View style={[title && subtitle ? { gap: 12 } : null]}>
-            {title && <Text style={Styles.title}>{title}</Text>}
+            {title && (
+              <Text style={[Styles.title, { color: colors.Text.neutral.primary }]}>{title}</Text>
+            )}
             {subtitle && (
               <Text style={[Styles.subtitle, { color: colors.Text.neutral.secondary }]}>
                 {subtitle}

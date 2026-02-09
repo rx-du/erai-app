@@ -73,7 +73,8 @@
       "diabetes": "Diabetes",
       "splinting": "Splinting",
       "mentalHealth": "Mental health",
-      "fluidElectrolyte": "Fluid & Electrolyte"
+      "fluidElectrolyte": "Fluid & Electrolyte",
+      "fluidCovid": "Flu & Covid Symptoms"
     },
     "protocol": {
       "step": "Step",

@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>EraiApp</string>
+	<string>ER - EMERGENCY RESPONSE</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -27,7 +27,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.611672989625-o7tdu6o5ibnkndkn4q34b0d1v2f4lide</string>
+				<string>com.googleusercontent.apps.633749270164-54ca6dquao2qtiomo87g4d0u0495fmck</string>
 			</array>
 		</dict>
 	</array>

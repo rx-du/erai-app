@@ -31,7 +31,7 @@ export default function ProtocolMenu({
       isVisible={isVisible}
       header={
         <View style={stepFlowStyle.endProtocolModalHeader}>
-          <Icon />
+          <Icon color={colors.Text.accent.primary} />
           <Text style={[contentStyle.contentSection, { color: colors.Text.neutral.secondary }]}>
             {protocolTitle}
           </Text>
@@ -53,20 +53,20 @@ export default function ProtocolMenu({
           shadowRadius: 8,
         }}
       >
-        <CustomCategory
+        {/* <CustomCategory
           children={
             <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }}>
-              <Text>No hands mode</Text>
-              <NoHandsIcon />
+              <Text style={{ color: colors.Text.neutral.secondary }}>No hands mode</Text>
+              <NoHandsIcon color={colors.Text.accent.primary} />
             </View>
           }
           onPress={onNoHandsMode}
-        />
+        /> */}
 
         <CustomCategory
           children={
             <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }}>
-              <Text>End protocol</Text>
+              <Text style={{ color: colors.Text.neutral.secondary }}>End protocol</Text>
               <XIcon color={colors.Text.accent.primary} />
             </View>
           }

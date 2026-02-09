@@ -75,7 +75,7 @@ export function CustomDrawer({
           width: width,
         }}
       >
-        <DrawerHeader title={title} header={header} onClose={onClose} />
+        {(title || header) && <DrawerHeader title={title} header={header} onClose={onClose} />}
         {children}
       </SafeAreaView>
     </Modal>

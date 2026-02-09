@@ -65,7 +65,7 @@ export const footerStyle = StyleSheet.create({
     borderRadius: BorderRadius.full,
     paddingRight: 24,
     paddingLeft: 18,
-    width: 270,
+    flex: 1,
     height: 56,
   },
   timeContainer: {

@@ -26,10 +26,6 @@ const PrivacyPolicyScreen = () => {
           <Text style={[styles.title, { color: colors.Text.neutral.primary }]}>Privacy Policy</Text>
 
           <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
-            Last Updated: November 26, 2024
-          </Text>
-
-          <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
             Emergency Response Guide ("we", "us", or "our") is committed to protecting your privacy.
             This Privacy Policy explains how we collect, use, disclose, and safeguard your
             information when you use our mobile application (the "App"). Please read this privacy

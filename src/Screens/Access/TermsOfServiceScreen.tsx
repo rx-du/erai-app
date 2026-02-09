@@ -27,10 +27,6 @@ const TermsOfServiceScreen = () => {
             Terms of Service
           </Text>
 
-          <Text style={[styles.paragraph, { color: colors.Text.neutral.secondary }]}>
-            Last Updated: November 26, 2024
-          </Text>
-
           <Text style={[styles.sectionTitle, { color: colors.Text.neutral.primary }]}>
             1. Eligibility
           </Text>

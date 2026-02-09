@@ -34,6 +34,12 @@ type ProtocolStepFlowProps = {
 
 const MEDIA_MAP: Record<string, any> = {
   'ADULT_CPR.mp4': require('../../i18n/locales/protocols/en/ADULT_CPR.mp4'),
+  'STEP_1.mp4': require('../../i18n/locales/protocols/en/STEP_1.mp4'),
+  'STEP_2.mp4': require('../../i18n/locales/protocols/en/STEP_2.mp4'),
+  'STEP_3.mp4': require('../../i18n/locales/protocols/en/STEP_3.mp4'),
+  'STEP_4.mp4': require('../../i18n/locales/protocols/en/STEP_4.mp4'),
+  'STEP_5.mp4': require('../../i18n/locales/protocols/en/STEP_5.mp4'),
+  'STEP_6.mp4': require('../../i18n/locales/protocols/en/STEP_6.mp4'),
 };
 
 export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolStepFlowProps) {
@@ -259,7 +265,7 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
         onPageSelected={handlePageSelected}
       >
         {steps.map((step: any, index: number) => {
-          const stepIsVideoFile = step.video !== null;
+          const stepIsVideoFile = step?.video != null && step?.video !== undefined;
           const isCurrentStep = index === currentStepIndex;
 
           return (

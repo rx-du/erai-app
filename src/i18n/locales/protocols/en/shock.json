@@ -15,7 +15,8 @@
           "subtitle": "Check for rapid pulse, pale skin, confusion, decreased blood pressure.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -23,7 +24,8 @@
           "subtitle": "Place patient supine, elevate legs 8–12 inches if no spinal injury.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
@@ -31,7 +33,8 @@
           "subtitle": "Stop any visible bleeding immediately using direct pressure.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
@@ -39,7 +42,8 @@
           "subtitle": "Ensure open airway, provide oxygen if available.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 5,
@@ -47,7 +51,8 @@
           "subtitle": "Cover patient with blankets, maintain normal body temperature.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 6,
@@ -55,7 +60,8 @@
           "subtitle": "Continuously monitor pulse, breathing, and level of consciousness.",
           "timeframe": "Critical",
           "type": "monitor",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     }

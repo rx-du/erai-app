@@ -73,7 +73,8 @@
           "subtitle": "Clear area of hazards and protect patient from injury",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -81,7 +82,8 @@
           "subtitle": "Note start time and duration of seizure activity",
           "timeframe": "During seizure",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
@@ -89,7 +91,8 @@
           "subtitle": "Turn patient on side if possible to maintain airway",
           "timeframe": "When safe",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
@@ -100,7 +103,8 @@
           "icon": "phone",
           "actionText": "Call 911",
           "status": "pending",
-          "shouldDisplayEmergencyCall": true
+          "shouldDisplayEmergencyCall": true,
+          "video": null
         },
         {
           "id": 5,
@@ -108,7 +112,8 @@
           "subtitle": "Stay with patient during recovery phase",
           "timeframe": "After seizure",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 6,
@@ -116,7 +121,8 @@
           "subtitle": "Assess for injuries and monitor breathing",
           "timeframe": "Ongoing",
           "type": "monitor",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     }

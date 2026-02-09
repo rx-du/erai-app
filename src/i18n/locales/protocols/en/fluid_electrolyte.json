@@ -18,22 +18,30 @@
         {
           "title": "Sodium",
           "type": "list",
-          "items": ["135–145 mEq/L"]
+          "items": [
+            "135–145 mEq/L"
+          ]
         },
         {
           "title": "Potassium",
           "type": "list",
-          "items": ["3.5–5.0 mEq/L"]
+          "items": [
+            "3.5–5.0 mEq/L"
+          ]
         },
         {
           "title": "Chloride",
           "type": "list",
-          "items": ["98–107 mEq/L"]
+          "items": [
+            "98–107 mEq/L"
+          ]
         },
         {
           "title": "CO2",
           "type": "list",
-          "items": ["22–28 mEq/L"]
+          "items": [
+            "22–28 mEq/L"
+          ]
         }
       ]
     }
@@ -48,42 +56,48 @@
           "title": "Pay Attention to Your Body",
           "subtitle": "Notice signs like thirst, swelling, dizziness, or fatigue. Keep an eye on how often you pee and its color. Sudden weight changes can mean fluid changes.",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
           "title": "Drink Enough Fluids",
           "subtitle": "Drink water regularly, especially in heat or when active. If you’re sick with vomiting or diarrhea, increase fluids. Don’t wait until you feel very thirsty.",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
           "title": "Avoid Too Much Fluid",
           "subtitle": "Drinking too much water can also be a problem. Swelling in feet, hands, or shortness of breath are warning signs. Balance is key—not too little, not too much.",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
           "title": "Replace Lost Minerals",
           "subtitle": " When you sweat a lot, you lose minerals like salt and potassium. Eat balanced meals with fruits, vegetables, and light salts. Sports drinks can help after heavy sweating (not all the time).",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 5,
           "title": "Limit Excess Minerals",
           "subtitle": "Too much salt or supplements can stress your body. Follow food labels and don’t overuse electrolyte drinks. Only take mineral supplements if advised.",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 6,
           "title": "Know When to Get Help",
           "subtitle": "Seek help if symptoms are severe or don’t improve. Confusion, chest discomfort, or extreme weakness need attention. Children and teens especially need proper hydration.",
           "type": "action",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     }

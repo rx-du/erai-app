@@ -111,7 +111,8 @@
           "type": "instruction",
           "link": "C-Spine management",
           "status": "pending",
-          "shouldDisplayCSpineManagement": true
+          "shouldDisplayCSpineManagement": true,
+          "video": null
         },
         {
           "id": 2,
@@ -121,7 +122,8 @@
           "type": "instruction",
           "link": "Glasgow Coma scale",
           "status": "pending",
-          "shouldDisplayGlasgowComaScale": true
+          "shouldDisplayGlasgowComaScale": true,
+          "video": null
         },
         {
           "id": 3,
@@ -129,7 +131,8 @@
           "subtitle": "Check pupils, cranial nerves, and motor function",
           "timeframe": "Within 5 minutes",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
@@ -140,7 +143,8 @@
           "icon": "phone",
           "actionText": "Call 911",
           "status": "pending",
-          "shouldDisplayEmergencyCall": true
+          "shouldDisplayEmergencyCall": true,
+          "video": null
         },
         {
           "id": 5,
@@ -148,7 +152,8 @@
           "subtitle": "Apply cervical collar and prepare for transport",
           "timeframe": "During assessment",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 6,
@@ -156,7 +161,8 @@
           "subtitle": "Monitor for deterioration and prepare for rapid transport",
           "timeframe": "Ongoing",
           "type": "monitor",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     }

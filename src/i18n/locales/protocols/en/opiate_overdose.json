@@ -112,7 +112,8 @@
           "subtitle": "Ensure scene is safe. Check for hazards, drug paraphernalia, or hostile individuals. Use universal precautions.",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -120,7 +121,8 @@
           "subtitle": "Tap shoulder firmly and shout. Check for response using sternal rub if needed. Look for signs of opioid overdose.",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
@@ -131,7 +133,8 @@
           "icon": "phone",
           "actionText": "Call 911",
           "status": "pending",
-          "shouldDisplayEmergencyCall": true
+          "shouldDisplayEmergencyCall": true,
+          "video": null
         },
         {
           "id": 4,
@@ -139,7 +142,8 @@
           "subtitle": "Check for adequate breathing (rate >10/min, good depth). Assess pulse, skin color, look for cyanosis. Check Pupils (pin-point pupils sign of opiate overdose).",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 5,
@@ -148,7 +152,8 @@
           "timeframe": "Immediate",
           "type": "instruction",
           "link": "NARCAN administration",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 6,
@@ -156,7 +161,8 @@
           "subtitle": "Open airway using head-tilt, chin-lift. Clear visible obstructions. Consider OPA/NPA if trained.",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 7,
@@ -164,7 +170,8 @@
           "subtitle": "If breathing inadequate: provide rescue breaths with BVM or pocket mask. Rate 10–12/min for adults.",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 8,
@@ -173,7 +180,8 @@
           "timeframe": "Immediate",
           "type": "instruction",
           "link": "Recovery position",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 9,
@@ -183,7 +191,8 @@
           "type": "alert",
           "link": "CPR protocol",
           "status": "pending",
-          "shouldDisplayCprProtocol": true
+          "shouldDisplayCprProtocol": true,
+          "video": null
         },
         {
           "id": 10,
@@ -191,7 +200,8 @@
           "subtitle": "Watch for improvement after NARCAN. Be prepared for agitation or combativeness. Monitor vital signs.",
           "timeframe": "Immediate",
           "type": "monitor",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     }

@@ -105,7 +105,8 @@
           "icon": "phone",
           "actionText": "Call 911",
           "status": "pending",
-          "shouldDisplayEmergencyCall": true
+          "shouldDisplayEmergencyCall": true,
+          "video": null
         },
         {
           "id": 3,

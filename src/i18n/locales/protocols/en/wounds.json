@@ -15,7 +15,8 @@
           "subtitle": "Evaluate depth, length, location, and contamination of wound.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -23,7 +24,8 @@
           "subtitle": "Apply direct pressure with sterile gauze or clean cloth.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
@@ -31,7 +33,8 @@
           "subtitle": "Clean wound with sterile saline if heavily contaminated.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
@@ -39,7 +42,8 @@
           "subtitle": "Use sterile gauze pad secured with tape or bandage.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 5,
@@ -47,7 +51,8 @@
           "subtitle": "Determine tetanus vaccination status for dirty wounds.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 6,
@@ -55,7 +60,8 @@
           "subtitle": "Watch for signs of redness, swelling, warmth, discharge.",
           "timeframe": "Critical",
           "type": "monitor",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     }

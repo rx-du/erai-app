@@ -15,7 +15,8 @@
           "subtitle": "Check pulse, motor function, and sensation distal to injury.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -23,7 +24,8 @@
           "subtitle": "Splint fracture including joints above and below the injury.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
@@ -31,7 +33,8 @@
           "subtitle": "Look for open fractures, control bleeding with direct pressure.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
@@ -39,7 +42,8 @@
           "subtitle": "Use rigid splint materials, pad bony prominences.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 5,
@@ -47,7 +51,8 @@
           "subtitle": "Recheck pulse and sensation after splinting.",
           "timeframe": "Critical",
           "type": "monitor",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 6,
@@ -55,7 +60,8 @@
           "subtitle": "Provide appropriate pain relief, apply ice if available.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     }

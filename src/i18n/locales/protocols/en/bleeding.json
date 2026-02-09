@@ -15,7 +15,8 @@
           "subtitle": "Ensure scene safety, apply gloves and eye protection. Check for hazards.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -23,7 +24,8 @@
           "subtitle": "Identify bleeding source and severity. Look for arterial vs venous bleeding.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
@@ -31,7 +33,8 @@
           "subtitle": "Apply firm, direct pressure with clean cloth or gauze over bleeding site.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
@@ -39,7 +42,8 @@
           "subtitle": "Elevate injured area above heart level if no spinal injury suspected.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 5,
@@ -47,7 +51,8 @@
           "subtitle": "If bleeding continues, apply pressure to arterial pressure points.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 6,
@@ -55,7 +60,8 @@
           "subtitle": "For severe extremity bleeding, apply tourniquet 2–3 inches above wound.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 7,
@@ -63,7 +69,8 @@
           "subtitle": "Monitor vital signs, document time of interventions, prepare for transport.",
           "timeframe": "Critical",
           "type": "monitor",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     }

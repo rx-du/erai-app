@@ -13,11 +13,14 @@
         {
           "title": "Emergency contacts",
           "type": "contacts",
-          "items": ["Call 988 (Suicide & Crisis Lifeline)", "Call 911", "Text \"HOME\" to 741741"]
+          "items": [
+            "Call 988 (Suicide & Crisis Lifeline)",
+            "Call 911",
+            "Text \"HOME\" to 741741"
+          ]
         }
       ]
     },
-
     {
       "name": "Suicide risk factors",
       "sections": [
@@ -58,13 +61,17 @@
       ]
     }
   ],
-
   "protocols": [
     {
       "id": "active_suicidal_ideation",
       "title": "Active suicidal ideation protocol",
       "priority": "Imminent",
-      "symptoms": ["Detailed plan", "Access to means", "Previous attempts", "Social isolation"],
+      "symptoms": [
+        "Detailed plan",
+        "Access to means",
+        "Previous attempts",
+        "Social isolation"
+      ],
       "steps": [
         {
           "id": 1,
@@ -72,7 +79,8 @@
           "subtitle": "Ensure scene safety. Remove potential weapons/means. Ask directly: “Are you thinking about killing yourself right now?”",
           "timeframe": "2–5 minutes",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -80,7 +88,8 @@
           "subtitle": "Use empathetic approach: “I’m here to help you stay safe.” Validate feelings without judgment.",
           "timeframe": "3–5 minutes",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
@@ -88,7 +97,8 @@
           "subtitle": "Assess intent, plan specificity, means access, timeline. Use SAMHSA suicide risk assessment protocol.",
           "timeframe": "5–10 minutes",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
@@ -96,7 +106,8 @@
           "subtitle": "Explore ambivalence, identify protective factors, discuss reasons for living, validate emotional pain.",
           "timeframe": "10–15 minutes",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 5,
@@ -104,7 +115,8 @@
           "subtitle": "Assess airway, breathing, circulation. Treat overdose, bleeding, or other medical threats.",
           "timeframe": "0–10 minutes",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 6,
@@ -112,7 +124,8 @@
           "subtitle": "Determine appropriate level of care: emergency hold, psychiatric evaluation, or outpatient follow-up.",
           "timeframe": "Ongoing",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 7,
@@ -120,16 +133,21 @@
           "subtitle": "Assess airway, breathing, circulation. Treat overdose, bleeding, or other medical threats.",
           "timeframe": "Ongoing",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     },
-
     {
       "id": "suicide_attempt_in_progress",
       "title": "Suicide attempt in progress protocol",
       "priority": "Imminent",
-      "symptoms": ["Overdose", "Self-injury", "Hanging attempt", "Weapon access"],
+      "symptoms": [
+        "Overdose",
+        "Self-injury",
+        "Hanging attempt",
+        "Weapon access"
+      ],
       "steps": [
         {
           "id": 1,
@@ -137,7 +155,8 @@
           "subtitle": "Assess airway, breathing, circulation. Treat overdose, bleeding, or other medical threats.",
           "timeframe": "0–10 minutes",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -145,7 +164,8 @@
           "subtitle": "Establish 1:1 observation. Remove all harmful objects. Place in safe, monitored environment.",
           "timeframe": "Ongoing",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
@@ -153,7 +173,8 @@
           "subtitle": "IV access, vital signs, O2 monitoring. Consider antidotes (Narcan, activated charcoal). Protect C-spine if indicated.",
           "timeframe": "5–15 minutes",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
@@ -161,7 +182,8 @@
           "subtitle": "Complete mental status exam when medically stable. Assess ongoing suicide risk using standardized tools.",
           "timeframe": "15–30 minutes",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 5,
@@ -169,11 +191,11 @@
           "subtitle": "Consider involuntary psychiatric hold. Family notification per safety protocol. Document all interventions.",
           "timeframe": "If needed",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     },
-
     {
       "id": "homicidal_ideation",
       "title": "Homicidal ideation protocol",
@@ -230,12 +252,16 @@
         }
       ]
     },
-
     {
       "id": "passive_suicidal_ideation",
       "title": "Passive suicidal ideation protocol",
       "priority": "High",
-      "symptoms": ["Depression", "Hopelessness", "Chronic illness", "Recent loss"],
+      "symptoms": [
+        "Depression",
+        "Hopelessness",
+        "Chronic illness",
+        "Recent loss"
+      ],
       "steps": [
         {
           "id": 1,
@@ -243,7 +269,8 @@
           "subtitle": "Take a deep breath and assess the situation calmly.",
           "timeframe": null,
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -252,7 +279,8 @@
           "timeframe": null,
           "type": "action",
           "status": "pending",
-          "shouldDisplayEmergencyCall": true
+          "shouldDisplayEmergencyCall": true,
+          "video": null
         },
         {
           "id": 3,
@@ -261,16 +289,21 @@
           "timeframe": null,
           "type": "instruction",
           "status": "pending",
-          "shouldDisplayLocation": true
+          "shouldDisplayLocation": true,
+          "video": null
         }
       ]
     },
-
     {
       "id": "acute_psychiatric_crisis",
       "title": "Acute psychiatric crisis protocol",
       "priority": "High",
-      "symptoms": ["Psychosis", "Severe agitation", "Command hallucinations", "Paranoia"],
+      "symptoms": [
+        "Psychosis",
+        "Severe agitation",
+        "Command hallucinations",
+        "Paranoia"
+      ],
       "steps": [
         {
           "id": 1,
@@ -278,7 +311,8 @@
           "subtitle": "Ensure scene safety. Use calm, non-confrontational approach. Assess for agitation, psychosis, or disorientation.",
           "timeframe": "2–5 minutes",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -286,7 +320,8 @@
           "subtitle": "Assess orientation, thought process, perceptions. Look for hallucinations, delusions, or command voices.",
           "timeframe": "5–10 minutes",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
@@ -294,7 +329,8 @@
           "subtitle": "Evaluate risk to self and others. Assess need for involuntary treatment. Consider substance use influence.",
           "timeframe": "5–10 minutes",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
@@ -302,7 +338,8 @@
           "subtitle": "Provide reality orientation. Use therapeutic communication. Avoid arguing with delusions.",
           "timeframe": "10–20 minutes",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 5,
@@ -310,7 +347,8 @@
           "subtitle": "Rule out medical causes: infection, metabolic issues, substance intoxication/withdrawal, head injury.",
           "timeframe": "15–30 minutes",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 6,
@@ -318,16 +356,21 @@
           "subtitle": "Consider medication for severe agitation. Plan for psychiatric evaluation and appropriate disposition.",
           "timeframe": "Ongoing",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     },
-
     {
       "id": "post_suicide_attempt_care",
       "title": "Post-suicide attempt care protocol",
       "priority": "Moderate",
-      "symptoms": ["Medical complications", "Continued ideation", "Shame/guilt", "Family distress"],
+      "symptoms": [
+        "Medical complications",
+        "Continued ideation",
+        "Shame/guilt",
+        "Family distress"
+      ],
       "steps": [
         {
           "id": 1,
@@ -335,7 +378,8 @@
           "subtitle": "Take a deep breath and assess the situation calmly.",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -344,7 +388,8 @@
           "timeframe": "Immediate",
           "type": "action",
           "shouldDisplayEmergencyCall": true,
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 8,
@@ -352,7 +397,8 @@
           "subtitle": "Give your exact location, nature of emergency, and number of people involved.",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     }

@@ -24,7 +24,7 @@
           "subtitle": "Tap shoulders firmly and shout: 'Are you OK? Can you hear me?' Check for Breathing and Carotid Pulse no more than 10 seconds.",
           "timeframe": "Immediate",
           "type": "instruction",
-          "video": "ADULT_CPR.mp4",
+          "video": "STEP_1.mp4",
           "status": "pending"
         },
         {
@@ -35,7 +35,7 @@
           "type": "action",
           "icon": "phone",
           "actionText": "Call 911",
-          "video": "ADULT_CPR.mp4",
+          "video": "STEP_2.mp4",
           "status": "pending",
           "shouldDisplayEmergencyCall": true
         },
@@ -45,7 +45,7 @@
           "subtitle": "Place person on firm surface. Tilt head back, lift chin to open airway.",
           "timeframe": "Immediate",
           "type": "instruction",
-          "video": "ADULT_CPR.mp4",
+          "video": "STEP_3.mp4",
           "status": "pending"
         },
         {
@@ -55,7 +55,7 @@
           "timeframe": "Immediate",
           "type": "instruction",
           "status": "pending",
-          "video": "ADULT_CPR.mp4",
+          "video": "STEP_4.mp4",
           "details": {
             "depth": "At least 2 inches (5 cm)."
           }
@@ -67,7 +67,7 @@
           "timeframe": "Immediate",
           "type": "instruction",
           "status": "pending",
-          "video": "ADULT_CPR.mp4",
+          "video": "STEP_5.mp4",
           "details": {
             "duration": "30 compressions",
             "rate": "100–120/min",
@@ -81,7 +81,7 @@
           "timeframe": "Immediate",
           "type": "instruction",
           "status": "pending",
-          "video": "ADULT_CPR.mp4"
+          "video": "STEP_6.mp4"
         }
       ]
     },
@@ -96,7 +96,8 @@
           "subtitle": "Tap shoulders gently and call their name. Look for normal breathing for no more than 10 seconds.",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -106,7 +107,8 @@
           "type": "action",
           "icon": "phone",
           "actionText": "Call 911",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
@@ -114,7 +116,8 @@
           "subtitle": "Place child on firm surface. Tilt head back slightly, lift chin to open airway.",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
@@ -125,7 +128,8 @@
           "status": "pending",
           "details": {
             "depth": "About 2 inches (5 cm) or 1/3 chest depth."
-          }
+          },
+          "video": null
         },
         {
           "id": 5,
@@ -138,7 +142,8 @@
             "duration": "30 compressions",
             "rate": "100–120/min",
             "depth": "About 2 inches (5 cm) or 1/3 chest depth."
-          }
+          },
+          "video": null
         },
         {
           "id": 6,
@@ -146,7 +151,8 @@
           "subtitle": "Tilt head, lift chin. Pinch nose, seal mouth. Give 2 gentle breaths, each lasting 1 second.",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     },
@@ -161,7 +167,8 @@
           "subtitle": "Tap bottom of feet gently. Look for normal breathing for no more than 10 seconds.",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -171,7 +178,8 @@
           "type": "action",
           "icon": "phone",
           "actionText": "Call 911",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
@@ -179,7 +187,8 @@
           "subtitle": "Place infant on firm surface. Tilt head back slightly, lift chin gently to open airway.",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
@@ -190,7 +199,8 @@
           "status": "pending",
           "details": {
             "depth": "About 1.5 inches (4 cm) or 1/3 chest depth."
-          }
+          },
+          "video": null
         },
         {
           "id": 5,
@@ -203,7 +213,8 @@
             "duration": "30 compressions",
             "rate": "100–120/min",
             "depth": "About 1.5 inches (4 cm) or 1/3 chest depth."
-          }
+          },
+          "video": null
         },
         {
           "id": 6,
@@ -211,7 +222,8 @@
           "subtitle": "Cover infant's nose and mouth with your mouth. Give 2 gentle puffs, each lasting 1 second.",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     }

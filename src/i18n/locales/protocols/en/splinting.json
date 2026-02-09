@@ -14,7 +14,8 @@
           "subtitle": "Ensure the area is safe and assess mechanism of injury",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -22,7 +23,8 @@
           "subtitle": "Check pulse, sensation, and movement distal to injury",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
@@ -30,7 +32,8 @@
           "subtitle": "Consider appropriate pain control measures before manipulation",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
@@ -38,7 +41,8 @@
           "subtitle": "Stabilize joints above and below the fracture site",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 5,
@@ -46,7 +50,8 @@
           "subtitle": "Use rigid materials like SAM splint or board splint",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 6,
@@ -54,7 +59,8 @@
           "subtitle": "Wrap with gauze or elastic bandage; avoid over-tightening",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 7,
@@ -62,7 +68,8 @@
           "subtitle": "Recheck circulation, sensation, and movement",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 8,
@@ -70,11 +77,11 @@
           "subtitle": "Elevate if possible and prepare for rapid transport",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     },
-
     {
       "id": "lower_extremity_fracture",
       "title": "Lower extremity fracture protocol",
@@ -85,7 +92,8 @@
           "subtitle": "Evaluate for other injuries and mechanism",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -93,7 +101,8 @@
           "subtitle": "Document pulse, sensation, and movement before injury",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
@@ -101,7 +110,8 @@
           "subtitle": "Apply direct pressure if open fracture present",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
@@ -109,7 +119,8 @@
           "subtitle": "For mid-shaft femur fractures, consider traction",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 5,
@@ -117,7 +128,8 @@
           "subtitle": "Use long board splint from hip to ankle",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 6,
@@ -125,7 +137,8 @@
           "subtitle": "Add padding at pressure points, secure with straps",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 7,
@@ -133,7 +146,8 @@
           "subtitle": "Ensure splint is not too tight, check distal pulse",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 8,
@@ -141,11 +155,11 @@
           "subtitle": "Keep leg elevated and prepare for immediate transport",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     },
-
     {
       "id": "ankle_fracture_sprain",
       "title": "Ankle fracture/sprain protocol",
@@ -156,7 +170,8 @@
           "subtitle": "Determine if inversion, eversion, or high-energy trauma",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -164,7 +179,8 @@
           "subtitle": "Assess dorsalis pedis and posterior tibial pulses",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
@@ -172,7 +188,8 @@
           "subtitle": "Check if deformity is present, note position of foot",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
@@ -180,7 +197,8 @@
           "subtitle": "Wrap pillows around ankle and foot for support. Use posterior splint if available.",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 5,
@@ -188,7 +206,8 @@
           "subtitle": "Raise ankle above heart level to reduce swelling",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 6,
@@ -196,7 +215,8 @@
           "subtitle": "Apply ice pack over splint for 20 minutes",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 7,
@@ -204,11 +224,11 @@
           "subtitle": "Monitor for compartment syndrome signs",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     },
-
     {
       "id": "wrist_fracture",
       "title": "Wrist fracture protocol",
@@ -219,7 +239,8 @@
           "subtitle": "Evaluate mechanism and check for open wounds",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -227,7 +248,8 @@
           "subtitle": "Test radial pulse and finger sensation/movement",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
@@ -235,7 +257,8 @@
           "subtitle": "Place wrist in slight extension, fingers curved",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
@@ -243,7 +266,8 @@
           "subtitle": "Apply rigid splint to palm side of forearm",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 5,
@@ -251,7 +275,8 @@
           "subtitle": "Use gauze padding, secure with elastic wrap",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 6,
@@ -259,7 +284,8 @@
           "subtitle": "Support arm in sling for comfort and elevation",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 7,
@@ -267,7 +293,8 @@
           "subtitle": "Verify fingers remain pink with good capillary refill",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 8,
@@ -275,11 +302,11 @@
           "subtitle": "Apply cold pack and keep hand elevated above heart",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     },
-
     {
       "id": "finger_fracture",
       "title": "Finger fracture protocol",
@@ -290,7 +317,8 @@
           "subtitle": "Examine for deformity, rotation, or open wounds",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -298,7 +326,8 @@
           "subtitle": "Test sensation and capillary refill in fingertip",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
@@ -306,7 +335,8 @@
           "subtitle": "Tape injured finger to adjacent uninjured finger",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
@@ -314,7 +344,8 @@
           "subtitle": "Use small aluminum splint if available",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 5,
@@ -322,7 +353,8 @@
           "subtitle": "Secure with medical tape; avoid circumferential wrapping",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 6,
@@ -330,7 +362,8 @@
           "subtitle": "Keep hand in position of function with slight curve",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 7,
@@ -338,7 +371,8 @@
           "subtitle": "Apply ice for 20 minutes, elevate hand",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 8,
@@ -346,11 +380,11 @@
           "subtitle": "Check ability to make fist and finger movement",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     },
-
     {
       "id": "spinal_immobilization",
       "title": "Spinal immobilization protocol",
@@ -361,7 +395,8 @@
           "subtitle": "High-risk mechanism requires full spinal precautions",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -369,7 +404,8 @@
           "subtitle": "Check motor, sensory function in all extremities",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
@@ -377,7 +413,8 @@
           "subtitle": "Manually hold head in neutral alignment",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
@@ -385,7 +422,8 @@
           "subtitle": "Move patient as single unit onto backboard",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 5,
@@ -393,7 +431,8 @@
           "subtitle": "Secure patient to long spine board with straps",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 6,
@@ -401,7 +440,8 @@
           "subtitle": "Use head blocks and tape to prevent movement",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 7,
@@ -409,7 +449,8 @@
           "subtitle": "Add padding for pressure points and comfort",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 8,
@@ -417,7 +458,8 @@
           "subtitle": "Continuously monitor neurological status during transport",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     }

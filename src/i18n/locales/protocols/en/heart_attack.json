@@ -57,7 +57,8 @@
           "type": "action",
           "icon": "phone",
           "status": "completed",
-          "shouldDisplayEmergencyCall": true
+          "shouldDisplayEmergencyCall": true,
+          "video": null
         },
         {
           "id": 3,
@@ -74,7 +75,8 @@
           "subtitle": "Place patient in comfortable upright position",
           "timeframe": "Immediate",
           "type": "instruction",
-          "status": "completed"
+          "status": "completed",
+          "video": null
         },
         {
           "id": 5,
@@ -82,7 +84,8 @@
           "subtitle": "Continuously monitor breathing, pulse, and consciousness",
           "timeframe": "Ongoing",
           "type": "monitor",
-          "status": "completed"
+          "status": "completed",
+          "video": null
         },
         {
           "id": 6,
@@ -92,7 +95,8 @@
           "type": "alert",
           "link": "cpr_protocol",
           "status": "completed",
-          "shouldDisplayCprProtocol": true
+          "shouldDisplayCprProtocol": true,
+          "video": null
         }
       ]
     }

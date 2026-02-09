@@ -15,7 +15,8 @@
           "subtitle": "Remove from heat source, stop, drop, and roll if clothing on fire.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 2,
@@ -23,7 +24,8 @@
           "subtitle": "Determine depth (1st, 2nd, 3rd degree) and percentage of body affected.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 3,
@@ -31,7 +33,8 @@
           "subtitle": "Apply cool (not cold) water for 10–20 minutes to thermal burns.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 4,
@@ -39,7 +42,8 @@
           "subtitle": "Remove rings, watches before swelling occurs. Do not remove stuck clothing.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 5,
@@ -47,7 +51,8 @@
           "subtitle": "Use sterile gauze or clean cloth. Do not use ice, butter, or ointments.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         },
         {
           "id": 6,
@@ -55,7 +60,8 @@
           "subtitle": "Provide appropriate pain relief, monitor for shock development.",
           "timeframe": "Critical",
           "type": "instruction",
-          "status": "pending"
+          "status": "pending",
+          "video": null
         }
       ]
     }

@@ -294,7 +294,7 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
                   {step.subtitle}
                 </Text>
 
-                {isCPR && index === totalSteps - 1 && (
+                {/* {isCPR && index === totalSteps - 1 && (
                   <CustomButton
                     type="secondary"
                     text={`Continue compressions ${protocolState.compressions}`}
@@ -306,7 +306,7 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
                     }}
                     dimension="small"
                   />
-                )}
+                )} */}
 
                 {step.shouldDisplayEmergencyCall && (
                   <TouchableOpacity

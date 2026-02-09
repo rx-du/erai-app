@@ -21,25 +21,11 @@ import FluiElectrolyteIcon from '../../Icons/fluid_electrolyte.svg';
 import CovidIcon from '../../Icons/virus.svg';
 
 const getCategoriesEmergency = () => [
-  {
-    label: i18n.t('aid.categories.activeShooter'),
-    icon: ActiveShooterIcon,
-    pageContent: getProtocolData('active_shooter'),
-  },
+  { label: i18n.t('aid.categories.cpr'), icon: CPRIcon, pageContent: getProtocolData('CPR') },
   {
     label: i18n.t('aid.categories.heartAttack'),
     icon: HeartAttackIcon,
     pageContent: getProtocolData('heart_attack'),
-  },
-  {
-    label: i18n.t('aid.categories.anaphylaxis'),
-    icon: AnaphylaxisIcon,
-    pageContent: getProtocolData('anaphylaxis'),
-  },
-  {
-    label: i18n.t('aid.categories.headInjury'),
-    icon: HeadInjuryIcon,
-    pageContent: getProtocolData('head_injury'),
   },
   {
     label: i18n.t('aid.categories.opiateOverdose'),
@@ -47,20 +33,31 @@ const getCategoriesEmergency = () => [
     pageContent: getProtocolData('opiate_overdose'),
   },
   {
-    label: i18n.t('aid.categories.seizure'),
-    icon: SeizureIcon,
-    pageContent: getProtocolData('seisure'),
+    label: i18n.t('aid.categories.mentalHealth'),
+    icon: MentalHealthIcon,
+    pageContent: getProtocolData('mental_health'),
   },
   {
-    label: i18n.t('aid.categories.burnInjury'),
-    icon: BurnInjuryIcon,
-    pageContent: getProtocolData('burn_injury'),
+    label: i18n.t('aid.categories.activeShooter'),
+    icon: ActiveShooterIcon,
+    pageContent: getProtocolData('active_shooter'),
   },
-  { label: i18n.t('aid.categories.cpr'), icon: CPRIcon, pageContent: getProtocolData('CPR') },
+
+  {
+    label: i18n.t('aid.categories.anaphylaxis'),
+    icon: AnaphylaxisIcon,
+    pageContent: getProtocolData('anaphylaxis'),
+  },
   {
     label: i18n.t('aid.categories.choking'),
     icon: ChockingIcon,
     pageContent: getProtocolData('choking'),
+  },
+
+  {
+    label: i18n.t('aid.categories.seizure'),
+    icon: SeizureIcon,
+    pageContent: getProtocolData('seisure'),
   },
   {
     label: i18n.t('aid.categories.diabetes'),
@@ -68,24 +65,29 @@ const getCategoriesEmergency = () => [
     pageContent: getProtocolData('diabetes'),
   },
   {
+    label: i18n.t('aid.categories.headInjury'),
+    icon: HeadInjuryIcon,
+    pageContent: getProtocolData('head_injury'),
+  },
+  {
+    label: i18n.t('aid.categories.burnInjury'),
+    icon: BurnInjuryIcon,
+    pageContent: getProtocolData('burn_injury'),
+  },
+  {
     label: i18n.t('aid.categories.splinting'),
     icon: SplintingIcon,
     pageContent: getProtocolData('splinting'),
   },
   {
-    label: i18n.t('aid.categories.mentalHealth'),
-    icon: MentalHealthIcon,
-    pageContent: getProtocolData('mental_health'),
+    label: i18n.t('aid.categories.fluidCovid'),
+    icon: CovidIcon,
+    pageContent: getProtocolData('fluid_covid'),
   },
   {
     label: i18n.t('aid.categories.fluidElectrolyte'),
     icon: FluiElectrolyteIcon,
     pageContent: getProtocolData('fluid_electrolyte'),
-  },
-  {
-    label: i18n.t('aid.categories.fluidCovid'),
-    icon: CovidIcon,
-    pageContent: getProtocolData('fluid_covid'),
   },
 ];
 

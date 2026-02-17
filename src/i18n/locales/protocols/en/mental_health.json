@@ -13,11 +13,7 @@
         {
           "title": "Emergency contacts",
           "type": "contacts",
-          "items": [
-            "Call 988 (Suicide & Crisis Lifeline)",
-            "Call 911",
-            "Text \"HOME\" to 741741"
-          ]
+          "items": ["Call 988 (Suicide & Crisis Lifeline)", "Call 911", "Text \"HOME\" to 741741"]
         }
       ]
     },
@@ -66,12 +62,7 @@
       "id": "active_suicidal_ideation",
       "title": "Active suicidal ideation protocol",
       "priority": "Imminent",
-      "symptoms": [
-        "Detailed plan",
-        "Access to means",
-        "Previous attempts",
-        "Social isolation"
-      ],
+      "symptoms": ["Detailed plan", "Access to means", "Previous attempts", "Social isolation"],
       "steps": [
         {
           "id": 1,
@@ -142,12 +133,7 @@
       "id": "suicide_attempt_in_progress",
       "title": "Suicide attempt in progress protocol",
       "priority": "Imminent",
-      "symptoms": [
-        "Overdose",
-        "Self-injury",
-        "Hanging attempt",
-        "Weapon access"
-      ],
+      "symptoms": ["Overdose", "Self-injury", "Hanging attempt", "Weapon access"],
       "steps": [
         {
           "id": 1,
@@ -200,7 +186,7 @@
       "id": "homicidal_ideation",
       "title": "Homicidal ideation protocol",
       "priority": "Imminent",
-      "symptoms": [
+      "steps": [
         {
           "id": 1,
           "title": "Immediate Threat Assessment",
@@ -256,17 +242,12 @@
       "id": "passive_suicidal_ideation",
       "title": "Passive suicidal ideation protocol",
       "priority": "High",
-      "symptoms": [
-        "Depression",
-        "Hopelessness",
-        "Chronic illness",
-        "Recent loss"
-      ],
+      "symptoms": ["Depression", "Hopelessness", "Chronic illness", "Recent loss"],
       "steps": [
         {
           "id": 1,
-          "title": "Stay Calm",
-          "subtitle": "Take a deep breath and assess the situation calmly.",
+          "title": "Acknowledge the thoughts and reach out right away",
+          "subtitle": "Recognize the thoughts without judgment or shame—they are a symptom of pain, not a personal failing or permanent state. Talk to someone immediately to reduce isolation.",
           "timeframe": null,
           "type": "instruction",
           "status": "pending",
@@ -274,22 +255,47 @@
         },
         {
           "id": 2,
-          "title": "Call Emergency Service",
-          "subtitle": "Call emergency services and provide clear information about the emergency.",
+          "title": "Seek professional evaluation and treatment",
+          "subtitle": "Passive ideation often links to underlying issues like depression, anxiety, trauma, or sleep problems. A mental health professional can assess risk and create a tailored plan.",
           "timeframe": null,
           "type": "action",
           "status": "pending",
-          "shouldDisplayEmergencyCall": true,
           "video": null
         },
         {
           "id": 3,
-          "title": "Provide Information",
-          "subtitle": "Give your exact location, nature of emergency, and number of people involved.",
+          "title": "Create a personalized safety plan",
+          "subtitle": "A safety plan gives concrete steps for when thoughts intensify, helping you stay safe and regain control.",
           "timeframe": null,
           "type": "instruction",
           "status": "pending",
-          "shouldDisplayLocation": true,
+          "video": null
+        },
+        {
+          "id": 4,
+          "title": "Prioritize foundational self-care",
+          "subtitle": "Basic physical needs directly impact mood and thought patterns. When depleted, passive thoughts often worsen.\n\nFocus on small, consistent habits:\n• Aim for regular sleep (even if imperfect)\n• Eat nourishing meals\n• Gentle movement (a short walk)\n• Basic hygiene and routines",
+          "timeframe": null,
+          "type": "instruction",
+          "status": "pending",
+          "video": null
+        },
+        {
+          "id": 5,
+          "title": "Practice grounding and thought-challenging techniques",
+          "subtitle": "These tools help interrupt and reduce the power of passive thoughts in the moment.\n\n• Grounding: Name 5 things you see, 4 you can touch, 3 you hear, etc.\n• Mindfulness/meditation: Observe thoughts as passing clouds without engaging.\n• Reality-check negatives: Ask \"Is this thought a fact or a feeling?\" or \"What would I tell a friend in this situation?\"\n• Engage in absorbing activities: (music, reading, hobbies) for distraction and small moments of relief.",
+          "timeframe": null,
+          "type": "instruction",
+          "status": "pending",
+          "video": null
+        },
+        {
+          "id": 6,
+          "title": "Build long-term support and resilience",
+          "subtitle": "Address isolation and cultivate reasons for living through ongoing connection and purpose.\n\n• Stay connected to supportive people or groups (in-person or online communities)\n• Follow through with therapy appointments and track progress\n• Explore values-based goals (even tiny ones like \"learn one new skill\")\n• Limit substances that worsen mood\n• Reassess regularly—many people see thoughts fade as circumstances and coping improve.\n\nThese steps work best when combined with professional guidance. If thoughts intensify, include plans to act, or you feel unsafe, contact 988 or Contact Emergency Medical Services immediately. Pain can feel endless, but it is often temporary, and effective help exists—recovery is common and realistic.",
+          "timeframe": null,
+          "type": "instruction",
+          "status": "pending",
           "video": null
         }
       ]
@@ -298,12 +304,7 @@
       "id": "acute_psychiatric_crisis",
       "title": "Acute psychiatric crisis protocol",
       "priority": "High",
-      "symptoms": [
-        "Psychosis",
-        "Severe agitation",
-        "Command hallucinations",
-        "Paranoia"
-      ],
+      "symptoms": ["Psychosis", "Severe agitation", "Command hallucinations", "Paranoia"],
       "steps": [
         {
           "id": 1,
@@ -365,17 +366,12 @@
       "id": "post_suicide_attempt_care",
       "title": "Post-suicide attempt care protocol",
       "priority": "Moderate",
-      "symptoms": [
-        "Medical complications",
-        "Continued ideation",
-        "Shame/guilt",
-        "Family distress"
-      ],
+      "symptoms": ["Medical complications", "Continued ideation", "Shame/guilt", "Family distress"],
       "steps": [
         {
           "id": 1,
-          "title": "Stay Calm",
-          "subtitle": "Take a deep breath and assess the situation calmly.",
+          "title": "Call Emergency Medical Services for Stabilization and Safety",
+          "subtitle": "The first priority is treating any physical injuries or medical complications from the attempt - Stabilization, Monitoring Vital Signs, and ensuring physical safety.",
           "timeframe": "Immediate",
           "type": "instruction",
           "status": "pending",
@@ -383,18 +379,44 @@
         },
         {
           "id": 2,
-          "title": "Call Emergency Service",
-          "subtitle": "Call emergency services and provide clear information about the emergency.",
+          "title": "Comprehensive Psychiatric Evaluation and Risk Assessment",
+          "subtitle": "Once medically stable, a full mental health assessment evaluates the reasons for the attempt, current suicidal thoughts, underlying conditions (e.g., depression, trauma, substance use), and future risk level.",
           "timeframe": "Immediate",
           "type": "action",
-          "shouldDisplayEmergencyCall": true,
           "status": "pending",
           "video": null
         },
         {
-          "id": 8,
-          "title": "Provide Information",
-          "subtitle": "Give your exact location, nature of emergency, and number of people involved.",
+          "id": 3,
+          "title": "Acute Treatment and Level of Care",
+          "subtitle": "Based on the assessment, short-term intensive care may be recommended, such as inpatient psychiatric hospitalization for safety and stabilization, or intensive outpatient programs. Treatments can include medication for mood disorders, crisis counseling, and initial therapy.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending",
+          "video": null
+        },
+        {
+          "id": 4,
+          "title": "Personalized Safety Plan",
+          "subtitle": "A safety plan is a written, step-by-step tool to recognize warning signs and respond effectively during distress. It includes coping strategies, support contacts, and ways to limit access to lethal means (e.g., securing medications, firearms).",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending",
+          "video": null
+        },
+        {
+          "id": 5,
+          "title": "Follow-Up and Care",
+          "subtitle": "The highest-risk period is right after leaving the Hospital or Emergency Room.\nCall for follow-up within 24–72 hours via phone, text, or in-person appointment to check in, reinforce the plan, and connect to ongoing services.",
+          "timeframe": "Immediate",
+          "type": "instruction",
+          "status": "pending",
+          "video": null
+        },
+        {
+          "id": 6,
+          "title": "Long-Term Recovery, Therapy, and Support",
+          "subtitle": "Ongoing care addresses underlying issues, builds coping skills, and fosters hope and connection. This includes therapy (e.g., medication management, support groups for attempt survivors, and lifestyle changes like sleep, exercise, and social connections).\nConnect with a therapist or psychiatrist experienced in suicide prevention. Practice self-compassion—be kind to yourself during recovery, involve family/friends and monitor progress with regular check-ins.\n\nThis is not a substitute for personalized medical or psychiatric care. If this relates to you or someone you know right now, seek immediate professional help—call or text 988 (Suicide & Crisis Lifeline, 24/7) or go to the nearest Hospital or Emergency Room.",
           "timeframe": "Immediate",
           "type": "instruction",
           "status": "pending",

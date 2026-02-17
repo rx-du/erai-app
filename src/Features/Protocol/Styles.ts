@@ -186,6 +186,7 @@ export const stepFlowStyle = StyleSheet.create({
     lineHeight: 31.2,
     fontFamily: 'Inter',
     marginBottom: 8,
+    marginTop: 16,
   },
   stepSubtitle: {
     fontSize: 18,

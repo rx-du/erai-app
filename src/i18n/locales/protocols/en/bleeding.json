@@ -1,7 +1,28 @@
 {
   "id": "bleeding_control",
   "title": "Bleeding Control",
-  "category": [],
+  "category": [
+    {
+      "sections": [
+        {
+          "title": "Stop the Bleed Protocol",
+          "type": "text",
+          "content": "Stop the Bleed is a national emergency response that teaches bystanders how to control severe bleeding before professional help arrives. Severe bleeding can cause death in 5 minutes or less, so immediate action is critical."
+        },
+        {
+          "title": "When to Use Stop the Bleed, Use this protocol if you see:",
+          "type": "list",
+          "items": [
+            "Blood that is spurting or pumping",
+            "Blood that is pooling rapidly",
+            "Clothing soaked with blood",
+            "Loss of part of a limb",
+            "A victim who is pale, confused, or unconscious after injury"
+          ]
+        }
+      ]
+    }
+  ],
   "steps": [
     {
       "id": "bleeding_control_protocol",
@@ -11,8 +32,8 @@
       "steps": [
         {
           "id": 1,
-          "title": "Scene Safety & BSI",
-          "subtitle": "Ensure scene safety, apply gloves and eye protection. Check for hazards.",
+          "title": "Scene Safety & BSI (Body Substance Isolation)",
+          "subtitle": "A safety practice used to prevent exposure to blood and other potentially infectious materials. Ensure scene safety, apply gloves and eye protection. Check for hazards. Protect yourself so you can safely help others.",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",
@@ -30,7 +51,7 @@
         {
           "id": 3,
           "title": "Direct Pressure",
-          "subtitle": "Apply firm, direct pressure with clean cloth or gauze over bleeding site.",
+          "subtitle": "Put on gloves if available, apply firm direct pressure over bleeding site with gauze, clean cloth or clothing. Press firmly and continuously on the wound with both hands. If blood soaks through, do not remove the first dressing, add more on top.",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",
@@ -57,7 +78,7 @@
         {
           "id": 6,
           "title": "Tourniquet Application",
-          "subtitle": "For severe extremity bleeding, apply tourniquet 2–3 inches above wound.",
+          "subtitle": "Apply a Tourniquet (For Severe Limb Bleeding). Place the tourniquet 2–3 inches above the wound (not over a joint), tighten until bleeding stops completely. Note the time applied, Do NOT loosen once applied. If no commercial tourniquet is available, use a belt if available, or use a wide band of cloth and a windlass (stick/rod) to tighten.",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",

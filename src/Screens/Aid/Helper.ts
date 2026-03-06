@@ -19,6 +19,7 @@ import SplintingIcon from '../../Icons/splinting.svg';
 import MentalHealthIcon from '../../Icons/mental_health.svg';
 import FluiElectrolyteIcon from '../../Icons/fluid_electrolyte.svg';
 import CovidIcon from '../../Icons/virus.svg';
+import PoisonIcon from '../../Icons/poison-24.svg';
 
 const getCategoriesEmergency = () => [
   { label: i18n.t('aid.categories.cpr'), icon: CPRIcon, pageContent: getProtocolData('CPR') },
@@ -88,6 +89,11 @@ const getCategoriesEmergency = () => [
     label: i18n.t('aid.categories.fluidElectrolyte'),
     icon: FluiElectrolyteIcon,
     pageContent: getProtocolData('fluid_electrolyte'),
+  },
+  {
+    label: i18n.t('aid.categories.poison'),
+    icon: PoisonIcon,
+    pageContent: getProtocolData('poison'),
   },
 ];
 

@@ -3,7 +3,7 @@
   "title": "Diabetes",
   "category": [
     {
-      "name": "Types & recognition",
+      "name": "Types & Recognition",
       "sections": [
         {
           "title": "High Priority",
@@ -11,7 +11,7 @@
           "content": "Diabetes emergencies require immediate assessment and intervention. Blood glucose levels can be life-threatening."
         },
         {
-          "title": "Low blood sugar (Hypoglycemia)",
+          "title": "Low Blood Sugar (Hypoglycemia)",
           "type": "list",
           "items": [
             "Confusion, altered mental status",
@@ -22,7 +22,7 @@
           ]
         },
         {
-          "title": "High blood sugar (Hyperglycemia)",
+          "title": "High Blood Sugar (Hyperglycemia)",
           "type": "list",
           "items": [
             "Fruity breath odor",
@@ -35,28 +35,28 @@
       ]
     },
     {
-      "name": "Professional reference",
+      "name": "Professional Reference",
       "sections": [
         {
-          "title": "Blood glucose reference",
+          "title": "Blood Glucose Reference",
           "type": "list",
           "items": [
             "Normal: 70–140 mg/dL",
             "Hypoglycemia: <70 mg/dL",
             "Hyperglycemia: >180 mg/dL",
             "Critical High: >250 mg/dL",
-            "DKA Range: >300 mg/dL + ketones"
+            "Diabetic Ketoacidosis Range: >300 mg/dL + ketones"
           ]
         },
         {
-          "title": "Treatment protocols",
+          "title": "Treatment Protocols",
           "type": "list",
           "items": [
             "Oral glucose: 15–20g for conscious patients",
             "Glucagon: 1mg IM/SC for unconscious",
             "IV Dextrose: D50W 25g IV push",
             "Monitor q15min post-treatment",
-            "ALS transport for severe cases"
+            "Advanced Life Support transport for severe cases"
           ]
         }
       ]

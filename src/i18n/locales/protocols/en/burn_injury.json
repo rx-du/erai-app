@@ -3,7 +3,7 @@
   "title": "Burn injury",
   "category": [
     {
-      "name": "Types & recognition",
+      "name": "Types & Recognition",
       "sections": [
         {
           "title": "High Priority",
@@ -11,17 +11,17 @@
           "content": "Immediate care for thermal, chemical, and electrical burns. Time-sensitive treatment protocols."
         },
         {
-          "title": "Thermal burns",
+          "title": "Thermal Burns",
           "type": "list",
           "items": ["Hot liquids, steam", "Flame exposure", "Hot surfaces, friction", "Flash burns"]
         },
         {
-          "title": "Chemical burns",
+          "title": "Chemical Burns",
           "type": "list",
           "items": ["Acids and bases", "Industrial chemicals", "Household cleaners"]
         },
         {
-          "title": "Electrical burns",
+          "title": "Electrical Burns",
           "type": "list",
           "items": [
             "Live electrical wires",
@@ -33,15 +33,15 @@
       ]
     },
     {
-      "name": "Severity assessment",
+      "name": "Severity Assessment",
       "sections": [
         {
-          "title": "First degree",
+          "title": "First Degree",
           "type": "list",
           "items": ["Red, no blisters", "Painful", "Mild swelling", "Heals without skin layer loss"]
         },
         {
-          "title": "Second degree",
+          "title": "Second Degree",
           "type": "list",
           "items": [
             "Deep redness",
@@ -52,7 +52,7 @@
           ]
         },
         {
-          "title": "Third degree",
+          "title": "Third Degree",
           "type": "list",
           "items": [
             "White, brown, or black",
@@ -75,7 +75,7 @@
         {
           "id": 1,
           "title": "Ensure Scene Safety",
-          "subtitle": "Remove patient from burn source and ensure area is safe",
+          "subtitle": "Remove patient from burn source and ensure area is safe.",
           "timeframe": "Immediate",
           "type": "instruction",
           "video": null,
@@ -84,7 +84,7 @@
         {
           "id": 2,
           "title": "Stop the Burning Process",
-          "subtitle": "Stop, drop, and roll for flames; remove from heat source",
+          "subtitle": "Stop, drop, and roll for flames; remove from heat source.",
           "timeframe": "Immediate",
           "type": "instruction",
           "video": null,
@@ -93,7 +93,7 @@
         {
           "id": 3,
           "title": "Cool the Burn",
-          "subtitle": "Apply cool running water for 10–20 minutes",
+          "subtitle": "Apply cool running water for 10–20 minutes.",
           "timeframe": "Within 5 minutes",
           "type": "instruction",
           "video": null,
@@ -102,7 +102,7 @@
         {
           "id": 4,
           "title": "Assess Burn Severity",
-          "subtitle": "Determine burn degree and percentage of body affected",
+          "subtitle": "Determine burn degree and percentage of body affected.",
           "timeframe": "After cooling",
           "type": "instruction",
           "video": null,
@@ -111,7 +111,7 @@
         {
           "id": 5,
           "title": "Call Emergency Services",
-          "subtitle": "Call 911 for severe burns or burns covering large areas",
+          "subtitle": "Call 911 for severe burns or burns covering large areas.",
           "timeframe": "If indicated",
           "type": "action",
           "icon": "phone",
@@ -122,7 +122,7 @@
         {
           "id": 6,
           "title": "Cover and Protect",
-          "subtitle": "Cover burn with sterile dressing and monitor for shock",
+          "subtitle": "Cover burn with sterile dressing and monitor for shock.",
           "timeframe": "After assessment",
           "type": "instruction",
           "status": "pending"

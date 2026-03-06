@@ -3,12 +3,12 @@
   "title": "Head injury",
   "category": [
     {
-      "name": "Critical signs and immediate actions",
+      "name": "Critical Signs and Immediate Actions",
       "sections": [
         {
           "title": "Critical",
           "type": "text",
-          "content": "Any decline in GCS, new focal deficits, or signs of herniation require immediate ALS intervention and trauma center transport!"
+          "content": "Any decline in Glasgow Coma Scale, new focal deficits, or signs of herniation require immediate Advanced Life Support intervention and trauma center transport!"
         },
         {
           "title": "Critical Signs",
@@ -16,7 +16,7 @@
           "items": [
             "Altered level of consciousness",
             "Unequal or non-reactive pupils",
-            "Clear fluid from ears/nose (CSF leak)",
+            "Clear fluid from ears/nose (cerebrospinal fluid leak)",
             "Raccoon eyes or Battle's sign",
             "Severe headache or vomiting"
           ]
@@ -35,13 +35,13 @@
       ]
     },
     {
-      "name": "Professional first responder notes",
+      "name": "Professional First Responder Notes",
       "sections": [
         {
           "title": "Critical Transport Criteria",
           "type": "list",
           "items": [
-            "GCS ≤13 or decline ≥2 points",
+            "Glasgow Coma Scale ≤13 or decline ≥2 points",
             "Loss of consciousness > 5 minutes",
             "Post-traumatic amnesia > 30 minutes",
             "Repeated vomiting (≥2 episodes)",
@@ -56,7 +56,7 @@
             "Maintain C-spine immobilization",
             "Prevent secondary brain injury",
             "Optimize oxygenation/ventilation",
-            "Monitor for ICP signs",
+            "Monitor for Intracranial Pressure signs",
             "Frequent neurological reassessment",
             "Transport to trauma center"
           ]
@@ -64,7 +64,7 @@
       ]
     },
     {
-      "name": "Glasgow Coma scale",
+      "name": "Glasgow Coma Scale",
       "sections": [
         {
           "title": "Assessment Components",
@@ -106,7 +106,7 @@
         {
           "id": 1,
           "title": "Scene Safety & C-Spine Control",
-          "subtitle": "Ensure scene safety and establish manual C-spine stabilization",
+          "subtitle": "Ensure scene safety and establish manual C-spine stabilization.",
           "timeframe": "Immediate",
           "type": "instruction",
           "link": "C-Spine management",
@@ -117,7 +117,7 @@
         {
           "id": 2,
           "title": "Primary Assessment & Glasgow Coma Scale",
-          "subtitle": "Assess airway, breathing, circulation, and neurological function",
+          "subtitle": "Assess airway, breathing, circulation, and neurological function.",
           "timeframe": "Within 2 minutes",
           "type": "instruction",
           "link": "Glasgow Coma scale",
@@ -128,7 +128,7 @@
         {
           "id": 3,
           "title": "Neurological Assessment",
-          "subtitle": "Check pupils, cranial nerves, and motor function",
+          "subtitle": "Check pupils, cranial nerves, and motor function.",
           "timeframe": "Within 5 minutes",
           "type": "instruction",
           "status": "pending",
@@ -137,7 +137,7 @@
         {
           "id": 4,
           "title": "Call Emergency Services & Transport Decision",
-          "subtitle": "Activate EMS and determine need for trauma center",
+          "subtitle": "Activate Emergency Medical Services and determine need for trauma center.",
           "timeframe": "Within 3 minutes",
           "type": "action",
           "icon": "phone",
@@ -149,7 +149,7 @@
         {
           "id": 5,
           "title": "Immobilization & Airway Management",
-          "subtitle": "Apply cervical collar and prepare for transport",
+          "subtitle": "Apply cervical collar and prepare for transport.",
           "timeframe": "During assessment",
           "type": "instruction",
           "status": "pending",
@@ -158,7 +158,7 @@
         {
           "id": 6,
           "title": "Continuous Monitoring & Transport",
-          "subtitle": "Monitor for deterioration and prepare for rapid transport",
+          "subtitle": "Monitor for deterioration and prepare for rapid transport.",
           "timeframe": "Ongoing",
           "type": "monitor",
           "status": "pending",

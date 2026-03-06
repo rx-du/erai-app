@@ -1,7 +1,17 @@
 {
   "id": "shock_management",
   "title": "Shock Management First Aid",
-  "category": [],
+  "category": [
+    {
+      "sections": [
+        {
+          "title": "Shock Management",
+          "type": "text",
+          "content": "Shock is a life-threatening condition where the body is not getting enough blood flow, leading to a lack of oxygen to vital organs. Immediate first aid can save a life.\n\nShock is always a medical emergency. Even if the person seems to recover, they still need urgent medical evaluation.\n\nCall your local emergency number immediately (e.g., 911/112/999)."
+        }
+      ]
+    }
+  ],
   "steps": [
     {
       "id": "shock_management_protocol",
@@ -12,7 +22,7 @@
         {
           "id": 1,
           "title": "Recognize Shock Signs",
-          "subtitle": "Check for rapid pulse, pale skin, confusion, decreased blood pressure.",
+          "subtitle": "Pale, cold, clammy skin, Rapid, weak pulse, Fast, shallow breathing, Dizziness or fainting, Nausea or vomiting, Thirst, Confusion or restlessness, Bluish lips or fingernails (late sign).",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",
@@ -21,7 +31,7 @@
         {
           "id": 2,
           "title": "Position Patient",
-          "subtitle": "Place patient supine, elevate legs 8–12 inches if no spinal injury.",
+          "subtitle": "Place them on their back, elevate the legs about 6–12 inches (unless you suspect head, neck, spine, hip, or leg injury).",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",
@@ -30,7 +40,7 @@
         {
           "id": 3,
           "title": "Control Bleeding",
-          "subtitle": "Stop any visible bleeding immediately using direct pressure.",
+          "subtitle": "Stop any visible bleeding immediately by applying firm direct pressure with a clean cloth or bandage. Use a tourniquet only if trained and bleeding is severe.",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",

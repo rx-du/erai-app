@@ -1,0 +1,63 @@
+{
+  "id": "poison_emergency",
+  "title": "Poison Emergency",
+  "category": [],
+  "steps": [
+    {
+      "id": "poison_emergency_protocol",
+      "title": "Poison Emergency 6-Step Protocol",
+      "category": "Medical Emergencies",
+      "severity": "critical",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Ensure Scene Safety",
+          "subtitle": "• Make sure you are safe before helping.\n• Remove the person from the source of poison (gas, chemicals, fumes).\n• Avoid direct contact with unknown substances (use gloves if available).\n• If it’s a gas exposure (like carbon monoxide), move to fresh air immediately.",
+          "type": "instruction",
+          "status": "pending",
+          "video": null
+        },
+        {
+          "id": 2,
+          "title": "Check Responsiveness & ABCs",
+          "subtitle": "• A — Airway: Is the airway clear?\n• B — Breathing: Is the person breathing normally?\n• C — Circulation: Is there a pulse?\n\nIf unconscious and not breathing, start CPR and call Emergency Medical Services immediately.",
+          "type": "instruction",
+          "status": "pending",
+          "video": null
+        },
+        {
+          "id": 3,
+          "title": "Call for Professional Help",
+          "subtitle": "• Call your local emergency number right away.\n• In the U.S., contact Poison Control (1-800-222-1222).\n• Provide:\n  • Age and weight of the person\n  • Substance involved (bring the container if possible)\n  • Amount taken\n  • Time of exposure\n  • Symptoms\nDo not wait for symptoms to appear.",
+          "type": "instruction",
+          "status": "pending",
+          "video": null
+        },
+        {
+          "id": 4,
+          "title": "Do NOT Induce Vomiting (Unless Directed)",
+          "subtitle": "• Do not give food, drink, or milk unless instructed by medical professionals.\n• Do not induce vomiting unless poison control specifically tells you to.\n• If the poison is on the skin, rinse with running water for 15 minutes.\n• If in eyes, flush gently with clean water for 15 minutes.",
+          "type": "instruction",
+          "status": "pending",
+          "video": null
+        },
+        {
+          "id": 5,
+          "title": "Position the Person Properly",
+          "subtitle": "• If unconscious but breathing, place in the recovery position (on their side).\n• If vomiting, turn head to the side to prevent choking.\n• Keep them calm and still.",
+          "type": "instruction",
+          "status": "pending",
+          "video": null
+        },
+        {
+          "id": 6,
+          "title": "Monitor & Document",
+          "subtitle": "Watch for:\n• Difficulty breathing\n• Seizures\n• Chest pain\n• Severe drowsiness\n• Bluish lips or nails\n• Note any changes in condition.\n• Be ready to give updates to emergency responders.\n\nSeek Immediate Emergency Care If:\n• The person collapses\n• Has trouble breathing\n• Has seizures\n• Is unconscious\n• The poison is a strong acid, alkali, or petroleum product",
+          "type": "monitor",
+          "status": "pending",
+          "video": null
+        }
+      ]
+    }
+  ]
+}

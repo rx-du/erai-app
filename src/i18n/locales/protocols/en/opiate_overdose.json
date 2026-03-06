@@ -3,7 +3,7 @@
   "title": "Opiate overdose",
   "category": [
     {
-      "name": "Recognition signs and critical actions",
+      "name": "Recognize Signs and Critical Actions",
       "sections": [
         {
           "title": "Critical",
@@ -11,7 +11,7 @@
           "content": "Comprehensive protocol for accidental opioid overdose response including NARCAN (naloxone) administration and recovery positioning. Designed for professional medical first responders, EMTs, and law enforcement personnel."
         },
         {
-          "title": "Recognition signs",
+          "title": "Recognize Signs",
           "type": "list",
           "items": [
             "Unconscious or unresponsive",
@@ -22,7 +22,7 @@
           ]
         },
         {
-          "title": "Critical actions",
+          "title": "Critical Actions",
           "type": "list",
           "items": [
             "Scene safety assessment",
@@ -35,7 +35,7 @@
       ]
     },
     {
-      "name": "NARCAN administration",
+      "name": "NARCAN Administration",
       "sections": [
         {
           "title": "Warning",
@@ -43,7 +43,7 @@
           "content": "NARCAN effects are temporary. Patient may re-overdose when it wears off!"
         },
         {
-          "title": "Dosing guidelines",
+          "title": "Dosing Guidelines",
           "type": "list",
           "items": [
             "Intranasal: 4mg per nostril",
@@ -56,10 +56,10 @@
       ]
     },
     {
-      "name": "Recovery position",
+      "name": "Recovery Position",
       "sections": [
         {
-          "title": "Recovery position",
+          "title": "Recovery Position",
           "type": "list",
           "items": [
             "Place patient on side",
@@ -75,7 +75,7 @@
       "name": "Professional First Responder Notes",
       "sections": [
         {
-          "title": "NARCAN (Naloxone) facts",
+          "title": "NARCAN (Naloxone) Facts",
           "type": "list",
           "items": [
             "Opioid receptor antagonist",
@@ -86,7 +86,7 @@
           ]
         },
         {
-          "title": "Safety considerations",
+          "title": "Safety Considerations",
           "type": "list",
           "items": [
             "Scene safety paramount",
@@ -127,7 +127,7 @@
         {
           "id": 3,
           "title": "Call Emergency Services",
-          "subtitle": "Call 911 immediately. Report suspected opioid overdose and request ALS if available. Provide exact location.",
+          "subtitle": "Call 911 immediately. Report suspected opioid overdose and request Advance Life Support if available. Provide exact location.",
           "timeframe": "Immediate",
           "type": "action",
           "icon": "phone",
@@ -139,7 +139,7 @@
         {
           "id": 4,
           "title": "Assess Breathing & Pulse",
-          "subtitle": "Check for adequate breathing (rate >10/min, good depth). Assess pulse, skin color, look for cyanosis. Check Pupils (pin-point pupils sign of opiate overdose).",
+          "subtitle": "Check for adequate breathing (rate >10 breaths/minute, good depth). Assess pulse, skin color, look for cyanosis (bluish or purplish discoloration). Check Pupils (pin-point pupils sign of opiate overdose).",
           "timeframe": "Immediate",
           "type": "instruction",
           "status": "pending",
@@ -153,12 +153,13 @@
           "type": "instruction",
           "link": "NARCAN administration",
           "status": "pending",
-          "video": null
+          "video": null,
+          "image": "narcan_administration.png"
         },
         {
           "id": 6,
           "title": "Airway Management",
-          "subtitle": "Open airway using head-tilt, chin-lift. Clear visible obstructions. Consider OPA/NPA if trained.",
+          "subtitle": "Delete Consider OPA/NPA if trained. (that procedure is foradvanced medical personnel).",
           "timeframe": "Immediate",
           "type": "instruction",
           "status": "pending",
@@ -167,7 +168,7 @@
         {
           "id": 7,
           "title": "Rescue Breathing/Ventilation",
-          "subtitle": "If breathing inadequate: provide rescue breaths with BVM or pocket mask. Rate 10–12/min for adults.",
+          "subtitle": "If breathing inadequate: provide rescue breaths with Bag-Valve-Mask or pocket mask. Rate 10–12/min for adults.",
           "timeframe": "Immediate",
           "type": "instruction",
           "status": "pending",
@@ -176,7 +177,7 @@
         {
           "id": 8,
           "title": "Recovery Position",
-          "subtitle": "If breathing adequately and unconscious, place in recovery position on side to prevent aspiration.",
+          "subtitle": "If breathing adequately, place in recovery position on their side, top leg bent to prevent rolling, and to prevent aspiration if vomiting occurs.",
           "timeframe": "Immediate",
           "type": "instruction",
           "link": "Recovery position",
@@ -186,7 +187,7 @@
         {
           "id": 9,
           "title": "CPR if Cardiac Arrest",
-          "subtitle": "If no pulse, begin CPR immediately. 30:2 compression to ventilation ratio. Continue until ALS arrives.",
+          "subtitle": "If no pulse, begin CPR immediately. 30:2 compression to ventilation ratio. Continue until Advanced Life Support arrives.",
           "timeframe": "Immediate",
           "type": "alert",
           "link": "CPR protocol",

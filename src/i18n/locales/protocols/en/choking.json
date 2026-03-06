@@ -7,8 +7,16 @@
       "name": "",
       "sections": [
         {
-          "title": "AHA Accredited",
-          "subtitle": "This protocol follows American Heart Association Basic Life Support choking guidelines with AI safety guidance."
+          "title": "American Heart Association Choking Guidelines\n\nSigns of Severe Airway Obstruction",
+          "type": "list",
+          "items": [
+            "Cannot speak or cry",
+            "Cannot cough effectively",
+            "Cannot breathe",
+            "Silent or high-pitched noises",
+            "Clutching throat (universal choking sign)",
+            "Turning blue (cyanosis)"
+          ]
         }
       ]
     }
@@ -16,7 +24,7 @@
   "protocols": [
     {
       "id": "CHOKING_ADULT",
-      "title": "Choking protocol for adults",
+      "title": "Choking Protocol for Adults",
       "ageRange": "8+ years",
       "steps": [
         {
@@ -59,7 +67,7 @@
     },
     {
       "id": "CHOKING_CHILD",
-      "title": "Choking protocol for children",
+      "title": "Choking Protocol for Children",
       "ageRange": "1-8 years",
       "steps": [
         {
@@ -100,7 +108,7 @@
     },
     {
       "id": "CHOKING_INFANT",
-      "title": "Choking protocol for infants",
+      "title": "Choking Protocol for Infants",
       "ageRange": "0-1 years",
       "steps": [
         {

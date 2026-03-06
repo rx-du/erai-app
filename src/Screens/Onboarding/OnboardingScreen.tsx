@@ -32,12 +32,12 @@ export function OnboardingScreen({ navigation }: any) {
         'Learn with short videos and clear instructions that make complex protocols simple and actionable in any emergency.',
       Icon: require('../../Icons/onboarding2.png'),
     },
-    {
-      title: 'Hands-Free Assistance',
-      subtitle:
-        'Use voice commands to follow protocols without touching your phone, so you can stay fully focused.',
-      Icon: require('../../Icons/onboarding3.png'),
-    },
+    // {
+    //   title: 'Hands-Free Assistance',
+    //   subtitle:
+    //     'Use voice commands to follow protocols without touching your phone, so you can stay fully focused.',
+    //   Icon: require('../../Icons/onboarding3.png'),
+    // },
     {
       type: 'trial',
     },

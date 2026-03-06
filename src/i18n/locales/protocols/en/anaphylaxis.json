@@ -3,12 +3,18 @@
   "title": "Anaphylaxis",
   "category": [
     {
-      "name": "Severity assessment",
+      "name": "Severity Assessment",
       "sections": [
         {
-          "title": "High Priority",
-          "type": "text",
-          "content": "Diabetes emergencies require immediate assessment and intervention. Blood glucose levels can be life-threatening."
+          "title": "Anaphylaxis can rapidly cause",
+          "type": "list",
+          "items": [
+            "Airway swelling (can block breathing)",
+            "Severe difficulty breathing",
+            "Drop in blood pressure (shock)",
+            "Loss of consciousness",
+            "Death if untreated"
+          ]
         },
         {
           "title": "Mild Reaction",
@@ -33,49 +39,15 @@
       ]
     },
     {
-      "name": "Professional reference",
+      "name": "Epinephrine Dose",
       "sections": [
         {
-          "title": "Blood Glucose Reference",
+          "title": "There are no absolute contraindications to epinephrine in anaphylaxis.",
           "type": "list",
           "items": [
-            "Normal: 70–140 mg/dL",
-            "Hypoglycemia: <70 mg/dL",
-            "Hyperglycemia: >180 mg/dL",
-            "Critical High: >250 mg/dL",
-            "DKA Range: >300 mg/dL + ketones"
+            "Site: Mid-outer thigh (vastus lateralis)",
+            "Repeat every 5–15 minutes if needed"
           ]
-        },
-        {
-          "title": "Treatment Protocols",
-          "type": "list",
-          "items": [
-            "Oral glucose: 15–20g for conscious patients",
-            "Glucagon: 1mg IM/SC for unconscious",
-            "IV Dextrose: D50W 25g IV push",
-            "Monitor q15min post-treatment",
-            "ALS transport for severe cases"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Epinephrine dose",
-      "sections": [
-        {
-          "title": "Adult",
-          "type": "text",
-          "content": "0.3–0.5mg IM"
-        },
-        {
-          "title": "Child",
-          "type": "text",
-          "content": "0.01mg/kg IM (max 0.3mg)"
-        },
-        {
-          "title": "Infant",
-          "type": "text",
-          "content": "0.1–0.15mg IM"
         }
       ]
     }
@@ -90,7 +62,7 @@
         {
           "id": 1,
           "title": "Recognize Anaphylaxis",
-          "subtitle": "Identify signs of severe allergic reaction",
+          "subtitle": "Suspect anaphylaxis if there is acute onset (minutes–hours) of:\n\n• Skin/Mucosal: hives, flushing, itching, angioedema (lips, tongue, throat)\n• Respiratory: wheeze, stridor, shortness of breath, throat tightness\n• Cardiovascular: hypotension, dizziness, syncope\n• Gastrointestinal: vomiting, diarrhea, abdominal pain\n• Neurologic: feeling of impending doom\n\nCommon triggers:\n\n• Foods (nuts, shellfish, milk, eggs)\n• Medications (penicillin, NSAIDs)\n• Insect stings\n• Latex",
           "timeframe": "Immediate",
           "type": "instruction",
           "video": null,
@@ -111,18 +83,19 @@
         {
           "id": 3,
           "title": "Administer Epinephrine",
-          "subtitle": "Use EpiPen or epinephrine auto-injector if available",
+          "subtitle": "Use EpiPen or epinephrine auto-injector if available (DO NOT DELAY)",
           "timeframe": "Within 2 minutes",
           "type": "instruction",
           "video": null,
           "link": "epinephrine_dose",
           "status": "pending",
-          "shouldDisplayEpinephineDose": true
+          "shouldDisplayEpinephineDose": true,
+          "image": "anaphylaxis_epinephrine.png"
         },
         {
           "id": 4,
           "title": "Position Patient",
-          "subtitle": "Keep patient lying down with legs elevated",
+          "subtitle": "Place patient Supine (flat on their back, facing upward) with legs elevated (unless respiratory distress).",
           "timeframe": "After epinephrine",
           "type": "instruction",
           "video": null,

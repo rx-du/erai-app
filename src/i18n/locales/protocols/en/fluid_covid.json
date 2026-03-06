@@ -1,17 +1,49 @@
 {
   "id": "fluid_covid",
   "title": "Flu & Covid Symptoms",
-  "category": [],
+  "category": [
+    {
+      "sections": [
+        {
+          "title": "Flu vs. COVID-19 Symptoms",
+          "type": "text",
+          "content": "General symptoms guidance consistent with Public Health and Education from the American Heart Association and the Centers for Disease Control and Prevention."
+        },
+        {
+          "title": "Symptoms",
+          "type": "list",
+          "items": [
+            "Fever",
+            "Chills",
+            "Cough",
+            "Shortness of breath",
+            "Fatigue (very common with Covid-19)",
+            "Body aches",
+            "Headache",
+            "Sore throat",
+            "Runny/stuffy nose (sometimes with Covid-19)",
+            "Loss of taste/smell (more specific with Covid-19)",
+            "Nausea/vomiting",
+            "Diarrhea"
+          ]
+        },
+        {
+          "title": "Onset Differences",
+          "type": "list",
+          "items": [
+            "Flu: Sudden onset (you feel sick quickly)",
+            "COVID-19: May develop gradually (2–14 days after exposure)"
+          ]
+        }
+      ]
+    }
+  ],
   "protocols": [
     {
       "id": "flu_covid_symptoms",
       "title": "Flu / COVID-Like Symptoms",
       "severity": "Moderate",
-      "tags": [
-        "Respiratory",
-        "Infection",
-        "Recovery"
-      ],
+      "tags": ["Respiratory", "Infection", "Recovery"],
       "steps": [
         {
           "id": 1,

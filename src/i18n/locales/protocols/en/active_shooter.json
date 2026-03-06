@@ -10,7 +10,7 @@
           "content": "Dial emergency number immediately and maintain communication."
         },
         {
-          "title": "Your safety is the priority",
+          "title": "Your Safety is the Priority",
           "type": "text",
           "content": "Follow instructions that protect your teachers and school officials."
         },
@@ -20,12 +20,12 @@
           "content": "All steps should be performed quickly and quietly."
         },
         {
-          "title": "Tactical medical care",
+          "title": "Tactical Medical Care",
           "type": "text",
           "content": "Requires specialized training and coordination with medical teams."
         },
         {
-          "title": "Mass casualty events",
+          "title": "Mass Casualty Events",
           "type": "text",
           "content": "Ensure coordinated response and systematic triage protocols."
         },
@@ -179,7 +179,7 @@
         {
           "id": 2,
           "title": "Rapid Triage Assessment",
-          "subtitle": "Use START triage. Prioritize life-threatening injuries.",
+          "subtitle": "Use Simple Triage and Rapid Treatment triage. Prioritize life-threatening injuries.",
           "timeframe": "Immediate",
           "type": "instruction",
           "video": null,
@@ -232,7 +232,7 @@
         {
           "id": 1,
           "title": "Establish Triage Area",
-          "subtitle": "Set up triage zones. Implement START protocol.",
+          "subtitle": "Set up triage zones. Implement Simple Triage and Rapid Treatment protocol.",
           "timeframe": "Immediate",
           "type": "instruction",
           "video": null,

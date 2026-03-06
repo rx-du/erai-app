@@ -55,33 +55,33 @@ export default function AidScreen() {
 
     if (!currentTab) return;
 
-    const isFirstAid = currentTab.key === t('aid.firstAid');
+    // const isFirstAid = currentTab.key === t('aid.firstAid');
 
-    if (isFirstAid) {
-      const isFreeUser = subscriptionDetails.currentPlan === null;
+    // if (isFirstAid) {
+    //   const isFreeUser = subscriptionDetails.currentPlan === null;
 
-      if (isFreeUser) {
-        setShowUpgradeSubscription(true);
-        return;
-      }
+    //   if (isFreeUser) {
+    //     setShowUpgradeSubscription(true);
+    //     return;
+    //   }
 
-      const protocolData = item.pageContent;
-      const firstProtocol = protocolData?.steps?.[0];
+    //   const protocolData = item.pageContent;
+    //   const firstProtocol = protocolData?.steps?.[0];
 
-      navigation.navigate('ProtocolStep', {
-        protocolData: {
-          ...protocolData,
-          selectedProtocol: firstProtocol,
-        },
-        icon: item.icon,
-      });
-    } else {
-      navigation.navigate('Protocol', {
-        protocolData: item.pageContent,
-        title: item.label,
-        icon: item.icon,
-      });
-    }
+    //   navigation.navigate('ProtocolStep', {
+    //     protocolData: {
+    //       ...protocolData,
+    //       selectedProtocol: firstProtocol,
+    //     },
+    //     icon: item.icon,
+    //   });
+    // }
+
+    navigation.navigate('Protocol', {
+      protocolData: item.pageContent,
+      title: item.label,
+      icon: item.icon,
+    });
   };
 
   return (

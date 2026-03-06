@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Platform, Dimensions } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -8,6 +8,7 @@ import { MainLayout } from '../Layout/MainLayout';
 import HeaderIconFirst from '../../Icons/hello-vector.svg';
 import AppleIcon from '../../Icons/apple-24.svg';
 import GoogleIcon from '../../Icons/google-24.svg';
+import YahooIcon from '../../Icons/yahoo-24.svg'; // You may need to add this SVG if not present
 import { welcomeStyles } from './Styles';
 import { signInWithApple } from '../../Features/Auth/Services/AppleLogin';
 import { useTheme } from '../../Theme/ThemeContext';
@@ -17,14 +18,16 @@ import { useAuth } from '../../Context/AuthContext';
 export default function WelcomeScreen({ navigation }: any) {
   const { colors } = useTheme();
   const { t } = useTranslation();
-  const { loginWithGoogle, loginWithApple } = useAuth();
+  const { loginWithGoogle, loginWithApple, loginWithYahoo } = useAuth();
 
   const handleSignIn = async (provider: string) => {
     try {
       if (provider === 'google') {
         await loginWithGoogle();
-      } else {
+      } else if (provider === 'apple') {
         await loginWithApple();
+      } else if (provider === 'yahoo') {
+        await loginWithYahoo();
       }
     } catch (error) {
       console.error('Google Sign-In Error:', error);
@@ -66,6 +69,15 @@ export default function WelcomeScreen({ navigation }: any) {
                 width={345}
               />
             )}
+
+            <CustomButton
+              onPress={() => handleSignIn('yahoo')}
+              text={t('welcome.continueWithYahoo')}
+              Icon={YahooIcon}
+              type="social"
+              dimension="large"
+              width={345}
+            />
           </View>
           <View style={welcomeStyles.textContainer}>
             <Text style={[welcomeStyles.servicesText, { color: colors.Text.neutral.secondary }]}>

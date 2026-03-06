@@ -20,6 +20,7 @@ import fracturesEn from '../locales/protocols/en/fractures.json';
 import woundsEn from '../locales/protocols/en/wounds.json';
 import fluidElectrolyteEn from '../locales/protocols/en/fluid_electrolyte.json';
 import fluidCovidEn from '../locales/protocols/en/fluid_covid.json';
+import poisonEn from '../locales/protocols/en/poison.json';
 
 // Romanian protocols
 import heartAttackRo from '../locales/protocols/ro/heart_attack.json';
@@ -45,6 +46,7 @@ const protocols = {
     wounds: woundsEn,
     fluid_electrolyte: fluidElectrolyteEn,
     fluid_covid: fluidCovidEn,
+    poison: poisonEn,
   },
   ro: {
     heart_attack: heartAttackRo,

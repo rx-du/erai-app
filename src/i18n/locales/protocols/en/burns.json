@@ -1,7 +1,30 @@
 {
   "id": "burn_care",
   "title": "Burn Care First Aid",
-  "category": [],
+  "category": [
+    {
+      "name": "Burn Care First Aid Guidance",
+      "sections": [
+        {
+          "title": "General Guidance",
+          "type": "text",
+          "content": "Burns can damage the skin and deeper tissues. Quick, correct first aid reduces pain, infection, and long-term damage."
+        },
+        {
+          "title": "Call Emergency Services Immediately If",
+          "type": "list",
+          "items": [
+            "Burn is larger than the person's palm",
+            "Burn involves face, hands, feet, genitals, or major joints",
+            "Third-degree burn suspected",
+            "Electrical or chemical burn",
+            "Signs of shock appear",
+            "Burn in infants or elderly"
+          ]
+        }
+      ]
+    }
+  ],
   "steps": [
     {
       "id": "burn_care_protocol",
@@ -12,7 +35,7 @@
         {
           "id": 1,
           "title": "Stop Burning Process",
-          "subtitle": "Remove from heat source, stop, drop, and roll if clothing on fire.",
+          "subtitle": "Remove from heat source, Stop-Drop-Roll if clothing is on fire. Turn off electricity before touching a person with electrical burns.",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",
@@ -21,7 +44,7 @@
         {
           "id": 2,
           "title": "Assess Burn Severity",
-          "subtitle": "Determine depth (1st, 2nd, 3rd degree) and percentage of body affected.",
+          "subtitle": "Determine depth (1st, 2nd, 3rd degree) and percentage of body affected.\n\nFirst-Degree (Superficial):\n  • Red, painful, dry skin\n  • No blisters\n  • Example: mild sunburn\n\nSecond-Degree (Partial Thickness):\n  • Red or blotchy\n  • Blisters\n  • Swelling and severe pain\n\nThird-Degree (Full Thickness) — Medical Emergency:\n  • White, charred, brown, or leathery skin\n  • May be painless (nerve damage)\n  • Requires urgent medical care",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",
@@ -30,7 +53,7 @@
         {
           "id": 3,
           "title": "Cool the Burn",
-          "subtitle": "Apply cool (not cold) water for 10–20 minutes to thermal burns.",
+          "subtitle": "Run cool (not ice-cold) water over the burn for 10–20 minutes. Do NOT use ice (can cause more tissue damage).",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",
@@ -38,8 +61,8 @@
         },
         {
           "id": 4,
-          "title": "Remove Jewelry",
-          "subtitle": "Remove rings, watches before swelling occurs. Do not remove stuck clothing.",
+          "title": "Remove Tight Items",
+          "subtitle": "Gently remove rings, watches, or tight clothing before swelling starts. Do NOT remove stuck clothing.",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",
@@ -47,8 +70,8 @@
         },
         {
           "id": 5,
-          "title": "Cover Burn",
-          "subtitle": "Use sterile gauze or clean cloth. Do not use ice, butter, or ointments.",
+          "title": "Protect the Burn",
+          "subtitle": "Cover loosely with a sterile, non-stick dressing or clean cloth. Do NOT break blisters.\nDo NOT use ice, butter, ointments, toothpaste, or creams.",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",
@@ -57,7 +80,7 @@
         {
           "id": 6,
           "title": "Pain Management",
-          "subtitle": "Provide appropriate pain relief, monitor for shock development.",
+          "subtitle": "Provide over-the-counter pain relievers (if appropriate). Monitor for shock, keep the area elevated if possible.",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",

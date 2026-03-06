@@ -39,7 +39,7 @@ export default function Header({
         <BackIcon color={colors.Button.accent.primary} />
       </TouchableOpacity>
       <View style={headerStyle.subContainer}>
-        {Icon && <Icon color={colors.Text.neutral.primary} />}
+        {Icon && <Icon color={colors.Text.neutral.primary} width={28} height={28} />}
         <Text style={[headerStyle.text, { color: colors.Text.neutral.primary }]}>{title}</Text>
       </View>
       {categories && categories.length > 0 && (

@@ -17,8 +17,8 @@ export const headerStyle = StyleSheet.create({
     gap: 12,
   },
   text: {
-    fontSize: 24,
-    fontWeight: 700,
+    fontSize: 28,
+    fontWeight: 900,
     lineHeight: 31.2,
     fontFamily: 'Inter',
   },

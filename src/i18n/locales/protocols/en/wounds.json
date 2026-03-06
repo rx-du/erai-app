@@ -1,7 +1,29 @@
 {
   "id": "wound_care",
   "title": "Wound Care First Aid",
-  "category": [],
+  "category": [
+    {
+      "sections": [
+        {
+          "title": "General Guidance",
+          "type": "text",
+          "content": "Proper wound care helps prevent infection, reduce bleeding, and promote healing."
+        },
+        {
+          "title": "Seek Medical Help Immediately If",
+          "type": "list",
+          "items": [
+            "Bleeding won’t stop after 10 minutes of firm pressure",
+            "Wound is deep, large, or edges are gaping",
+            "Bone, muscle, or fat is visible",
+            "Caused by animal/human bite",
+            "Caused by rusty/dirty object (tetanus risk)",
+            "Signs of severe infection develop"
+          ]
+        }
+      ]
+    }
+  ],
   "steps": [
     {
       "id": "wound_care_protocol",
@@ -11,8 +33,8 @@
       "steps": [
         {
           "id": 1,
-          "title": "Wound Assessment",
-          "subtitle": "Evaluate depth, length, location, and contamination of wound.",
+          "title": "Stay Calm & Assess the Wound",
+          "subtitle": "Check how deep and large the wound is. Look for heavy bleeding, dirt, or embedded objects. If bleeding is severe or won’t stop after 10 minutes of pressure, seek emergency care immediately.",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",
@@ -20,8 +42,8 @@
         },
         {
           "id": 2,
-          "title": "Control Bleeding",
-          "subtitle": "Apply direct pressure with sterile gauze or clean cloth.",
+          "title": "Stop the Bleeding",
+          "subtitle": "Apply firm, direct pressure with sterile gauze or clean cloth. Elevate the injured area if possible.",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",
@@ -29,8 +51,8 @@
         },
         {
           "id": 3,
-          "title": "Irrigate if Needed",
-          "subtitle": "Clean wound with sterile saline if heavily contaminated.",
+          "title": "Clean the Wound",
+          "subtitle": "Rinse under clean running water, remove visible dirt with clean tweezers (sterilized if possible). Avoid pouring soap directly into deep wounds, use mild antiseptic solution. Avoid harsh chemicals like hydrogen peroxide for deep wounds (can damage tissue).",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",
@@ -39,7 +61,7 @@
         {
           "id": 4,
           "title": "Apply Dressing",
-          "subtitle": "Use sterile gauze pad secured with tape or bandage.",
+          "subtitle": "Apply sterile dressing or adhesive bandage, secure with tape. Change dressing daily orwhen wet/dirty.",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",
@@ -47,8 +69,8 @@
         },
         {
           "id": 5,
-          "title": "Tetanus Consideration",
-          "subtitle": "Determine tetanus vaccination status for dirty wounds.",
+          "title": "Tetanus Protection",
+          "subtitle": "Ensure tetanus vaccination is up to date. Booster recommended every 10 years (or sooner for high-risk wounds).",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",
@@ -56,8 +78,8 @@
         },
         {
           "id": 6,
-          "title": "Monitor for Infection",
-          "subtitle": "Watch for signs of redness, swelling, warmth, discharge.",
+          "title": "Monitor for Signs of Infection",
+          "subtitle": "Increased redness or swelling, warmth around wound. Pus or unusual discharge, fever, or red streaks spreading from wound.",
           "timeframe": "Critical",
           "type": "monitor",
           "status": "pending",

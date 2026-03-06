@@ -3,7 +3,7 @@
   "title": "Seizure",
   "category": [
     {
-      "name": "Recognize seizure types",
+      "name": "Recognize Seizure Types",
       "sections": [
         {
           "title": "High Priority",
@@ -11,12 +11,12 @@
           "content": "Seizures require immediate protection and monitoring. Status epilepticus (>5 minutes) is a medical emergency."
         },
         {
-          "title": "Status epilepticus",
+          "title": "Status Epilepticus",
           "type": "text",
           "content": "Seizure > 5 minutes or repeated seizures."
         },
         {
-          "title": "Generalized tonic-clonic",
+          "title": "Generalized Tonic-Clonic",
           "type": "text",
           "content": "Full body convulsions, loss of consciousness."
         },
@@ -33,10 +33,10 @@
       ]
     },
     {
-      "name": "Critical assessment points",
+      "name": "Critical Assessment Points",
       "sections": [
         {
-          "title": "Primary survey",
+          "title": "Primary Survey",
           "type": "list",
           "items": [
             "Airway patency and protection",
@@ -47,7 +47,7 @@
           ]
         },
         {
-          "title": "Immediate priorities",
+          "title": "Immediate Priorities",
           "type": "list",
           "items": [
             "Protect from injury – pad/cushion",
@@ -70,7 +70,7 @@
         {
           "id": 1,
           "title": "Ensure Safety",
-          "subtitle": "Clear area of hazards and protect patient from injury",
+          "subtitle": "Stay calm, clear area of hazards and protect patient from injury.\n\nEase patient to the floor if needed. Clear nearby objects.\n\nPlace something soft under the head. Loosen tight clothing around the neck.\n\n  • Do NOT hold them down.\n  • Do NOT put anything in their mouth.\n  • Do NOT give food or water during seizure.\n  • Do NOT perform rescue breaths during active convulsions.",
           "timeframe": "Immediate",
           "type": "instruction",
           "status": "pending",
@@ -79,7 +79,7 @@
         {
           "id": 2,
           "title": "Time the Seizure",
-          "subtitle": "Note start time and duration of seizure activity",
+          "subtitle": "Note start time and duration of seizure activity. Most seizures last 1–3 minutes.",
           "timeframe": "During seizure",
           "type": "instruction",
           "status": "pending",
@@ -97,7 +97,7 @@
         {
           "id": 4,
           "title": "Call Emergency Services & Transport Decision",
-          "subtitle": "Call 911 if seizure lasts over 5 minutes or patient is injured",
+          "subtitle": "Call 911 if:\n• Seizure lasts longer than 5 minutes or patient is injured.\n• Repeated seizures without regaining consciousness.\n• First known seizure.\n• Person is pregnant.\n• Person is diabetic.\n• Person is injured.\n• Seizure occurred in water.\n• Breathing problems occur after seizure.",
           "timeframe": "If indicated",
           "type": "action",
           "icon": "phone",
@@ -109,7 +109,7 @@
         {
           "id": 5,
           "title": "Post-Seizure Care",
-          "subtitle": "Stay with patient during recovery phase",
+          "subtitle": "After Seizure Stops (Post-ictal Phase), Stay with patient, they may be confused, sleepy, or embarrassed, reassure and orient them.",
           "timeframe": "After seizure",
           "type": "instruction",
           "status": "pending",

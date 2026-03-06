@@ -26,7 +26,7 @@
           "items": ["Cold sweats", "Lightheadedness", "Unusual fatigue", "Heartburn-like feeling"]
         },
         {
-          "title": "Quick action",
+          "title": "Quick Action",
           "type": "text",
           "content": "325mg Aspirin, chew slowly."
         }
@@ -43,7 +43,7 @@
         {
           "id": 1,
           "title": "Scene Safety & Initial Assessment",
-          "subtitle": "Ensure scene safety, check responsiveness, and assess breathing",
+          "subtitle": "Ensure scene safety, check responsiveness, and assess breathing.",
           "timeframe": "Immediate",
           "type": "instruction",
           "video": null,
@@ -52,7 +52,7 @@
         {
           "id": 2,
           "title": "Call Emergency Services",
-          "subtitle": "Call 911 immediately – time is critical for cardiac events",
+          "subtitle": "Call 911 immediately – time is critical for cardiac events.",
           "timeframe": "Within 1 minute",
           "type": "action",
           "icon": "phone",
@@ -63,7 +63,7 @@
         {
           "id": 3,
           "title": "Administer Aspirin",
-          "subtitle": "Give 325mg aspirin if patient is conscious and not allergic",
+          "subtitle": "Give 325mg aspirin if patient is conscious and not allergic.",
           "timeframe": "Within 5 minutes",
           "type": "instruction",
           "video": null,
@@ -72,7 +72,7 @@
         {
           "id": 4,
           "title": "Position Patient",
-          "subtitle": "Place patient in comfortable upright position",
+          "subtitle": "Place patient in comfortable upright position.",
           "timeframe": "Immediate",
           "type": "instruction",
           "status": "completed",
@@ -81,7 +81,7 @@
         {
           "id": 5,
           "title": "Monitor Vital Signs",
-          "subtitle": "Continuously monitor breathing, pulse, and consciousness",
+          "subtitle": "Continuously monitor breathing, pulse, and consciousness.",
           "timeframe": "Ongoing",
           "type": "monitor",
           "status": "completed",
@@ -90,7 +90,7 @@
         {
           "id": 6,
           "title": "Prepare for CPR",
-          "subtitle": "Be ready to start CPR if patient loses consciousness",
+          "subtitle": "Be ready to start CPR if patient loses consciousness.",
           "timeframe": "If needed",
           "type": "alert",
           "link": "cpr_protocol",

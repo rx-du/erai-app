@@ -3,6 +3,10 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import appleAuth from '@invertase/react-native-apple-authentication';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { authorize } from 'react-native-app-auth';
+import { Platform, NativeModules } from 'react-native';
+
+const { YahooAuthModule } = NativeModules;
 
 type AuthContextType = {
   isAuthenticated: boolean | null;
@@ -11,6 +15,7 @@ type AuthContextType = {
   replayOnboarding: () => Promise<void>;
   loginWithGoogle: () => Promise<void>;
   loginWithApple: () => Promise<void>;
+  loginWithYahoo: () => Promise<void>;
   logout: () => Promise<void>;
 };
 
@@ -24,6 +29,7 @@ export const AuthContext = createContext<AuthContextType>({
   replayOnboarding: async () => {},
   loginWithGoogle: async () => {},
   loginWithApple: async () => {},
+  loginWithYahoo: async () => {},
   logout: async () => {},
 });
 
@@ -39,7 +45,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       return;
     }
 
-    if (provider === 'apple') {
+    if (provider === 'apple' || provider === 'yahoo') {
       setIsAuthenticated(true);
       return;
     }
@@ -101,6 +107,67 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }
   };
 
+  const loginWithYahoo = async () => {
+    const clientId =
+      'dj0yJmk9UnVNMFpBYWFXdmV6JmQ9WVdrOU1XZHNNRWhHYW1JbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PWUy';
+
+    const redirectUri = 'com.eraiapp://auth';
+
+    try {
+      if (Platform.OS === 'ios') {
+        const result = await YahooAuthModule.authorize(clientId, redirectUri);
+
+        const { callbackUrl, codeVerifier } = result;
+
+        const code = callbackUrl.match(/code=([^&]+)/)?.[1];
+
+        if (!code) throw new Error('No auth code received');
+
+        const response = await fetch('https://api.login.yahoo.com/oauth2/get_token', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: new URLSearchParams({
+            grant_type: 'authorization_code',
+            client_id: clientId,
+            redirect_uri: redirectUri,
+            code,
+            code_verifier: codeVerifier,
+          }).toString(),
+        });
+
+        if (!response.ok) throw new Error('Token request failed');
+
+        await AsyncStorage.setItem(AUTH_PROVIDER_KEY, 'yahoo');
+        setIsAuthenticated(true);
+      } else {
+        const config = {
+          clientId,
+          redirectUrl: redirectUri,
+          scopes: ['openid', 'email'],
+          additionalParameters: {
+            prompt: 'login' as const,
+          },
+          serviceConfiguration: {
+            authorizationEndpoint: 'https://api.login.yahoo.com/oauth2/request_auth',
+            tokenEndpoint: 'https://api.login.yahoo.com/oauth2/get_token',
+          },
+          usePKCE: true,
+        };
+
+        const authState = await authorize(config);
+
+        if (authState.accessToken) {
+          await AsyncStorage.setItem(AUTH_PROVIDER_KEY, 'yahoo');
+          setIsAuthenticated(true);
+        }
+      }
+    } catch (error) {
+      console.log('Yahoo login error:', error);
+    }
+  };
+
   const logout = async () => {
     const provider = await AsyncStorage.getItem(AUTH_PROVIDER_KEY);
 
@@ -123,6 +190,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         replayOnboarding,
         loginWithGoogle,
         loginWithApple,
+        loginWithYahoo,
         logout,
       }}
     >

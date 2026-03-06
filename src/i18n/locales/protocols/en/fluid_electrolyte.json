@@ -6,7 +6,7 @@
       "name": "About",
       "sections": [
         {
-          "title": "Critical safety alert",
+          "title": "Critical Safety Alert",
           "type": "text",
           "content": "Critical fluid and electrolyte imbalances require immediate medical intervention. Select emergency type for step-by-step professional protocols.\n\nSevere electrolyte imbalances can cause cardiac arrest within minutes. Immediate intervention and continuous monitoring required."
         }
@@ -18,30 +18,22 @@
         {
           "title": "Sodium",
           "type": "list",
-          "items": [
-            "135–145 mEq/L"
-          ]
+          "items": ["135–145 mEq/L"]
         },
         {
           "title": "Potassium",
           "type": "list",
-          "items": [
-            "3.5–5.0 mEq/L"
-          ]
+          "items": ["3.5–5.0 mEq/L"]
         },
         {
           "title": "Chloride",
           "type": "list",
-          "items": [
-            "98–107 mEq/L"
-          ]
+          "items": ["98–107 mEq/L"]
         },
         {
           "title": "CO2",
           "type": "list",
-          "items": [
-            "22–28 mEq/L"
-          ]
+          "items": ["22–28 mEq/L"]
         }
       ]
     }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity, Image } from 'react-native';
 import Sound from 'react-native-sound';
 import Video, { VideoRef } from 'react-native-video';
 import { useTranslation } from 'react-i18next';
@@ -33,6 +33,18 @@ type ProtocolStepFlowProps = {
 };
 
 const MEDIA_MAP: Record<string, any> = {
+  'cpr_child_step1.mp4': require('../../i18n/locales/protocols/en/cpr_child_step1.mp4'),
+  'cpr_child_step2.mp4': require('../../i18n/locales/protocols/en/cpr_child_step2.mp4'),
+  'cpr_child_step3.mp4': require('../../i18n/locales/protocols/en/cpr_child_step3.mp4'),
+  'cpr_child_step4.mp4': require('../../i18n/locales/protocols/en/cpr_child_step4.mp4'),
+  'cpr_child_step5.mp4': require('../../i18n/locales/protocols/en/cpr_child_step5.mp4'),
+  'cpr_child_step6.mp4': require('../../i18n/locales/protocols/en/cpr_child_step6.mp4'),
+  'cpr_infant_step1.mp4': require('../../i18n/locales/protocols/en/cpr_infant_step1.mp4'),
+  'cpr_infant_step2.mp4': require('../../i18n/locales/protocols/en/cpr_infant_step2.mp4'),
+  'cpr_infant_step3.mp4': require('../../i18n/locales/protocols/en/cpr_infant_step3.mp4'),
+  'cpr_infant_step4.mp4': require('../../i18n/locales/protocols/en/cpr_infant_step4.mp4'),
+  'cpr_infant_step5.mp4': require('../../i18n/locales/protocols/en/cpr_infant_step5.mp4'),
+  'cpr_infant_step6.mp4': require('../../i18n/locales/protocols/en/cpr_infant_step6.mp4'),
   'ADULT_CPR.mp4': require('../../i18n/locales/protocols/en/ADULT_CPR.mp4'),
   'STEP_1.mp4': require('../../i18n/locales/protocols/en/STEP_1.mp4'),
   'STEP_2.mp4': require('../../i18n/locales/protocols/en/STEP_2.mp4'),
@@ -40,6 +52,11 @@ const MEDIA_MAP: Record<string, any> = {
   'STEP_4.mp4': require('../../i18n/locales/protocols/en/STEP_4.mp4'),
   'STEP_5.mp4': require('../../i18n/locales/protocols/en/STEP_5.mp4'),
   'STEP_6.mp4': require('../../i18n/locales/protocols/en/STEP_6.mp4'),
+};
+
+const IMAGE_MAP: Record<string, any> = {
+  'narcan_administration.png': require('../../i18n/locales/protocols/en/narcan_administration.png'),
+  'anaphylaxis_epinephrine.png': require('../../i18n/locales/protocols/en/anaphylaxis_epinephrine.png'),
 };
 
 export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolStepFlowProps) {
@@ -266,6 +283,7 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
       >
         {steps.map((step: any, index: number) => {
           const stepIsVideoFile = step?.video != null && step?.video !== undefined;
+          const stepIsImageFile = step?.image != null && step?.image !== undefined;
           const isCurrentStep = index === currentStepIndex;
 
           return (
@@ -273,7 +291,10 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
               key={step.id}
               style={[
                 stepFlowStyle.pageContainer,
-                { justifyContent: step.video ? 'space-between' : 'center' },
+                {
+                  justifyContent: step.video || step.image ? 'space-between' : 'center',
+                  alignItems: 'flex-start',
+                },
               ]}
             >
               <View style={stepFlowStyle.firstSubContainer}>
@@ -433,6 +454,29 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
                   </TouchableOpacity>
                 )}
               </View>
+
+              {stepIsImageFile && isCurrentStep && (
+                <View
+                  style={{
+                    width: '100%',
+                    aspectRatio: 16 / 9,
+                    backgroundColor: '#000',
+                    borderRadius: 24,
+                    overflow: 'hidden',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                >
+                  <Image
+                    source={IMAGE_MAP[step.image]}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      resizeMode: 'contain',
+                    }}
+                  />
+                </View>
+              )}
 
               {stepIsVideoFile && isCurrentStep && (
                 <TouchableOpacity

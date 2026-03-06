@@ -1,7 +1,41 @@
 {
   "id": "fracture_immobilization",
   "title": "Fracture & Immobilization First Aid",
-  "category": [],
+  "category": [
+    {
+      "sections": [
+        {
+          "title": "General Guidance",
+          "type": "text",
+          "content": "A fracture is a broken bone. Proper immobilization prevents further injury, reduces pain, and protects blood vessels and nerves until medical help arrives."
+        },
+        {
+          "title": "Call Emergency Services Immediately If",
+          "type": "list",
+          "items": [
+            "Suspected head, neck, or spine injury",
+            "Open fracture",
+            "Severe bleeding",
+            "Limb looks pale, blue, or cold",
+            "Loss of sensation",
+            "Person is unconscious"
+          ]
+        },
+        {
+          "title": "Signs of a Fracture",
+          "type": "list",
+          "items": [
+            "Severe pain at the injury site",
+            "Swelling and bruising",
+            "Deformity (bone looks out of place)",
+            "Inability to move or bear weight",
+            "Grinding sound (crepitus)",
+            "Bone protruding through skin (open fracture — emergency)"
+          ]
+        }
+      ]
+    }
+  ],
   "steps": [
     {
       "id": "fracture_immobilization_protocol",
@@ -11,8 +45,8 @@
       "steps": [
         {
           "id": 1,
-          "title": "Assess Circulation",
-          "subtitle": "Check pulse, motor function, and sensation distal to injury.",
+          "title": "Assess Injury",
+          "subtitle": "Check pulse, motor function, and sensation distal to injury. Do NOT move the injured area, keep the person still. Support the injured limb in the position found. Do NOT attempt to straighten the bone.",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",
@@ -20,8 +54,8 @@
         },
         {
           "id": 2,
-          "title": "Immobilize Joint",
-          "subtitle": "Splint fracture including joints above and below the injury.",
+          "title": "Immobilize the Fracture",
+          "subtitle": "Immobilize the joint above and below the fracture. Arm Fracture - Use a splint and secure arm in a sling. Leg Fracture - Splint both sides of the leg. If no splint available, tie injured leg to uninjured leg. Suspected Spine Injury - Do NOT move the person unless in immediate danger. Stabilize head and neck. Wait for trained medical responders.",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",
@@ -30,7 +64,7 @@
         {
           "id": 3,
           "title": "Check for Bleeding",
-          "subtitle": "Look for open fractures, control bleeding with direct pressure.",
+          "subtitle": "Control Bleeding (If Present), Apply gentle pressure with sterile gauze or clean cloth. For open fractures, do not push the bone back in, apply dressing around the wound carefully.",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",
@@ -39,7 +73,7 @@
         {
           "id": 4,
           "title": "Apply Splint",
-          "subtitle": "Use rigid splint materials, pad bony prominences.",
+          "subtitle": "How to Make a Splint: Use rigid objects (wood, sticks, rolled newspaper, cardboard). Pad the splint with cloth, secure with bandages, cloth strips, or tape. Tie snugly but not too tight (check circulation).",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",
@@ -48,7 +82,7 @@
         {
           "id": 5,
           "title": "Reassess Circulation",
-          "subtitle": "Recheck pulse and sensation after splinting.",
+          "subtitle": "Check circulation before and after Splinting. Check pulse below injury, and look for color and warmth. Ask about numbness or tingling.",
           "timeframe": "Critical",
           "type": "monitor",
           "status": "pending",
@@ -57,7 +91,7 @@
         {
           "id": 6,
           "title": "Pain Management",
-          "subtitle": "Provide appropriate pain relief, apply ice if available.",
+          "subtitle": "Provide over-the-counter pain relievers (if appropriate). Use wrapped ice pack for 15–20 minutes. Do NOT place ice directly on skin.",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",

@@ -6,22 +6,22 @@
       "name": "Contacts",
       "sections": [
         {
-          "title": "Critical safety alert",
+          "title": "Critical Safety Alert",
           "type": "text",
           "content": "Professional crisis intervention protocols for mental health emergencies, suicidal ideation, and psychiatric crises require immediate assessment and intervention. All mental health emergencies require immediate safety assessment. If risk indicators are present, take steps to ensure patient safety, remove access to means, and consider emergency intervention."
         },
         {
-          "title": "Emergency contacts",
+          "title": "Emergency Contacts",
           "type": "contacts",
           "items": ["Call 988 (Suicide & Crisis Lifeline)", "Call 911", "Text \"HOME\" to 741741"]
         }
       ]
     },
     {
-      "name": "Suicide risk factors",
+      "name": "Suicide Risk Factors",
       "sections": [
         {
-          "title": "High risk factors",
+          "title": "High Risk Factors",
           "type": "list",
           "items": [
             "Previous suicide attempts",
@@ -32,7 +32,7 @@
           ]
         },
         {
-          "title": "Protective factors",
+          "title": "Protective Factors",
           "type": "list",
           "items": [
             "Strong social support",
@@ -43,7 +43,7 @@
           ]
         },
         {
-          "title": "Warning signs",
+          "title": "Warning Signs",
           "type": "list",
           "items": [
             "Talking about dying/suicide",
@@ -60,7 +60,7 @@
   "protocols": [
     {
       "id": "active_suicidal_ideation",
-      "title": "Active suicidal ideation protocol",
+      "title": "Active Suicidal Ideation Protocol",
       "priority": "Imminent",
       "symptoms": ["Detailed plan", "Access to means", "Previous attempts", "Social isolation"],
       "steps": [
@@ -85,7 +85,7 @@
         {
           "id": 3,
           "title": "Risk Assessment",
-          "subtitle": "Assess intent, plan specificity, means access, timeline. Use SAMHSA suicide risk assessment protocol.",
+          "subtitle": "Assess intent, plan specificity, means access, timeline. Use Substance Abuse and Mental Health Services Administration (SAMHSA) - Suicide Risk Assessment.",
           "timeframe": "5–10 minutes",
           "type": "instruction",
           "status": "pending",
@@ -131,7 +131,7 @@
     },
     {
       "id": "suicide_attempt_in_progress",
-      "title": "Suicide attempt in progress protocol",
+      "title": "Suicide Attempt in Progress Protocol",
       "priority": "Imminent",
       "symptoms": ["Overdose", "Self-injury", "Hanging attempt", "Weapon access"],
       "steps": [
@@ -184,7 +184,7 @@
     },
     {
       "id": "homicidal_ideation",
-      "title": "Homicidal ideation protocol",
+      "title": "Homicidal Ideation Protocol",
       "priority": "Imminent",
       "steps": [
         {
@@ -240,13 +240,13 @@
     },
     {
       "id": "passive_suicidal_ideation",
-      "title": "Passive suicidal ideation protocol",
+      "title": "Passive Suicidal Ideation Protocol",
       "priority": "High",
       "symptoms": ["Depression", "Hopelessness", "Chronic illness", "Recent loss"],
       "steps": [
         {
           "id": 1,
-          "title": "Acknowledge the thoughts and reach out right away",
+          "title": "Acknowledge the Thoughts and Reach Out Right Away",
           "subtitle": "Recognize the thoughts without judgment or shame—they are a symptom of pain, not a personal failing or permanent state. Talk to someone immediately to reduce isolation.",
           "timeframe": null,
           "type": "instruction",
@@ -255,7 +255,7 @@
         },
         {
           "id": 2,
-          "title": "Seek professional evaluation and treatment",
+          "title": "Seek Professional Evaluation and Treatment",
           "subtitle": "Passive ideation often links to underlying issues like depression, anxiety, trauma, or sleep problems. A mental health professional can assess risk and create a tailored plan.",
           "timeframe": null,
           "type": "action",
@@ -264,7 +264,7 @@
         },
         {
           "id": 3,
-          "title": "Create a personalized safety plan",
+          "title": "Create a Personalized Safety Plan",
           "subtitle": "A safety plan gives concrete steps for when thoughts intensify, helping you stay safe and regain control.",
           "timeframe": null,
           "type": "instruction",
@@ -273,7 +273,7 @@
         },
         {
           "id": 4,
-          "title": "Prioritize foundational self-care",
+          "title": "Prioritize Foundational Self-Care",
           "subtitle": "Basic physical needs directly impact mood and thought patterns. When depleted, passive thoughts often worsen.\n\nFocus on small, consistent habits:\n• Aim for regular sleep (even if imperfect)\n• Eat nourishing meals\n• Gentle movement (a short walk)\n• Basic hygiene and routines",
           "timeframe": null,
           "type": "instruction",
@@ -282,7 +282,7 @@
         },
         {
           "id": 5,
-          "title": "Practice grounding and thought-challenging techniques",
+          "title": "Practice Grounding and Thought-Challenging Techniques",
           "subtitle": "These tools help interrupt and reduce the power of passive thoughts in the moment.\n\n• Grounding: Name 5 things you see, 4 you can touch, 3 you hear, etc.\n• Mindfulness/meditation: Observe thoughts as passing clouds without engaging.\n• Reality-check negatives: Ask \"Is this thought a fact or a feeling?\" or \"What would I tell a friend in this situation?\"\n• Engage in absorbing activities: (music, reading, hobbies) for distraction and small moments of relief.",
           "timeframe": null,
           "type": "instruction",
@@ -291,7 +291,7 @@
         },
         {
           "id": 6,
-          "title": "Build long-term support and resilience",
+          "title": "Build Long-Term Support and Resilience",
           "subtitle": "Address isolation and cultivate reasons for living through ongoing connection and purpose.\n\n• Stay connected to supportive people or groups (in-person or online communities)\n• Follow through with therapy appointments and track progress\n• Explore values-based goals (even tiny ones like \"learn one new skill\")\n• Limit substances that worsen mood\n• Reassess regularly—many people see thoughts fade as circumstances and coping improve.\n\nThese steps work best when combined with professional guidance. If thoughts intensify, include plans to act, or you feel unsafe, contact 988 or Contact Emergency Medical Services immediately. Pain can feel endless, but it is often temporary, and effective help exists—recovery is common and realistic.",
           "timeframe": null,
           "type": "instruction",
@@ -302,7 +302,7 @@
     },
     {
       "id": "acute_psychiatric_crisis",
-      "title": "Acute psychiatric crisis protocol",
+      "title": "Acute Psychiatric Crisis Protocol",
       "priority": "High",
       "symptoms": ["Psychosis", "Severe agitation", "Command hallucinations", "Paranoia"],
       "steps": [
@@ -364,7 +364,7 @@
     },
     {
       "id": "post_suicide_attempt_care",
-      "title": "Post-suicide attempt care protocol",
+      "title": "Post-Suicide Attempt Care Protocol",
       "priority": "Moderate",
       "symptoms": ["Medical complications", "Continued ideation", "Shame/guilt", "Family distress"],
       "steps": [

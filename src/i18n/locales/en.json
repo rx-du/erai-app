@@ -6,7 +6,8 @@
     "signUp": "Sign up",
     "or": "or",
     "continueWithGoogle": "Continue with Google",
-    "continueWithApple": "Continue with Apple"
+    "continueWithApple": "Continue with Apple",
+    "continueWithYahoo": "Continue with Yahoo"
   },
   "login": {
     "title": "Login",
@@ -60,21 +61,22 @@
       "bleeding": "Bleeding",
       "burns": "Burns",
       "fractures": "Fractures",
-      "headInjury": "Head injury",
-      "activeShooter": "Active shooter",
-      "heartAttack": "Heart attack",
+      "headInjury": "Head Injury",
+      "activeShooter": "Active Shooter",
+      "heartAttack": "Heart Attack",
       "anaphylaxis": "Anaphylaxis",
       "seizure": "Seizure",
       "shock": "Shock",
       "wounds": "Wounds",
-      "opiateOverdose": "Opiate overdose",
-      "burnInjury": "Burn injury",
+      "opiateOverdose": "Opiate Overdose",
+      "burnInjury": "Burn Injury",
       "choking": "Choking",
       "diabetes": "Diabetes",
       "splinting": "Splinting",
-      "mentalHealth": "Mental health",
+      "mentalHealth": "Mental Health",
       "fluidElectrolyte": "Fluid & Electrolyte",
-      "fluidCovid": "Flu & Covid Symptoms"
+      "fluidCovid": "Flu & Covid Symptoms",
+      "poison": "Poison Emergency"
     },
     "protocol": {
       "step": "Step",

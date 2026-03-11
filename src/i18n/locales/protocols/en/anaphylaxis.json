@@ -6,7 +6,7 @@
       "name": "Severity Assessment",
       "sections": [
         {
-          "title": "Anaphylaxis can rapidly cause",
+          "title": "Anaphylaxis Can Rapidly Cause",
           "type": "list",
           "items": [
             "Airway swelling (can block breathing)",
@@ -44,10 +44,7 @@
         {
           "title": "There are no absolute contraindications to epinephrine in anaphylaxis.",
           "type": "list",
-          "items": [
-            "Site: Mid-outer thigh (vastus lateralis)",
-            "Repeat every 5–15 minutes if needed"
-          ]
+          "items": ["Adult: 0.3–0.5mg/IM", "Child: 0.1mg/IM (max 0.3mg)", "Infant: 0.1–0.15mg/IM"]
         }
       ]
     }

@@ -172,7 +172,6 @@ export const stepFlowStyle = StyleSheet.create({
     paddingVertical: 6,
     borderRadius: 8,
     backgroundColor: '#F2F2F7',
-    marginBottom: 16,
   },
   timeframeText: {
     fontSize: 12,

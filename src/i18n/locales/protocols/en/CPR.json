@@ -7,7 +7,7 @@
         {
           "title": "AHA Accredited",
           "type": "text",
-          "content": "This protocol follows American Heart Association Basic Life Support guidelines. For certification, complete an official AHA course."
+          "content": "This protocol follows American Heart Association Basic Life Support guidelines. For certification, complete an official AHA course.\n\nCPR (Cardiopulmonary Resuscitation) is an emergency lifesaving procedure used when a person’s heart stops beating or they stop breathing. It keeps blood and oxygen flowing to the brain until professional help arrives."
         }
       ]
     }
@@ -15,7 +15,7 @@
   "protocols": [
     {
       "id": "cpr_adult",
-      "title": "CPR protocol for adults",
+      "title": "CPR Protocol for Adults",
       "ageRange": "8+ years",
       "steps": [
         {
@@ -87,7 +87,7 @@
     },
     {
       "id": "cpr_children",
-      "title": "CPR protocol for children",
+      "title": "CPR Protocol for Children",
       "ageRange": "1-8 years",
       "steps": [
         {
@@ -159,7 +159,7 @@
     },
     {
       "id": "cpr_infants",
-      "title": "CPR protocol for infants",
+      "title": "CPR Protocol for Infants",
       "ageRange": "0-1 year",
       "steps": [
         {

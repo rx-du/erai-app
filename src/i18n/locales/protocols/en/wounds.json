@@ -1,6 +1,6 @@
 {
   "id": "wound_care",
-  "title": "Wound Care First Aid",
+  "title": "Wound Care",
   "category": [
     {
       "sections": [
@@ -61,7 +61,7 @@
         {
           "id": 4,
           "title": "Apply Dressing",
-          "subtitle": "Apply sterile dressing or adhesive bandage, secure with tape. Change dressing daily orwhen wet/dirty.",
+          "subtitle": "Apply sterile dressing or adhesive bandage, secure with tape. Change dressing daily or when wet/dirty.",
           "timeframe": "Critical",
           "type": "instruction",
           "status": "pending",

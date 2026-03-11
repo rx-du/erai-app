@@ -80,7 +80,7 @@
       ]
     },
     {
-      "name": "C-Spine management",
+      "name": "C-Spine Management",
       "sections": [
         {
           "title": "Immobilization Steps",
@@ -109,7 +109,7 @@
           "subtitle": "Ensure scene safety and establish manual C-spine stabilization.",
           "timeframe": "Immediate",
           "type": "instruction",
-          "link": "C-Spine management",
+          "link": "C-Spine Management",
           "status": "pending",
           "shouldDisplayCSpineManagement": true,
           "video": null

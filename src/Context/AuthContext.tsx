@@ -22,6 +22,17 @@ type AuthContextType = {
 const AUTH_PROVIDER_KEY = 'authProvider';
 const ONBOARDING_KEY = 'hasSeenOnboarding';
 
+const YAHOO_AUTH = {
+  clientId:
+    'dj0yJmk9UnVNMFpBYWFXdmV6JmQ9WVdrOU1XZHNNRWhHYW1JbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PWUy',
+  redirectUri: 'com.eraiapp://auth',
+  tokenEndpoint: 'https://api.login.yahoo.com/oauth2/get_token',
+  authorizationEndpoint: 'https://api.login.yahoo.com/oauth2/request_auth',
+  scopes: ['openid', 'email'],
+  grantType: 'authorization_code',
+  contentType: 'application/x-www-form-urlencoded',
+};
+
 export const AuthContext = createContext<AuthContextType>({
   isAuthenticated: null,
   hasSeenOnboarding: null,
@@ -108,56 +119,43 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const loginWithYahoo = async () => {
-    const clientId =
-      'dj0yJmk9UnVNMFpBYWFXdmV6JmQ9WVdrOU1XZHNNRWhHYW1JbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PWUy';
-
-    const redirectUri = 'com.eraiapp://auth';
-
     try {
       if (Platform.OS === 'ios') {
-        const result = await YahooAuthModule.authorize(clientId, redirectUri);
-
+        const result = await YahooAuthModule.authorize(YAHOO_AUTH.clientId, YAHOO_AUTH.redirectUri);
         const { callbackUrl, codeVerifier } = result;
-
         const code = callbackUrl.match(/code=([^&]+)/)?.[1];
-
         if (!code) throw new Error('No auth code received');
-
-        const response = await fetch('https://api.login.yahoo.com/oauth2/get_token', {
+        const response = await fetch(YAHOO_AUTH.tokenEndpoint, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
+            'Content-Type': YAHOO_AUTH.contentType,
           },
           body: new URLSearchParams({
-            grant_type: 'authorization_code',
-            client_id: clientId,
-            redirect_uri: redirectUri,
+            grant_type: YAHOO_AUTH.grantType,
+            client_id: YAHOO_AUTH.clientId,
+            redirect_uri: YAHOO_AUTH.redirectUri,
             code,
             code_verifier: codeVerifier,
           }).toString(),
         });
-
         if (!response.ok) throw new Error('Token request failed');
-
         await AsyncStorage.setItem(AUTH_PROVIDER_KEY, 'yahoo');
         setIsAuthenticated(true);
       } else {
         const config = {
-          clientId,
-          redirectUrl: redirectUri,
-          scopes: ['openid', 'email'],
+          clientId: YAHOO_AUTH.clientId,
+          redirectUrl: YAHOO_AUTH.redirectUri,
+          scopes: YAHOO_AUTH.scopes,
           additionalParameters: {
             prompt: 'login' as const,
           },
           serviceConfiguration: {
-            authorizationEndpoint: 'https://api.login.yahoo.com/oauth2/request_auth',
-            tokenEndpoint: 'https://api.login.yahoo.com/oauth2/get_token',
+            authorizationEndpoint: YAHOO_AUTH.authorizationEndpoint,
+            tokenEndpoint: YAHOO_AUTH.tokenEndpoint,
           },
           usePKCE: true,
         };
-
         const authState = await authorize(config);
-
         if (authState.accessToken) {
           await AsyncStorage.setItem(AUTH_PROVIDER_KEY, 'yahoo');
           setIsAuthenticated(true);

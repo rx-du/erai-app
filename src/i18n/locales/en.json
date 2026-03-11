@@ -52,8 +52,8 @@
   },
   "aid": {
     "title": "First Aid",
-    "stepByStep": "Step-by-step guidance",
-    "chooseEmergency": "Choose your emergency",
+    "stepByStep": "Step-by-Step Guidance",
+    "chooseEmergency": "Choose your Emergency",
     "emergencyResponse": "Emergency Response",
     "firstAid": "First Aid",
     "categories": {
@@ -76,7 +76,7 @@
       "mentalHealth": "Mental Health",
       "fluidElectrolyte": "Fluid & Electrolyte",
       "fluidCovid": "Flu & Covid Symptoms",
-      "poison": "Poison Emergency"
+      "poison": "Poison"
     },
     "protocol": {
       "step": "Step",
@@ -100,9 +100,9 @@
     "title": "Emergency",
     "call": "Call Emergency Services",
     "callNumber": "Call {{number}}",
-    "whatIsEmergency": "What is your emergency?",
-    "holdButton": "Hold the button bellow and help will reach you soon",
-    "showAllContacts": "Show all emergency contacts",
+    "whatIsEmergency": "What is your Emergency?",
+    "holdButton": "Hold the Button Below to Call for Help",
+    "showAllContacts": "Show All Emergency Contacts",
     "calling": "Calling 911..."
   },
   "account": {

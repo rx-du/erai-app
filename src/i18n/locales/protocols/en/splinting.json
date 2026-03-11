@@ -74,7 +74,7 @@
         {
           "id": 5,
           "title": "Apply Splint Material",
-          "subtitle": "Use rigid materials like Structural Aluminum Malleable splint splint or board splint.",
+          "subtitle": "Use rigid materials like SAM splint (Structural Aluminum Malleable), or board splint.",
           "timeframe": "Immediate",
           "type": "instruction",
           "status": "pending",

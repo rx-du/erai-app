@@ -26,6 +26,7 @@ import CPRIcon from '../../Icons/cpr-24.svg';
 import StepCompletedIcon from '../../Icons/step_completed.svg';
 import PhoneIcon from '../../Icons/phone-filled-24.svg';
 import Arrow from '../../Icons/arrow-protocol.svg';
+import { ScrollView } from 'react-native-gesture-handler';
 
 type ProtocolStepFlowProps = {
   protocolData: any;
@@ -287,41 +288,46 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
           const isCurrentStep = index === currentStepIndex;
 
           return (
-            <View
+            <ScrollView
               key={step.id}
-              style={[
-                stepFlowStyle.pageContainer,
-                {
-                  justifyContent: step.video || step.image ? 'space-between' : 'center',
-                  alignItems: 'flex-start',
-                },
-              ]}
+              style={{ flex: 1 }}
+              contentContainerStyle={{ flexGrow: 1 }}
+              showsVerticalScrollIndicator={false}
+              nestedScrollEnabled
             >
-              <View style={stepFlowStyle.firstSubContainer}>
-                {step.timeframe && (
-                  <View style={stepFlowStyle.timeframeBadge}>
-                    <Text
-                      style={[
-                        stepFlowStyle.timeframeText,
-                        { color: colors.Text.neutral.secondary },
-                      ]}
-                    >
-                      ⏱ {step.timeframe}
-                    </Text>
-                  </View>
-                )}
+              <View
+                style={[
+                  stepFlowStyle.pageContainer,
+                  {
+                    justifyContent: step.video || step.image ? 'space-between' : 'center',
+                  },
+                ]}
+              >
+                <View style={stepFlowStyle.firstSubContainer}>
+                  {step.timeframe && (
+                    <View style={stepFlowStyle.timeframeBadge}>
+                      <Text
+                        style={[
+                          stepFlowStyle.timeframeText,
+                          { color: colors.Text.neutral.secondary },
+                        ]}
+                      >
+                        ⏱ {step.timeframe}
+                      </Text>
+                    </View>
+                  )}
 
-                <Text style={[stepFlowStyle.stepTitle, { color: colors.Text.neutral.primary }]}>
-                  {step.title}
-                </Text>
+                  <Text style={[stepFlowStyle.stepTitle, { color: colors.Text.neutral.primary }]}>
+                    {step.title}
+                  </Text>
 
-                <Text
-                  style={[stepFlowStyle.stepSubtitle, { color: colors.Text.neutral.secondary }]}
-                >
-                  {step.subtitle}
-                </Text>
+                  <Text
+                    style={[stepFlowStyle.stepSubtitle, { color: colors.Text.neutral.secondary }]}
+                  >
+                    {step.subtitle}
+                  </Text>
 
-                {/* {isCPR && index === totalSteps - 1 && (
+                  {/* {isCPR && index === totalSteps - 1 && (
                   <CustomButton
                     type="secondary"
                     text={`Continue compressions ${protocolState.compressions}`}
@@ -335,222 +341,223 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
                   />
                 )} */}
 
-                {step.shouldDisplayEmergencyCall && (
-                  <TouchableOpacity
-                    onPress={() => {
-                      handleMinimize(false);
-                      navigation.navigate('MainTabs');
-                    }}
-                    style={{
-                      flexDirection: 'row',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      gap: 8,
-                    }}
-                  >
-                    <PhoneIcon color={colors.Text.accent.primary} />
-                    <Text style={[footerStyle.text, { color: colors.Text.accent.primary }]}>
-                      Call 911
-                    </Text>
-                  </TouchableOpacity>
-                )}
-
-                {step.shouldDisplayCprProtocol && (
-                  <TouchableOpacity
-                    onPress={() => {
-                      navigation.navigate('Protocol', {
-                        protocolData: getProtocolData('CPR'),
-                        title: i18n.t('aid.categories.cpr'),
-                        icon: CPRIcon,
-                        onBack: () => navigation.goBack(),
-                      });
-                    }}
-                    style={{
-                      flexDirection: 'row',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      gap: 8,
-                    }}
-                  >
-                    <CPRIcon color={colors.Text.accent.primary} />
-                    <Text style={[footerStyle.text, { color: colors.Text.accent.primary }]}>
-                      CPR protocol
-                    </Text>
-                  </TouchableOpacity>
-                )}
-
-                {step.shouldDisplayEpinephineDose && (
-                  <TouchableOpacity
-                    onPress={() => {
-                      handleMinimize(false);
-                      navigation.navigate('Protocol', {
-                        protocolData: getProtocolData('anaphylaxis'),
-                        title: i18n.t('aid.categories.anaphylaxis'),
-                        icon: CPRIcon,
-                        categoryIndex: 2,
-                      });
-                    }}
-                    style={{
-                      flexDirection: 'row',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      gap: 8,
-                    }}
-                  >
-                    <Text style={[footerStyle.text, { color: colors.Text.accent.primary }]}>
-                      Epinephrine Dose
-                    </Text>
-                    <Arrow />
-                  </TouchableOpacity>
-                )}
-
-                {step.shouldDisplayCSpineManagement && (
-                  <TouchableOpacity
-                    onPress={() => {
-                      handleMinimize(false);
-                      navigation.navigate('Protocol', {
-                        protocolData: getProtocolData('head_injury'),
-                        title: i18n.t('aid.categories.headInjury'),
-                        icon: CPRIcon,
-                        categoryIndex: 3,
-                      });
-                    }}
-                    style={{
-                      flexDirection: 'row',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      gap: 8,
-                    }}
-                  >
-                    <Text style={[footerStyle.text, { color: colors.Text.accent.primary }]}>
-                      C-Spine management
-                    </Text>
-                    <Arrow />
-                  </TouchableOpacity>
-                )}
-
-                {step.shouldDisplayGlasgowComaScale && (
-                  <TouchableOpacity
-                    onPress={() => {
-                      handleMinimize(false);
-                      navigation.navigate('Protocol', {
-                        protocolData: getProtocolData('head_injury'),
-                        title: i18n.t('aid.categories.headInjury'),
-                        icon: CPRIcon,
-                        categoryIndex: 2,
-                      });
-                    }}
-                    style={{
-                      flexDirection: 'row',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      gap: 8,
-                    }}
-                  >
-                    <Text style={[footerStyle.text, { color: colors.Text.accent.primary }]}>
-                      Glasgow Coma scale
-                    </Text>
-                    <Arrow />
-                  </TouchableOpacity>
-                )}
-              </View>
-
-              {stepIsImageFile && isCurrentStep && (
-                <View
-                  style={{
-                    width: '100%',
-                    aspectRatio: 16 / 9,
-                    backgroundColor: '#000',
-                    borderRadius: 24,
-                    overflow: 'hidden',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
-                >
-                  <Image
-                    source={IMAGE_MAP[step.image]}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      resizeMode: 'contain',
-                    }}
-                  />
-                </View>
-              )}
-
-              {stepIsVideoFile && isCurrentStep && (
-                <TouchableOpacity
-                  onPress={() => setIsPlaying(true)}
-                  style={{
-                    width: '100%',
-                    aspectRatio: 16 / 9,
-                    backgroundColor: '#000',
-                    borderRadius: 24,
-                    overflow: 'hidden',
-                  }}
-                >
-                  <Video
-                    ref={videoRef}
-                    source={MEDIA_MAP[step.video]}
-                    viewType={0}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                    }}
-                    paused={!isPlaying}
-                    controls={isPlaying}
-                    resizeMode="contain"
-                    repeat={false}
-                    onEnd={() => {
-                      setIsPlaying(false);
-                    }}
-                    onError={(error) => {
-                      setIsPlaying(false);
-                    }}
-                  />
-
-                  {!isPlaying && (
-                    <View
+                  {step.shouldDisplayEmergencyCall && (
+                    <TouchableOpacity
+                      onPress={() => {
+                        handleMinimize(false);
+                        navigation.navigate('MainTabs');
+                      }}
                       style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
+                        flexDirection: 'row',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                        gap: 8,
                       }}
                     >
+                      <PhoneIcon color={colors.Text.accent.primary} />
+                      <Text style={[footerStyle.text, { color: colors.Text.accent.primary }]}>
+                        Call 911
+                      </Text>
+                    </TouchableOpacity>
+                  )}
+
+                  {step.shouldDisplayCprProtocol && (
+                    <TouchableOpacity
+                      onPress={() => {
+                        navigation.navigate('Protocol', {
+                          protocolData: getProtocolData('CPR'),
+                          title: i18n.t('aid.categories.cpr'),
+                          icon: CPRIcon,
+                          onBack: () => navigation.goBack(),
+                        });
+                      }}
+                      style={{
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 8,
+                      }}
+                    >
+                      <CPRIcon color={colors.Text.accent.primary} />
+                      <Text style={[footerStyle.text, { color: colors.Text.accent.primary }]}>
+                        CPR protocol
+                      </Text>
+                    </TouchableOpacity>
+                  )}
+
+                  {step.shouldDisplayEpinephineDose && (
+                    <TouchableOpacity
+                      onPress={() => {
+                        handleMinimize(false);
+                        navigation.navigate('Protocol', {
+                          protocolData: getProtocolData('anaphylaxis'),
+                          title: i18n.t('aid.categories.anaphylaxis'),
+                          icon: CPRIcon,
+                          categoryIndex: 1,
+                        });
+                      }}
+                      style={{
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 8,
+                      }}
+                    >
+                      <Text style={[footerStyle.text, { color: colors.Text.accent.primary }]}>
+                        Epinephrine Dose
+                      </Text>
+                      <Arrow />
+                    </TouchableOpacity>
+                  )}
+
+                  {step.shouldDisplayCSpineManagement && (
+                    <TouchableOpacity
+                      onPress={() => {
+                        handleMinimize(false);
+                        navigation.navigate('Protocol', {
+                          protocolData: getProtocolData('head_injury'),
+                          title: i18n.t('aid.categories.headInjury'),
+                          icon: CPRIcon,
+                          categoryIndex: 3,
+                        });
+                      }}
+                      style={{
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 8,
+                      }}
+                    >
+                      <Text style={[footerStyle.text, { color: colors.Text.accent.primary }]}>
+                        C-Spine Management
+                      </Text>
+                      <Arrow />
+                    </TouchableOpacity>
+                  )}
+
+                  {step.shouldDisplayGlasgowComaScale && (
+                    <TouchableOpacity
+                      onPress={() => {
+                        handleMinimize(false);
+                        navigation.navigate('Protocol', {
+                          protocolData: getProtocolData('head_injury'),
+                          title: i18n.t('aid.categories.headInjury'),
+                          icon: CPRIcon,
+                          categoryIndex: 2,
+                        });
+                      }}
+                      style={{
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 8,
+                      }}
+                    >
+                      <Text style={[footerStyle.text, { color: colors.Text.accent.primary }]}>
+                        Glasgow Coma scale
+                      </Text>
+                      <Arrow />
+                    </TouchableOpacity>
+                  )}
+                </View>
+
+                {stepIsImageFile && isCurrentStep && (
+                  <View
+                    style={{
+                      width: '100%',
+                      aspectRatio: 16 / 9,
+                      backgroundColor: '#000',
+                      borderRadius: 24,
+                      overflow: 'hidden',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <Image
+                      source={IMAGE_MAP[step.image]}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        resizeMode: 'contain',
+                      }}
+                    />
+                  </View>
+                )}
+
+                {stepIsVideoFile && isCurrentStep && (
+                  <TouchableOpacity
+                    onPress={() => setIsPlaying(true)}
+                    style={{
+                      width: '100%',
+                      aspectRatio: 16 / 9,
+                      backgroundColor: '#000',
+                      borderRadius: 24,
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <Video
+                      ref={videoRef}
+                      source={MEDIA_MAP[step.video]}
+                      viewType={0}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                      }}
+                      paused={!isPlaying}
+                      controls={isPlaying}
+                      resizeMode="contain"
+                      repeat={false}
+                      onEnd={() => {
+                        setIsPlaying(false);
+                      }}
+                      onError={(error) => {
+                        setIsPlaying(false);
+                      }}
+                    />
+
+                    {!isPlaying && (
                       <View
                         style={{
-                          width: 64,
-                          height: 64,
-                          borderRadius: 32,
-                          backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          right: 0,
+                          bottom: 0,
                           justifyContent: 'center',
                           alignItems: 'center',
+                          backgroundColor: 'rgba(0, 0, 0, 0.3)',
                         }}
                       >
                         <View
                           style={{
-                            width: 0,
-                            height: 0,
-                            marginLeft: 4,
-                            borderLeftWidth: 20,
-                            borderTopWidth: 12,
-                            borderBottomWidth: 12,
-                            borderLeftColor: '#000',
-                            borderTopColor: 'transparent',
-                            borderBottomColor: 'transparent',
+                            width: 64,
+                            height: 64,
+                            borderRadius: 32,
+                            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                            justifyContent: 'center',
+                            alignItems: 'center',
                           }}
-                        />
+                        >
+                          <View
+                            style={{
+                              width: 0,
+                              height: 0,
+                              marginLeft: 4,
+                              borderLeftWidth: 20,
+                              borderTopWidth: 12,
+                              borderBottomWidth: 12,
+                              borderLeftColor: '#000',
+                              borderTopColor: 'transparent',
+                              borderBottomColor: 'transparent',
+                            }}
+                          />
+                        </View>
                       </View>
-                    </View>
-                  )}
-                </TouchableOpacity>
-              )}
-            </View>
+                    )}
+                  </TouchableOpacity>
+                )}
+              </View>
+            </ScrollView>
           );
         })}
       </PagerView>

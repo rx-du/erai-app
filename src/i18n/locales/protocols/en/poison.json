@@ -1,7 +1,17 @@
 {
   "id": "poison_emergency",
-  "title": "Poison Emergency",
-  "category": [],
+  "title": "Poison",
+  "category": [
+    {
+      "sections": [
+        {
+          "title": "Critical",
+          "type": "text",
+          "content": "A poison emergency happens when someone has swallowed, inhaled, touched, or injected a harmful substance. Acting quickly and correctly can save a life."
+        }
+      ]
+    }
+  ],
   "steps": [
     {
       "id": "poison_emergency_protocol",

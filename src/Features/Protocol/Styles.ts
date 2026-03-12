@@ -8,7 +8,7 @@ export const headerStyle = StyleSheet.create({
     alignItems: 'flex-start',
     gap: 24,
     paddingTop: 45,
-    paddingHorizontal: 24,
+    paddingLeft: 24,
   },
   subContainer: {
     flexDirection: 'row',

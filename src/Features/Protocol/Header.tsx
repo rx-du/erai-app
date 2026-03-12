@@ -1,4 +1,4 @@
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity, useWindowDimensions } from 'react-native';
 import { headerStyle } from './Styles';
 import BackIcon from '../../Icons/back-24.svg';
 import { useTheme } from '../../Theme/ThemeContext';
@@ -27,10 +27,13 @@ export default function Header({
   onBack,
 }: HeaderProps) {
   const { colors } = useTheme();
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
+  const { width } = useWindowDimensions();
+
+  const extraPaddingRight = width >= 400 ? 32 : 24;
 
   return (
-    <View style={headerStyle.container}>
+    <View style={[headerStyle.container, { paddingRight: extraPaddingRight }]}>
       <TouchableOpacity
         onPress={onBack}
         activeOpacity={0.7}

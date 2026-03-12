@@ -275,7 +275,7 @@ export default function AccountScreen({ navigation }: any) {
               }}
             >
               <Text style={[styles.subtitle, { color: colors.Text.neutral.secondary }]}>
-                Educational Purpose disclaimer
+                Educational Purpose Disclaimer
               </Text>
               <ArrowRight color={colors.Text.accent.primary} />
             </TouchableOpacity>
@@ -287,7 +287,7 @@ export default function AccountScreen({ navigation }: any) {
               }}
             >
               <Text style={[styles.subtitle, { color: colors.Text.neutral.secondary }]}>
-                Terms of Services
+                Terms of Service
               </Text>
               <ArrowRight color={colors.Text.accent.primary} />
             </TouchableOpacity>
@@ -317,7 +317,7 @@ export default function AccountScreen({ navigation }: any) {
               }}
             >
               <Text style={[styles.subtitle, { color: colors.Text.accent.primary }]}>
-                Delete account
+                Delete Account
               </Text>
             </TouchableOpacity>
           </View>
@@ -415,7 +415,7 @@ export default function AccountScreen({ navigation }: any) {
 
       <CustomModal
         visible={showDeleteModal}
-        title="Delete account"
+        title="Delete Account"
         subtitle="This action is irreversible. Deleting your account will remove all your personal data from our systems."
         onCancel={() => setShowDeleteModal(false)}
         onAction={handleDeleteAccount}

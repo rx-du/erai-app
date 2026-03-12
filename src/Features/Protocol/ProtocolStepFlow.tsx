@@ -656,12 +656,7 @@ export default function ProtocolStepFlow({ protocolData, icon: Icon }: ProtocolS
               fontWeight: '700',
             }}
           >
-            All steps completed
-          </Text>
-        }
-        secondText={
-          <Text style={{ color: colors.Text.neutral.secondary }}>
-            Your input helps us improve our guides for everyone.
+            All Steps Completed
           </Text>
         }
         visible={showFinishProtocolModal}

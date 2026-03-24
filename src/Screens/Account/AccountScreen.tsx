@@ -424,7 +424,7 @@ export default function AccountScreen({ navigation }: any) {
 
       <CustomDrawer
         isVisible={showSubscriptionDetails}
-        title="Subscription details"
+        title="Subscription Details"
         isSmallDrawer
         onClose={() => {
           setShowSubscriptionDetails(false);
@@ -477,7 +477,7 @@ export default function AccountScreen({ navigation }: any) {
                         { color: colors.Text.neutral.secondary },
                       ]}
                     >
-                      Access to all the guides and protocols.
+                      Access to all the Protocols.
                     </Text>
                   </View>
                 </View>
@@ -526,12 +526,6 @@ export default function AccountScreen({ navigation }: any) {
                 }}
               >
                 <View style={{ flexDirection: 'column', gap: 24 }}>
-                  <TouchableOpacity>
-                    <Text style={[styles.actionButton, { color: colors.Text.accent.primary }]}>
-                      Get help
-                    </Text>
-                  </TouchableOpacity>
-
                   <TouchableOpacity
                     onPress={() => {
                       openSubscriptionManagement(subscriptionDetails.productId || '');
@@ -601,9 +595,7 @@ export default function AccountScreen({ navigation }: any) {
                         { color: colors.Text.neutral.secondary },
                       ]}
                     >
-                      {subscriptionDetails.isTrial
-                        ? 'Access to CPR protocol for adults.'
-                        : 'Access to all the guides and protocols.'}
+                      Access to all the Protocols
                     </Text>
                   </View>
                 </View>
@@ -694,12 +686,6 @@ export default function AccountScreen({ navigation }: any) {
                 }}
               >
                 <View style={{ flexDirection: 'column', gap: 24 }}>
-                  <TouchableOpacity>
-                    <Text style={[styles.actionButton, { color: colors.Text.accent.primary }]}>
-                      Get help
-                    </Text>
-                  </TouchableOpacity>
-
                   <TouchableOpacity
                     onPress={() => {
                       if (isAndroid) {
@@ -711,7 +697,7 @@ export default function AccountScreen({ navigation }: any) {
                     }}
                   >
                     <Text style={[styles.actionButton, { color: colors.Text.accent.primary }]}>
-                      Manage my subscription
+                      Manage my Subscription
                     </Text>
                   </TouchableOpacity>
                 </View>

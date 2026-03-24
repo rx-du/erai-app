@@ -42,7 +42,7 @@ export default function UpgradeSubscriptionDrawer({
             gap: 12,
           }}
         >
-          <Text style={{ fontSize: 24, fontWeight: '700', lineHeight: 31.2 }}>Get premium</Text>
+          <Text style={{ fontSize: 24, fontWeight: '700', lineHeight: 31.2 }}>Get Premium</Text>
           <Text
             style={{
               fontSize: 15,
@@ -52,7 +52,8 @@ export default function UpgradeSubscriptionDrawer({
               color: colors.Text.neutral.secondary,
             }}
           >
-            Unlock all the power of this mobile tool and get access to all the guides and protocols.
+            Unlock the power of the app and get all access to Emergency Protocols and Fist Aid
+            steps.
           </Text>
         </View>
         <View style={{ gap: 16, justifyContent: 'flex-start', alignItems: 'center' }}>
@@ -65,7 +66,7 @@ export default function UpgradeSubscriptionDrawer({
               color: colors.Text.accent.secondary,
             }}
           >
-            Choose payment
+            Choose Payment
           </Text>
           <View style={{ gap: 8 }}>
             <TouchableOpacity
@@ -147,7 +148,7 @@ export default function UpgradeSubscriptionDrawer({
                     : colors.Text.neutral.secondary,
                 }}
               >
-                Annual
+                Annually
               </Text>
               <Text
                 style={{
@@ -171,7 +172,7 @@ export default function UpgradeSubscriptionDrawer({
                 monthlySubscritpion ? MONTHLY_SUBSCRIPTION_PRODUCT : ANNUAL_SUBSCRIPTION_PRODUCT
               );
             }}
-            text="Upgrade now"
+            text="Upgrade Now"
             disabled={!monthlySubscritpion && !annualSubscription}
             type={monthlySubscritpion || annualSubscription ? 'primary' : 'disabled'}
             dimension="large"
@@ -187,7 +188,8 @@ export default function UpgradeSubscriptionDrawer({
             color: colors.Text.neutral.secondary,
           }}
         >
-          Your subscription renews annually. Cancel anytime. By placing this order, you agree to the{' '}
+          Your subscription renews monthly/annually, depending on your subscription. Cancel anytime.
+          By placing this order, you agree to the{' '}
           <Text
             style={{ color: colors.Button.accent.primary }}
             onPress={() => navigation.navigate('TermsOfService')}

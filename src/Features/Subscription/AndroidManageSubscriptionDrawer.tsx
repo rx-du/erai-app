@@ -59,7 +59,7 @@ export default function AndroidManageSubscriptionDrawer({
               lineHeight: 31.2,
             }}
           >
-            Premium subscription
+            Premium Subscription
           </Text>
 
           <Text
@@ -70,7 +70,7 @@ export default function AndroidManageSubscriptionDrawer({
               color: colors.Text.neutral.secondary,
             }}
           >
-            You have access to all the guides and protocols.{'\n'}
+            You have access to all the protocols.{'\n'}
             {currentPlan === 'monthly' ? 'Paid monthly.' : 'Paid annually.'}
           </Text>
         </View>
@@ -167,7 +167,7 @@ export default function AndroidManageSubscriptionDrawer({
                       : colors.Text.neutral.secondary,
                 }}
               >
-                {currentPlan === 'annual' ? 'Annual (current)' : 'Annual'}
+                {currentPlan === 'annual' ? 'Annually (current)' : 'Annually'}
               </Text>
 
               <Text
@@ -203,7 +203,7 @@ export default function AndroidManageSubscriptionDrawer({
 
         <View style={{ alignItems: 'center', gap: 16 }}>
           <CustomButton
-            text="Change subscription"
+            text="Change Subscription"
             dimension="large"
             width={200}
             disabled={isSamePlan}
@@ -222,7 +222,7 @@ export default function AndroidManageSubscriptionDrawer({
           />
 
           <CustomButton
-            text="Cancel my subscription"
+            text="Cancel my Subscription"
             dimension="large"
             width={200}
             type="tertiary"
@@ -241,7 +241,8 @@ export default function AndroidManageSubscriptionDrawer({
             color: colors.Text.neutral.secondary,
           }}
         >
-          Your subscription renews annually. Cancel anytime. By placing this order, you agree to the{' '}
+          Your subscription renews monthly/annually, depending on your subscription. Cancel anytime.
+          By placing this order, you agree to the{' '}
           <Text
             style={{ color: colors.Button.accent.primary }}
             onPress={() => navigation.navigate('TermsOfService')}

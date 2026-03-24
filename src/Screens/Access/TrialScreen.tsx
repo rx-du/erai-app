@@ -39,7 +39,7 @@ export function TrialScreen({ navigation }: any) {
         >
           <View style={trialStyles.section}>
             <Text style={[trialStyles.title, { color: colors.Text.neutral.secondary }]}>
-              Premium subscription
+              Premium Subscription
             </Text>
 
             <View
@@ -62,7 +62,7 @@ export function TrialScreen({ navigation }: any) {
             </View>
 
             <Text style={[trialStyles.subtitle, { color: colors.Text.neutral.primary }]}>
-              First 7 days free
+              First 7 Days Free
             </Text>
           </View>
 
@@ -72,7 +72,7 @@ export function TrialScreen({ navigation }: any) {
                 Today
               </Text>
               <Text style={[trialStyles.todaySubtitle, { color: colors.Text.accent.secondary }]}>
-                Unlock all protocols.
+                Unlock All Protocols.
               </Text>
             </View>
 
@@ -89,7 +89,7 @@ export function TrialScreen({ navigation }: any) {
           </View>
 
           <CustomButton
-            text="Start my free trial"
+            text="Start My Free Trial"
             type="primary"
             width={180}
             onPress={() => {
@@ -100,8 +100,8 @@ export function TrialScreen({ navigation }: any) {
 
         <View style={trialStyles.footer}>
           <Text style={[trialStyles.todaySubtitle, { color: colors.Text.neutral.secondary }]}>
-            Your subscription renews annually. Cancel anytime. By placing this order, you agree to
-            the{' '}
+            Your subscription renews monthly/annually, depending on your subscription. Cancel
+            anytime. By placing this order, you agree to the{' '}
             <Text
               style={{ color: colors.Button.accent.primary }}
               onPress={() => navigation.navigate('TermsOfService')}
